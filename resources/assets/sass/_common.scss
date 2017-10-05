@@ -1,0 +1,93 @@
+/*
+|---------------------------------
+|- for navigation bar
+|- 04/10/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
+
+// background color
+$pri-back-color: #fff;
+$sec-back-color: #1BCA06;
+$thi-back-color: #15AE03;
+
+$fou-back-color: #E6E5E5;
+
+// text color
+$pri-text-color:#2d2d2d;
+$sec-text-color: #fff;
+$thi-text-color: #1BCA06;
+
+*{
+    font-size: 1.6rem
+}
+nav.navbar-phongtro {
+    background-color: $pri-back-color;
+    border-color: $pri-back-color;
+    border-radius: 0px;
+
+    .navbar-brand {
+        color: $pri-text-color;
+        @include pri-transittion;
+        &:hover, &:focus{
+            color: $thi-text-color;
+            @include pri-transittion;
+        }
+    }
+    .navbar-collapse,
+    .navbar-form {
+        border-color: $pri-back-color;
+    }
+    .navbar-form .input-group {
+        .form-control {
+            &::placeholder {
+                color: $pri-text-color;
+                @include pri-transittion;
+            }
+            &:hover::placeholder, &:focus::placeholder {
+                color: $thi-text-color;
+                font-weight: bolder;
+                @include pri-transittion;
+            }
+        }
+        .input-group-btn {
+            .btn-default {
+                @include pri-transittion;
+                color: $thi-text-color;
+            }
+            &:hover {
+                .btn-default {
+                    @include colors($thi-back-color,$sec-text-color);
+                    @include pri-transittion;
+                }
+            }
+        }
+    }
+
+    .navbar-nav>li>a {
+        color: $pri-text-color;
+        @include pri-transittion;
+    }
+    .navbar-nav>li>{
+        a:hover, & a:focus {
+            @include colors($thi-back-color,$sec-text-color);
+            @include pri-transittion;
+        }
+    }
+    .navbar-nav>.active> {
+        a, & a:hover, & a:focus {
+            @include colors($sec-back-color,$sec-text-color);
+        }
+    }
+    .navbar-nav>.open> {
+        a, & a:hover, & a:focus {
+            @include colors($thi-back-color,$sec-text-color);
+            @include pri-transittion;
+        }
+    }
+
+    .dropdown-menu > li > a:hover {
+        @include colors($thi-back-color,$sec-text-color);
+        @include pri-transittion;
+    }
+}

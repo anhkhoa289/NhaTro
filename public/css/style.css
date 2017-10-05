@@ -1,0 +1,234 @@
+/********************************/
+
+/*      for navigation bar      */
+
+/*      04/10/2017              */
+
+/*      by anhkhoa289          */
+
+/********************************/
+
+/********************************/
+
+/*      for navigation bar      */
+
+/*      04/10/2017              */
+
+/*      by anhkhoa289          */
+
+/********************************/
+
+/*
+|---------------------------------
+|- for navigation bar
+|- 04/10/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
+
+* {
+  font-size: 1.6rem;
+}
+
+nav.navbar-phongtro {
+  background-color: #fff;
+  border-color: #fff;
+  border-radius: 0px;
+}
+
+nav.navbar-phongtro .navbar-brand {
+  color: #2d2d2d;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-brand:hover,
+nav.navbar-phongtro .navbar-brand:focus {
+  color: #1BCA06;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-collapse,
+nav.navbar-phongtro .navbar-form {
+  border-color: #fff;
+}
+
+nav.navbar-phongtro .navbar-form .input-group .form-control::-webkit-input-placeholder {
+  color: #2d2d2d;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-form .input-group .form-control:-ms-input-placeholder {
+  color: #2d2d2d;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-form .input-group .form-control::placeholder {
+  color: #2d2d2d;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-form .input-group .form-control:hover::-webkit-input-placeholder,
+nav.navbar-phongtro .navbar-form .input-group .form-control:focus::-webkit-input-placeholder {
+  color: #1BCA06;
+  font-weight: bolder;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-form .input-group .form-control:hover:-ms-input-placeholder,
+nav.navbar-phongtro .navbar-form .input-group .form-control:focus:-ms-input-placeholder {
+  color: #1BCA06;
+  font-weight: bolder;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-form .input-group .form-control:hover::placeholder,
+nav.navbar-phongtro .navbar-form .input-group .form-control:focus::placeholder {
+  color: #1BCA06;
+  font-weight: bolder;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-form .input-group .input-group-btn .btn-default {
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+  color: #1BCA06;
+}
+
+nav.navbar-phongtro .navbar-form .input-group .input-group-btn:hover .btn-default {
+  background-color: #15AE03;
+  color: #fff;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-nav > li > a {
+  color: #2d2d2d;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-nav > li > a:hover,
+nav.navbar-phongtro .navbar-nav > li > a:focus {
+  background-color: #15AE03;
+  color: #fff;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-nav > .active > a,
+nav.navbar-phongtro .navbar-nav > .active > a:hover,
+nav.navbar-phongtro .navbar-nav > .active > a:focus {
+  background-color: #1BCA06;
+  color: #fff;
+}
+
+nav.navbar-phongtro .navbar-nav > .open > a,
+nav.navbar-phongtro .navbar-nav > .open > a:hover,
+nav.navbar-phongtro .navbar-nav > .open > a:focus {
+  background-color: #15AE03;
+  color: #fff;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .dropdown-menu > li > a:hover {
+  background-color: #15AE03;
+  color: #fff;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+/*
+|---------------------------------
+|- for navigation bar
+|- 04/10/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
+
+.homepage .panel-approved {
+  border-color: #FFF200;
+}
+
+.homepage .panel-approved .panel-heading {
+  background-color: #FFF200;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.homepage .panel-notapproved {
+  border-color: #D50000;
+}
+
+.homepage .panel-notapproved .panel-heading {
+  background-color: #D50000;
+  color: #fff;
+  font-weight: bolder;
+}
+
+.homepage .panel .img-nhatro img {
+  width: 100%;
+}
+
+.homepage .panel .img-ctv {
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+}
+
+.homepage .panel .img-ctv a {
+  float: right;
+  text-decoration: none;
+  font-style: italic;
+  color: #E65100;
+}
+
+@media screen and (min-width: sm) {
+  .homepage .panel .img-ctv a {
+    position: absolute;
+    right: 15px;
+    bottom: -88px;
+  }
+}
+
+.homepage .panel .img-ctv img {
+  width: 3rem;
+  border-radius: 50%;
+}
+

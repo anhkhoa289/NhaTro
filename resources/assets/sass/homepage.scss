@@ -1,0 +1,55 @@
+/*
+|---------------------------------
+|- for navigation bar
+|- 04/10/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
+
+$back-panel-approved-color: #FFF200;
+$back-panel-notapproved-color: #D50000;
+
+$ctv-color: #E65100;
+.homepage {
+    .panel-approved {
+        border-color: $back-panel-approved-color;
+        
+        .panel-heading {
+            @include colors($back-panel-approved-color,$sec-text-color);
+            @include big-font;
+        }
+    }
+
+    .panel-notapproved {
+        border-color: $back-panel-notapproved-color;
+
+        .panel-heading {
+            @include colors($back-panel-notapproved-color,$sec-text-color);
+            @include big-font;
+        }
+    }
+    .panel {
+        .img-nhatro img {
+            width: 100%;
+        }
+        .img-ctv {
+            height: max-content;
+            a {
+                float: right;
+                text-decoration: none;
+                font-style: italic;
+                color: $ctv-color;
+
+                @media screen and (min-width: sm){
+                    position: absolute;
+                    right: 15px;
+                    bottom: -88px;
+                }
+            }
+            img {
+                width: 3rem;
+                border-radius:50%;
+            }
+        }
+    }
+}
