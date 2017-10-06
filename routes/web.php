@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('HomePage');
 });
 Route::get('test','TestController@getLoaiTaiKhoan');
-
+Route::get('page2', function () {
+    return view('Page2');
+});
 Route::get('DangKyTaiKhoan', function () {
     return view('Account/DangKyTaiKhoan');
 });

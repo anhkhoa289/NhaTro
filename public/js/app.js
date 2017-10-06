@@ -762,8 +762,7 @@ module.exports = __webpack_require__(36);
  */
 
 __webpack_require__(9);
-//require('moment-with-locales');
-//require('bootstrap-datetimepicker');
+
 //window.Vue = require('vue');
 
 /**

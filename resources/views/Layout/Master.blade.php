@@ -6,11 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset('css/app.css')}}"> {{-- asset('public/css/<NAME>.css') --}}
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/jquery.slim.min.js')}}"></script>
+    {{--  <script type="text/javascript" src="{{asset('js/app.js')}}"></script>  --}}
     <script type="text/javascript" src="{{asset('js/moment-with-locales.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>
-    {{--  <script src="http://cdnjs.cloudflare.com/ajax/libs/moment.js/2.5.1/moment.min.js"></script>           --}}
-    {{--  <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/3.0.0/js/bootstrap-datetimepicker.min.js"></script>  --}}
     <title>Nhà Trọ | @yield('title')</title>
 </head>
 <body>
@@ -45,7 +44,7 @@
                             <li><a href="#">Page 1-3</a></li>
                         </ul>
                     </li>
-                    <li><a href="#">Page 2</a></li>
+                    <li><a href="{{ URL::to('page2')}}">Page 2</a></li>
                     <li><a href="#">Page 3</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
