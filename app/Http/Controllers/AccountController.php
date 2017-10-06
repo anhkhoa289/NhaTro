@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Repository\LoaiTaiKhoanRepository;
 
 class AccountController extends Controller
 {
@@ -10,8 +11,9 @@ class AccountController extends Controller
         return view('Account/ListUser');
     }
 
-    public function dangKy(){
-        return view('Account/Dangky');
+    public function dangKy(Request $request){
+        $kq = resolve(LoaiTaiKhoanRepository::class)->add($request->all());
+        return $kq;
     }
 
     public function dangNhap(){

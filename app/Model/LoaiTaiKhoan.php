@@ -16,7 +16,7 @@ class LoaiTaiKhoan extends Model
     //public $incrementing = false;
 
     //time stamp
-    //public $timestamps = false;
+    public $timestamps = false;
     //protected $dateFormat = 'U';
     //const CREATED_AT = 'creation_date';
     //const UPDATED_AT = 'last_update';

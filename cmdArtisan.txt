@@ -1,0 +1,7 @@
+php artisan key:generate
+
+php artisan serve --port=8080
+
+php artisan make:controller [ControllerName]
+
+php artisan make:model [ModelName]

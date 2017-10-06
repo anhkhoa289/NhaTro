@@ -20,6 +20,7 @@ Route::get('DangKyTaiKhoan', function () {
     return view('Account/DangKyTaiKhoan');
 });
 Route::get('DangNhap', 'AccountController@dangNhap');
-Route::group(['prefix' => 'user'], function () {
-    //Route::get('/','AccountController@getAllUser');
+
+Route::group(['prefix' => 'Account'], function () {
+    Route::post('DangKy','AccountController@dangky');
 });

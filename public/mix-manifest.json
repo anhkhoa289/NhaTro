@@ -1,5 +1,7 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/style.css": "/css/style.css"
+    "/css/style.css": "/css/style.css",
+    "/js/moment-with-locales.js": "/js/moment-with-locales.js",
+    "/js/bootstrap-datetimepicker.js": "/js/bootstrap-datetimepicker.js"
 }
