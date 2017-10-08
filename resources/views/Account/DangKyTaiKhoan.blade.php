@@ -7,14 +7,18 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="row">
-                {!! Form::open(['url' => 'Account/DangKy']) !!}
+                {!! Form::open(['url' => 'Account/DangKy', 'id'=>'dangKy']) !!}{{--, 'data-toggle'=>"validator"--}}
                     <div class="form-group col-md-4">
                         {!! Form::label('holot', 'Họ lót') !!}
-                        {!! Form::text('holot', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('holot', null, ['class' => 'form-control', 
+                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group col-md-4">
                         {!! Form::label('ten', 'Tên') !!}
-                        {!! Form::text('ten', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('ten', null, ['class' => 'form-control', 
+                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
 
                     <div class="clearfix visible-lg-block"></div>
@@ -28,36 +32,50 @@
 
                     <div class="form-group col-md-4">
                         {!! Form::label('ngSinh', 'Ngày Sinh') !!}
-                        <div class='input-group date' id='ngaySinh' data-date-format="yyyy-mm-dd">
-                            {!! Form::text('ngSinh', null, ['class' => 'form-control']) !!}
+                        <div class='input-group date' id='ngaySinh' 
+                            data-date-format="yyyy-mm-dd" data-date-end-date="0d">
+                            {!! Form::text('ngSinh', null, ['class' => 'form-control',
+                            'data-error'=>'Không được bỏ trống', 'required']) !!}
                             <span class="input-group-addon">
                                 <span class="glyphicon glyphicon-calendar"></span>
                             </span>
                         </div>
+                        <div class="help-block with-errors"></div>
                     </div>
 
                     <div class="clearfix visible-lg-block"></div>
 
                     <div class="form-group col-md-4">
                         {!! Form::label('tinh', 'Tỉnh/Thành phố') !!}
-                        {!! Form::text('tinh', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('tinh', null, ['class' => 'form-control', 
+                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group col-md-4">
                         {!! Form::label('quan', 'Quận/Huyện') !!}
-                        {!! Form::text('quan', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('quan', null, ['class' => 'form-control', 
+                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group col-md-4">
                         {!! Form::label('phuong', 'Phường/Xã') !!}
-                        {!! Form::text('phuong', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('phuong', null, ['class' => 'form-control', 
+                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
+                    <div class="clearfix visible-lg-block"></div>
                     <div class="form-group col-md-8">
                         {!! Form::label('diaChi', 'Địa Chỉ') !!}
-                        {!! Form::text('diaChi', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('diaChi', null, ['class' => 'form-control', 
+                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
                     <div class="clearfix visible-lg-block"></div>
                     <div class="form-group col-md-4">
                         {!! Form::label('cmnd', 'CMND') !!}
-                        {!! Form::number('cmnd', null, ['class' => 'form-control']) !!}
+                        {!! Form::number('cmnd', null, ['class' => 'form-control', 
+                        'data-error'=>'Phải có 9 chữ số', 'data-minlength'=>'9', 'data-maxlength'=>'9','required']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group col-md-4">
                         {!! Form::label('sdt', 'Số điện thoại') !!}
@@ -66,18 +84,33 @@
                     <div class="clearfix visible-lg-block"></div>
                     <div class="form-group col-md-8">
                         {!! Form::label('email', 'Email') !!}
-                        {!! Form::text('email', null, ['class' => 'form-control']) !!}
+                        {!! Form::email('email', null, ['class' => 'form-control',
+                        'data-remote-error'=>'Email này đã được sử dụng',
+                        'data-remote'=>'/Account/DangKy/email']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
                     <div class="clearfix visible-lg-block"></div>
                     <div class="form-group col-md-4">
                         {!! Form::label('tenDangNhap', 'Tên Đăng Nhập') !!}
-                        {!! Form::text('tenDangNhap', null, ['class' => 'form-control']) !!}
+                        {!! Form::text('tenDangNhap', null, ['class' => 'form-control', 
+                        'data-error'=>'Tối thiểu 6 ký tự', 'required', 'data-minlength'=>'6',
+                        'data-remote-error'=>'Tên đăng nhập này đã được sử dụng',
+                        'data-remote'=>'/Account/DangKy/tdn']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group  col-md-4">
                         {!! Form::label('matkhau', 'Mật Khẩu') !!}
-                        {!! Form::password('matkhau', ['class' => 'form-control']) !!}
+                        {!! Form::password('matkhau', ['class' => 'form-control', 
+                        'data-error'=>'Tối thiểu 6 ký tự', 'data-minlength'=>'6', 'required']) !!}
+                        <div class="help-block with-errors"></div>
                     </div>
-
+                    <div class="form-group  col-md-4">
+                        {!! Form::label('nhaplaimatkhau', 'Nhập lại mật Khẩu') !!}
+                        {!! Form::password(null, ['class' => 'form-control', 'id' => 'nhaplaimatkhau',
+                        'data-match'=>'#matkhau', 'data-match-error'=>'Mật khẩu không trùng khớp', 
+                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        <div class="help-block with-errors"></div>
+                    </div>
                     <div class="clearfix"></div>
 
                     <div class="form-group  col-md-10">
@@ -104,9 +137,16 @@
                 weekStart: 0
                 };*/
             $('#ngaySinh').datepicker({
-                language: 'vi'
+                language: 'vi',
+                startDate: '-3d'
             });
-
+            $('#dangKy').validator(/*{
+                messages:{
+                    email:{
+                        remote:""
+                    }
+                }
+            }*/);
             /*$('#ngaySinh').dateptimeicker({
                 locale: 'vi',
                 viewMode: 'years'

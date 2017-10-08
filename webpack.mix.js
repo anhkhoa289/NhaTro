@@ -14,6 +14,7 @@ let mix = require('laravel-mix');
 mix.sass('resources/assets/sass/app.scss', 'public/css')
 .sass('resources/assets/sass/style.scss', 'public/css')
 .js('resources/assets/js/app.js', 'public/js')
+.js('node_modules/bootstrap-validator/dist/validator.js', 'public/js')
 .copy('node_modules/jquery/dist/jquery.js', 'public/js')
 .copy('node_modules/moment/min/moment-with-locales.js', 'public/js')
 .copy('resources/assets/js/bootstrap-datetimepicker.js', 'public/js');

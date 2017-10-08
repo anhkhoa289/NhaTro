@@ -13,6 +13,8 @@
     <script type="text/javascript" src="{{asset('js/bootstrap-datepicker.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/moment-with-locales.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap-datepicker.vi.min.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/validator.js')}}"></script>
+    
     {{--  <script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>  --}}
     <title>Nhà Trọ | @yield('title')</title>
 </head>
