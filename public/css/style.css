@@ -1,22 +1,18 @@
-/********************************/
+/*
+|---------------------------------
+|- for navigation bar
+|- 04/10/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
 
-/*      for navigation bar      */
-
-/*      04/10/2017              */
-
-/*      by anhkhoa289          */
-
-/********************************/
-
-/********************************/
-
-/*      for navigation bar      */
-
-/*      04/10/2017              */
-
-/*      by anhkhoa289          */
-
-/********************************/
+/*
+|---------------------------------
+|- for navigation bar
+|- 04/10/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
 
 /*
 |---------------------------------
@@ -230,5 +226,22 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
 .homepage .panel .img-ctv img {
   width: 3rem;
   border-radius: 50%;
+}
+
+/*
+|---------------------------------
+|- for navigation bar
+|- 09/10/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
+
+.account .form-xac-nhan {
+  text-align: center;
+}
+
+.account .form-xac-nhan input[type=text] {
+  display: inline-block;
+  width: auto;
 }
 

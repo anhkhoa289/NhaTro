@@ -23,17 +23,16 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        // $this->app->bind('App\Repository\LoaiTaiKhoanRepository', function(){
-        //     //$a = new App\Model\LoaiTaiKhoan();
-        //     //return new App\Model\LoaiTaiKhoanRepository($a);
-        // });
-        //$LoaiTaiKhoanRepository = app('LoaiTaiKhoanRepository');
-        $this->app->bind('dienroi',function(){
-            return 'dien gan';
+        $this->app->bind('codeCreate',function(){
+            $length = 6;
+            $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            $size = strlen( $chars );
+            $str = '';
+            for( $i = 0; $i < $length; $i++ ) {
+                $str .= $chars[ rand( 0, $size - 1 ) ];
+            }
+            $str = substr( str_shuffle( $chars ), 0, $length );
+            return $str;
         });
-        // $this->app->singleton('diaPhuong', function () {
-        //     $diaP = DiaPhuong::all();
-        //     return $diaP;
-        // });
     }
 }

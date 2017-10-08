@@ -43,27 +43,8 @@ class TestController extends Controller
         return View('MyFirstView',$data);
     }
 
-    public function testValidate(Request $request){
-        $request->validate([
-            'ho' => 'min:10',
-            'ten'=> 'required'
-        ]);
-        return 'hihi';
-    }
-    public function testVal(Request $request){
-        //$a = TaiKhoan::where('tenDangNhap', '=', $ho)->firstOrFail();
-        return $request->ho;
-        $request->validate([
-            'ho' => 'min:10',
-            'ten'=> 'required'
-        ]);
-    }
-    public function withValidator($validator)
-    {
-        $validator->after(function ($validator) {
-            if ($this->somethingElseIsInvalid()) {
-                $validator->errors()->add('field', 'Something is wrong with this field!');
-            }
-        });
+    public function testcode(){
+        $str = resolve('codeCreate');//app('codeCreate');//
+        return $str;
     }
 }

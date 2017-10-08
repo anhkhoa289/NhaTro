@@ -114,7 +114,7 @@
                     <div class="clearfix"></div>
 
                     <div class="form-group  col-md-10">
-                        {!! Form::submit('Đăng ký', ['class' => 'btn btn-default']) !!}
+                        {!! Form::submit('Đăng ký', ['class' => 'btn btn-success']) !!}
                         Bấm đăng ký nghĩa là bạn đồng ý với mọi điều khoản của chúng tôi
                     </div>
                 {!! Form::close() !!}

@@ -28,9 +28,21 @@ class AccountController extends Controller
     public function dangNhap(){
         return view('Account/DangNhap');
     }
-    public function dangKy(DangKyTaiKhoanRequest $request){
+    public function dangKy(Request $request){
         $kq = resolve(TaiKhoanRepository::class)->add($request->all());
-        return $kq;
+        if($kq->id !== 0) {
+            $data['kq'] = 'Thành công';
+            $data['hoten'] = $kq->holot . ' ' . $kq->ten;
+            if($kq->tinhTrangHoatDong == 0) $data['tinhTrang'] = false;
+            else $data['tinhTrang'] = true;
+        }
+        else
+            $data= ['kq'=>'Thất bại', 'hoten'=>'', 'tinhTrang'=>null];
+        return view('Account/KetQuaDangKy', $data);
+    }
+
+    public function xacNhan(Request $request){
+        
     }
 
     //Kiểm tra tồn tại tên đăng nhập và email bằng AJAX của Jquery

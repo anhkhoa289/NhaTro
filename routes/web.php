@@ -17,7 +17,7 @@ Route::get('/', function () {
 Route::get('testView', function () {
     return view('testView');
 });
-Route::post('test','TestController@testValidate');
+Route::get('test','TestController@testcode');
 Route::post('test/val', 'TestController@testVal');
 
 Route::get('DangKyTaiKhoan', 'AccountController@viewDangKy');
@@ -27,4 +27,5 @@ Route::group(['prefix' => 'Account'], function () {
     Route::post('DangKy','AccountController@dangKy');
     Route::get('DangKy/tdn','AccountController@dangKyCheckTenDangNhap');
     Route::get('DangKy/email','AccountController@dangKyCheckEmail');
+    Route::get('XacNhan','AccountController@xacNhan');
 });
