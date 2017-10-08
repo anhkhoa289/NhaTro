@@ -14,15 +14,14 @@
 Route::get('/', function () {
     return view('HomePage');
 });
-Route::get('test','TestController@getLoaiTaiKhoan');
-Route::get('page2', function () {
-    return view('Page2');
+Route::get('testView', function () {
+    return view('testView');
 });
-Route::get('DangKyTaiKhoan', function () {
-    return view('Account/DangKyTaiKhoan');
-});
+Route::post('test','TestController@testValidate');
+
+Route::get('DangKyTaiKhoan', 'AccountController@viewDangKy');
 Route::get('DangNhap', 'AccountController@dangNhap');
 
 Route::group(['prefix' => 'Account'], function () {
-    Route::post('DangKy','AccountController@dangky');
+    Route::post('DangKy','AccountController@dangKy');
 });

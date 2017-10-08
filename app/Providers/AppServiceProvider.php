@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-
+use App\Model\DiaPhuong;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -31,5 +31,9 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('dienroi',function(){
             return 'dien gan';
         });
+        // $this->app->singleton('diaPhuong', function () {
+        //     $diaP = DiaPhuong::all();
+        //     return $diaP;
+        // });
     }
 }

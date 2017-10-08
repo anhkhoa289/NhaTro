@@ -32,4 +32,17 @@ class TestController extends Controller
         
         return view('testconect', $data);
     }
+    public function getview(){
+        //truyền dữ liệu ở dạng mảng
+        $data['user'] = 'Vietpro';
+        $data['arr'] =['khanh', 'khoa', 'thi'];
+        $data['thu'] = array('cho','meo','chuot');
+        $data['chim'] = ['a'=>'cho','meo','chuot'];
+        //$data = array('user'=> 'Khoa', 'arr'=> ['khanh', 'khoa', 'thi']);
+        $data['so'] = 5;
+        return View('MyFirstView',$data);
+    }
+
+    public function testValidate(){
+    }
 }

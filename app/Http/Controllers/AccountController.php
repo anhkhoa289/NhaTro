@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Repository\LoaiTaiKhoanRepository;
+use Illuminate\Support\Facades\DB;
+use App\Repository\TaiKhoanRepository;
 
 class AccountController extends Controller
 {
@@ -11,8 +12,25 @@ class AccountController extends Controller
         return view('Account/ListUser');
     }
 
+    public function viewDangKy(){
+        // $data['diaP'] = resolve('diaPhuong');
+        // $data['diaP2'] = DB::table('DiaPhuong')->select('tenTinh')->get();
+        // $data['diaP3'] = DB::table('DiaPhuong')->select('tenQuan')->get();
+        // $data['diaP2'] = DB::table('DiaPhuong')->select('maTinh', 'tenTinh')->get();
+        // $str='[';
+        // foreach($data['diaP'] as $tinh){
+        //     $str.='{';
+        //     $str.= '"'.$tinh->tenTinh.'":[';
+        //     //
+        //     $str.=']},';//if last not ,
+        // }
+        // $str.=']';
+
+        // $data['str'] = $str;
+        return view('Account/DangKyTaiKhoan');
+    }
     public function dangKy(Request $request){
-        $kq = resolve(LoaiTaiKhoanRepository::class)->add($request->all());
+        $kq = resolve(TaiKhoanRepository::class)->add($request->all());
         return $kq;
     }
 

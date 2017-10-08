@@ -1,17 +1,24 @@
 <?php
-namespace App\DAO;
+namespace App\Repository;
 
 use App\Model\TaiKhoan;
 
-class TaiKhoanDAO
+class TaiKhoanRepository
 {
-    public function getUserByType($type){
-        return TaiKhoan::Where('loaiTK', $type)->get();
-    }
+    public $TaiKhoan;
     
-    public function add($obj){
+    public function __construct(TaiKhoan $TaiKhoan)
+    {
+        $this->TaiKhoan = $TaiKhoan;
+    }
+    public function add($obj)
+    {
         $TaiKhoan = RemoveToken::remove($obj, TaiKhoan::class);
         $TaiKhoan->save();
         return $TaiKhoan;
+    }
+    public function getUserByType($type)
+    {
+        return TaiKhoan::Where('loaiTK', $type)->get();
     }
 }
