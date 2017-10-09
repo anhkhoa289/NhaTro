@@ -71,12 +71,12 @@
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="clearfix visible-lg-block"></div>
-                    <div class="form-group col-md-4">
+                    {{--  <div class="form-group col-md-4">
                         {!! Form::label('cmnd', 'CMND') !!}
                         {!! Form::number('cmnd', null, ['class' => 'form-control', 
                         'data-error'=>'Phải có 9 chữ số', 'data-minlength'=>'9', 'data-maxlength'=>'9','required']) !!}
                         <div class="help-block with-errors"></div>
-                    </div>
+                    </div>  --}}
                     <div class="form-group col-md-4">
                         {!! Form::label('sdt', 'Số điện thoại') !!}
                         {!! Form::number('sdt', null, ['class' => 'form-control']) !!}
@@ -96,13 +96,14 @@
                         'data-error'=>'Tối thiểu 6 ký tự', 'required', 'data-minlength'=>'6',
                         'data-remote-error'=>'Tên đăng nhập này đã được sử dụng',
                         'data-remote'=>'/Account/DangKy/tdn']) !!}
-                        <div class="help-block with-errors"></div>
+                        <div class="help-block with-errors">{{$errors->first('tenDangNhap')}}</div>
                     </div>
-                    <div class="form-group  col-md-4">
+                    
+                    <div class="form-group col-md-4">
                         {!! Form::label('matkhau', 'Mật Khẩu') !!}
                         {!! Form::password('matkhau', ['class' => 'form-control', 
                         'data-error'=>'Tối thiểu 6 ký tự', 'data-minlength'=>'6', 'required']) !!}
-                        <div class="help-block with-errors"></div>
+                        <div class="help-block with-errors">{{$errors->first('matkhau')}}</div>
                     </div>
                     <div class="form-group  col-md-4">
                         {!! Form::label('nhaplaimatkhau', 'Nhập lại mật Khẩu') !!}
@@ -140,13 +141,13 @@
                 language: 'vi',
                 startDate: '-3d'
             });
-            $('#dangKy').validator(/*{
+            /*$('#dangKy').validator({
                 messages:{
                     email:{
                         remote:""
                     }
                 }
-            }*/);
+            });*/
             /*$('#ngaySinh').dateptimeicker({
                 locale: 'vi',
                 viewMode: 'years'

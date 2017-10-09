@@ -14,7 +14,7 @@ class TaiKhoanRepository
     public function add($obj)
     {
         $this->TaiKhoan = RemoveToken::remove($obj, TaiKhoan::class);
-        $this->TaiKhoan->maKichHoat = resolve('codeCreate');
+        $this->TaiKhoan->maKichHoat = str_random(6);//resolve('codeCreate');
         $this->TaiKhoan->save();
         return $this->TaiKhoan;
     }

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TestRequest extends FormRequest
+class DangNhapRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class TestRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,10 +24,7 @@ class TestRequest extends FormRequest
     public function rules()
     {
         return [
-            [
-                'ho' => 'min:10',
-                'ten'=> 'required'
-            ]
+            //
         ];
     }
 }

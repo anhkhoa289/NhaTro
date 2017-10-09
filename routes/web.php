@@ -14,18 +14,22 @@
 Route::get('/', function () {
     return view('HomePage');
 });
+////////////////////////////////////////////////////////////////////
 Route::get('testView', function () {
     return view('testView');
 });
 Route::get('test','TestController@testcode');
 Route::post('test/val', 'TestController@testVal');
-
+///////////////////////////////////////////////////////////////////
 Route::get('DangKyTaiKhoan', 'AccountController@viewDangKy');
-Route::get('DangNhap', 'AccountController@dangNhap');
+Route::get('DangNhap', function () {
+    return view('Account/DangNhap');
+});
 
 Route::group(['prefix' => 'Account'], function () {
     Route::post('DangKy','AccountController@dangKy');
     Route::get('DangKy/tdn','AccountController@dangKyCheckTenDangNhap');
     Route::get('DangKy/email','AccountController@dangKyCheckEmail');
     Route::get('XacNhan','AccountController@xacNhan');
+    Route::get('DangNhap','AccountController@dangNhap');
 });
