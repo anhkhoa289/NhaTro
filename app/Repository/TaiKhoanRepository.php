@@ -2,7 +2,8 @@
 namespace App\Repository;
 
 use App\Model\TaiKhoan;
-
+use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 class TaiKhoanRepository
 {
     public $TaiKhoan;
@@ -15,8 +16,20 @@ class TaiKhoanRepository
     {
         $this->TaiKhoan = RemoveToken::remove($obj, TaiKhoan::class);
         $this->TaiKhoan->maKichHoat = str_random(6);//resolve('codeCreate');
+        $this->TaiKhoan->matkhau = bcrypt($this->TaiKhoan->matkhau);
+        //$this->TaiKhoan->created_at = Carbon::now();
         $this->TaiKhoan->save();
         return $this->TaiKhoan;
+    }
+    public function login($obj)
+    {
+        $this->TaiKhoan = TaiKhoan::where('tenDangNhap', $obj['tenDangNhap'])->get();
+        if($this->TaiKhoan->count() === 0)
+            return false;
+        else if(Hash::check($obj['matkhau'], $this->TaiKhoan[0]->matkhau))
+            return $this->TaiKhoan[0];
+        else
+            return false;
     }
     public function checkUserName($username){
         $count = $this->TaiKhoan::where("tenDangNhap","=",$username)->count();

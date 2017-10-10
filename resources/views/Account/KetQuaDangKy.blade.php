@@ -1,5 +1,5 @@
 @extends('/../Layout/Master')
-@section('title','Đăng Ký Tài Khoản')
+@section('title','Kết Quả Đăng Ký')
 @section('main')
 <div class="account">
     <h1>Kết quả đăng ký</h1>
@@ -20,7 +20,7 @@
                             </div>
                             <div class="form-group">
                                 {!! Form::submit('Xác nhận', ['class' => 'btn btn-success']) !!}
-                                <a class="btn btn-default" href="{{ URL::to('Account/XacNhan')}}">Xác nhận sau</a>
+                                <a class="btn btn-default" href="{{ URL::to('/')}}">Xác nhận sau</a>
                             </div>
                         {!! Form::close() !!}
                     @endif

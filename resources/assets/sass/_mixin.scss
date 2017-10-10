@@ -10,11 +10,18 @@
     color: $text-color;
 }
 
-@mixin big-font{
+@mixin big-font {
     font-weight: bolder;
 }
 
 @mixin pri-transittion {
     transition: color .2s ease 0s;
     transition: background-color .2s ease 0s;
+}
+
+
+///imgae Circle
+@mixin circle{
+    width: 3rem;
+    border-radius:50%;
 }

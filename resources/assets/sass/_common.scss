@@ -64,30 +64,43 @@ nav.navbar-phongtro {
         }
     }
 
-    .navbar-nav>li>a {
-        color: $pri-text-color;
-        @include pri-transittion;
-    }
-    .navbar-nav>li>{
-        a:hover, & a:focus {
-            @include colors($thi-back-color,$sec-text-color);
+    .navbar-nav>{
+        li>a {
+            color: $pri-text-color;
             @include pri-transittion;
         }
-    }
-    .navbar-nav>.active> {
-        a, & a:hover, & a:focus {
-            @include colors($sec-back-color,$sec-text-color);
+        li>{
+            a:hover, & a:focus {
+                @include colors($thi-back-color,$sec-text-color);
+                @include pri-transittion;
+            }
         }
-    }
-    .navbar-nav>.open> {
-        a, & a:hover, & a:focus {
-            @include colors($thi-back-color,$sec-text-color);
-            @include pri-transittion;
+        .active> {
+            a, & a:hover, & a:focus {
+                @include colors($sec-back-color,$sec-text-color);
+            }
         }
-    }
+        .open> {
+            a, & a:hover, & a:focus {
+                @include colors($thi-back-color,$sec-text-color);
+                @include pri-transittion;
+            }
+        }
 
+        &.navbar-right .user {
+            a {
+                padding: 0.9rem;
+                >img {
+                    @include circle;
+                    width: 3.2rem;                
+                } 
+            }
+        }
+    }
     .dropdown-menu > li > a:hover {
         @include colors($thi-back-color,$sec-text-color);
         @include pri-transittion;
     }
+
+    
 }

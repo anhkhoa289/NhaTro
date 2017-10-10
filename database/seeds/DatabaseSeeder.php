@@ -41,7 +41,7 @@ class DatabaseSeeder extends Seeder
             'tinhTrangHoatDong' => '1',
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'anhkhoa289',
-            'matkhau' => '1234',
+            'matkhau' => bcrypt('1234'),
             'loaiTK' => 3
         ]);
         DB::table('TaiKhoan')->insert([
@@ -58,7 +58,7 @@ class DatabaseSeeder extends Seeder
             'tinhTrangHoatDong' => '1',
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'thi12345',
-            'matkhau' => '1234',
+            'matkhau' => bcrypt('1234'),
             'loaiTK' => 2
         ]);
         DB::table('TaiKhoan')->insert([

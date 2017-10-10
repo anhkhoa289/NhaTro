@@ -31,7 +31,7 @@ class DangKyTaiKhoanRequest extends FormRequest
             'quan' => 'required',
             'phuong' => 'required',
             'diaChi' => 'required',
-            'email' => 'required',
+            //'email' => 'required',
             'tenDangNhap' => 'required|unique:TaiKhoan|max:255',
             'matkhau'=> 'required|min:6'
         ];
@@ -41,7 +41,7 @@ class DangKyTaiKhoanRequest extends FormRequest
         return [
             'tenDangNhap.required' => 'Tối thiểu 6 ký tự',
             'tenDangNhap.unique' => 'Tên đăng nhập này đã được sử dụng',
-            'email.required'=> 'Email không được rỗng',
+            //'email.required'=> 'Email không được rỗng',
             'matkhau.required' => 'Tối thiểu 6 ký tự'
         ];
     }

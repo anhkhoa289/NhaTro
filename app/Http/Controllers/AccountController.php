@@ -6,11 +6,29 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Repository\TaiKhoanRepository;
 use App\Http\Requests\DangkyTaiKhoanRequest;
-
+use Auth;
 class AccountController extends Controller
 {
-    public function dangNhap(){
-        return view('Account/DangNhap');
+    public function nguoiDung(Request $request){
+        if($request->session()->has('TaiKhoan'))
+            return view('Account/TrangCaNhan');
+        else
+            return view('Account/DangNhap');
+    }
+    public function dangXuat(Request $request){
+        //$request->session()->forget('TaiKhoan');
+        $request->session()->flush();
+        return view('HomePage');
+    }
+    public function dangNhap(Request $request){
+        $kq = resolve(TaiKhoanRepository::class)->login($request->only('tenDangNhap', 'matkhau'));
+        if ($kq === false) {
+            return view('Account/DangNhap', ['error'=> 'Tên đăng nhập hoặc mật khảu không chính xác']);
+        }
+        else {
+            $request->session()->put('TaiKhoan', $kq);
+            return view('HomePage');
+        }
     }
     public function dangKy(DangkyTaiKhoanRequest $request){
         $kq = resolve(TaiKhoanRepository::class)->add($request->all());

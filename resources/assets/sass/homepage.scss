@@ -47,8 +47,7 @@ $ctv-color: #E65100;
                 }
             }
             img {
-                width: 3rem;
-                border-radius:50%;
+                @include circle;
             }
         }
     }

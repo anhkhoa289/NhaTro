@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Model\LoaiTaiKhoan;
 use App\Repository\LoaiTaiKhoanRepository;
+use Illuminate\Support\Facades\Hash;
 
 class TestController extends Controller
 {
@@ -46,5 +47,25 @@ class TestController extends Controller
     public function testcode(){
         $str = resolve('codeCreate');//app('codeCreate');//
         return $str;
+    }
+
+    public function encrypt($str){
+
+        //Hashing A Password Using Bcrypt
+        $data['bcrypt'] = bcrypt($str);
+        //or
+        $data['bcrypt2'] = Hash::make($str);
+
+        //Verifying A Password Against A Hash
+        $data['kq'] = Hash::check($str, $data['bcrypt']);
+
+        //Checking If A Password Needs To Be Rehashed
+        $data['kq2'] = Hash::needsRehash($data['bcrypt2']);
+
+        //Encryption
+        $data['encrypt'] = encrypt($str);
+        $data['decrypt'] = decrypt($data['encrypt']);
+
+        return view('test3',$data);
     }
 }

@@ -54,8 +54,17 @@
                     <li><a href="#">Page 3</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="{{ URL::to('DangKyTaiKhoan')}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                    <li><a href="{{ URL::to('DangNhap')}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                    @if(Session::has('TaiKhoan'))
+                    <li class="user">
+                        <a href="{{ URL::to('Account/NguoiDung/'.Session::get('TaiKhoan.id'))}}">
+                            <img src="{{asset('img/user_1.jpg')}}" alt="user_1"> {{Session::get('TaiKhoan.ten')}}
+                        </a>
+                    </li>
+                    <li><a href="{{ URL::to('DangXuat')}}"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+                    @else
+                    <li><a href="{{ URL::to('DangKyTaiKhoan')}}"><span class="glyphicon glyphicon-user"></span> Đăng ký</a></li>
+                    <li><a href="{{ URL::to('DangNhap')}}"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
+                    @endif
                 </ul>
             </div>
         </div>

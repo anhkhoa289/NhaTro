@@ -26,11 +26,11 @@ class CreateTaikhoanTable extends Migration
             $table->char('quan', 50);
             $table->char('phuong', 50);
             $table->char('diaChi', 255);
-            $table->boolean('tinhTrangHoatDong');
+            $table->boolean('tinhTrangHoatDong')->default(0);
             $table->char('maKichHoat', 6)->nullable();
             $table->char('tenDangNhap', 255)->unique();
             $table->char('matkhau', 255);
-            $table->integer('loaiTK')->unsigned();
+            $table->integer('loaiTK')->unsigned()->default(1);
             $table->char('CTVHoTro', 255)->nullable();
             $table->rememberToken();
             $table->timestamps();

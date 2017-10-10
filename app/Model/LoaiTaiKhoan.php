@@ -26,6 +26,6 @@ class LoaiTaiKhoan extends Model
 
     public function TaiKhoan()
     {
-        return $this->hasMany('App\TaiKhoan');
+        return $this->hasMany('App\Model\TaiKhoan');
     }
 }

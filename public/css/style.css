@@ -161,6 +161,16 @@ nav.navbar-phongtro .navbar-nav > .open > a:focus {
   transition: background-color .2s ease 0s;
 }
 
+nav.navbar-phongtro .navbar-nav.navbar-right > .user a {
+  padding: 0.9rem;
+}
+
+nav.navbar-phongtro .navbar-nav.navbar-right > .user a > img {
+  width: 3rem;
+  border-radius: 50%;
+  width: 3.2rem;
+}
+
 nav.navbar-phongtro .dropdown-menu > li > a:hover {
   background-color: #15AE03;
   color: #fff;
@@ -243,5 +253,37 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
 .account .form-xac-nhan input[type=text] {
   display: inline-block;
   width: auto;
+}
+
+.account .trang-ca-nhan .thanh-ben .avatar img {
+  border-radius: 50%;
+  max-width: -webkit-fill-available;
+}
+
+.account .trang-ca-nhan .thanh-ben .name {
+  text-align: center;
+}
+
+.account .trang-ca-nhan .trang-chinh .underline-nav-item {
+  display: table-cell;
+  padding-right: 20px;
+  padding-left: 20px;
+  font-size: 14px;
+  color: #586069;
+  vertical-align: middle;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.account .trang-ca-nhan .trang-chinh .underline-nav-item .Counter {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  color: #fff;
+  background-color: #1BCA06;
+  padding: 2px 5px;
+  border-radius: 20px;
 }
 
