@@ -10,24 +10,26 @@ use Auth;
 class AccountController extends Controller
 {
     public function nguoiDung(Request $request){
-        if($request->session()->has('TaiKhoan'))
-            return view('Account/TrangCaNhan');
-        else
-            return view('Account/DangNhap');
+        return view('Account.TrangTongQuan');
     }
     public function dangXuat(Request $request){
         //$request->session()->forget('TaiKhoan');
         $request->session()->flush();
-        return view('HomePage');
+        return redirect('/');
     }
     public function dangNhap(Request $request){
-        $kq = resolve(TaiKhoanRepository::class)->login($request->only('tenDangNhap', 'matkhau'));
-        if ($kq === false) {
-            return view('Account/DangNhap', ['error'=> 'Tên đăng nhập hoặc mật khảu không chính xác']);
-        }
-        else {
-            $request->session()->put('TaiKhoan', $kq);
-            return view('HomePage');
+        if($request->session()->has('TaiKhoan'))
+            return redirect('/');
+        else{
+            $kq = resolve(TaiKhoanRepository::class)->login($request->only('tenDangNhap', 'matkhau'));
+            if ($kq === false) {
+                return view('Account.DangNhap', ['error'=> 'Tên đăng nhập hoặc mật khảu không chính xác']);
+            }
+            else {
+                $request->session()->put('TaiKhoan', $kq);
+                return redirect('/');
+                //return redirect()->back();
+            }
         }
     }
     public function dangKy(DangkyTaiKhoanRequest $request){
@@ -40,7 +42,7 @@ class AccountController extends Controller
         }
         else
             $data= ['kq'=>'Thất bại', 'hoten'=>'', 'tinhTrang'=>null];
-        return view('Account/KetQuaDangKy', $data);
+        return view('Account.KetQuaDangKy', $data);
     }
 
     public function xacNhan(Request $request){

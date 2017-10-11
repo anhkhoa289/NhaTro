@@ -5,6 +5,9 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
+use App\Repository\HinhAnhPhongTroRepository;
+use App\Model\HinhAnhPhongTro;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -24,6 +27,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind('HinhAnhPhongTroRepository',function(){
+            $ha = new HinhAnhPhongTro();
+            return new HinhAnhPhongTroRepository($ha);
+        });
         $this->app->bind('codeCreate',function(){
             $length = 6;
             $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

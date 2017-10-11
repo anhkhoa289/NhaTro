@@ -96,5 +96,7 @@ class DatabaseSeeder extends Seeder
             'loaiTK' => 1,
             'CTVHoTro' => 'thi12345'
         ]);
+
+        $this->call(PhongTroSeeder::class);
     }
 }

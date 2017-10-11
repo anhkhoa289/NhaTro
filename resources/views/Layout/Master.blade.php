@@ -4,17 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('css/app.css')}}"> {{-- asset('public/css/<NAME>.css') --}}
-    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker3.standalone.css')}}">
-    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 
+    {{--  Bootstrap and Font Awesome sass  --}}
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+    {{--  datepicker  --}}
+    <link rel="stylesheet" href="{{asset('css/bootstrap-datepicker3.standalone.css')}}">
+    {{--  file input  --}}
+    <link rel="stylesheet" href="{{asset('css/bootstrap-fileinput/fileinput.css')}}">
+    {{--  Mice  --}}
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    {{--  jquery, Bootstrap.js and Mice  --}}
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
-    
+    {{--  datepicker  --}}
     <script type="text/javascript" src="{{asset('js/bootstrap-datepicker.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/moment-with-locales.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap-datepicker.vi.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/validator.js')}}"></script>
-    
+    {{--  file input  --}}
+    <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/plugins/piexif.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/plugins/sortable.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/plugins/purify.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/fileinput.js')}}"></script>
+    <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/locales/vi.js')}}"></script>
+    {{--  Popper.js  --}}
+    <script type="text/javascript" src="{{asset('js/popper.js')}}"></script>
+
     {{--  <script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>  --}}
     <title>Nhà Trọ | @yield('title')</title>
 </head>
@@ -55,9 +69,12 @@
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if(Session::has('TaiKhoan'))
+                    <li><a href="{{ URL::to('Phong/ThemPhong')}}">
+                        <span class="glyphicon glyphicon-plus"></span> Thêm phòng trọ
+                    </a></li>
                     <li class="user">
                         <a href="{{ URL::to('Account/NguoiDung/'.Session::get('TaiKhoan.id'))}}">
-                            <img src="{{asset('img/user_1.jpg')}}" alt="user_1"> {{Session::get('TaiKhoan.ten')}}
+                            <img src="{{asset('storage/img/user_1.jpg')}}" alt="{{Session::get('TaiKhoan.ten')}}"> {{Session::get('TaiKhoan.ten')}}
                         </a>
                     </li>
                     <li><a href="{{ URL::to('DangXuat')}}"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>

@@ -7,5 +7,4 @@ use Illuminate\Database\Eloquent\Model;
 class DiaPhuong extends Model
 {
     protected $table = 'diaphuong';
-    public $timestamps = false;
 }

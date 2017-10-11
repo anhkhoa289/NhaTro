@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class DatCho extends Model
 {
-    public $timestamps = false;
+    
 }

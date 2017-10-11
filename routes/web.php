@@ -27,15 +27,20 @@ Route::get('/', function () {
 
 Route::get('DangKyTaiKhoan', 'AccountController@viewDangKy');
 Route::get('DangNhap', function () {
-    return view('Account/DangNhap');
+    return view('Account.DangNhap');
 });
 Route::get('DangXuat','AccountController@dangXuat');
 
 Route::group(['prefix' => 'Account'], function () {
     Route::post('DangKy','AccountController@dangKy');
-    Route::get('DangKy/tdn','AccountController@dangKyCheckTenDangNhap');
-    Route::get('DangKy/email','AccountController@dangKyCheckEmail');
-    Route::get('XacNhan','AccountController@xacNhan');
+    Route::get('DangKy/tdn','AccountController@dangKyCheckTenDangNhap');// AJAX
+    Route::get('DangKy/email','AccountController@dangKyCheckEmail');// AJAX
+    Route::get('XacNhan','AccountController@xacNhan');//->middleware('kiemTraDangNhap');
     Route::post('DangNhap','AccountController@dangNhap');
-    Route::get('NguoiDung/{id}','AccountController@nguoiDung');
+    Route::get('NguoiDung/{id}','AccountController@nguoiDung')->middleware('kiemTraDangNhap');
+});
+
+Route::group(['prefix' => 'Phong', 'middleware' => 'kiemTraDangNhap'], function () {
+    Route::view('ThemPhong', 'Phong.ThemPhong');
+    Route::post('ThemPhong','PhongController@themPhong');
 });

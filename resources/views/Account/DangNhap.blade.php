@@ -1,4 +1,4 @@
-@extends('/../Layout/Master')
+@extends('Layout.Master')
 @section('title','Đăng Nhập')
 @section('main')
 <div class="account">

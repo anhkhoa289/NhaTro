@@ -17,4 +17,14 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
 .js('node_modules/bootstrap-validator/dist/validator.js', 'public/js')
 .copy('node_modules/jquery/dist/jquery.js', 'public/js')
 .copy('node_modules/moment/min/moment-with-locales.js', 'public/js')
-.copy('resources/assets/js/bootstrap-datetimepicker.js', 'public/js');
+.copy('resources/assets/js/bootstrap-datetimepicker.js', 'public/js')
+
+.copy('vendor/kartik-v/bootstrap-fileinput/css/fileinput.css', 'public/css/bootstrap-fileinput')
+.copy('vendor/kartik-v/bootstrap-fileinput/js/plugins/piexif.js', 'public/js/bootstrap-fileinput/plugins')
+.copy('vendor/kartik-v/bootstrap-fileinput/js/plugins/sortable.js', 'public/js/bootstrap-fileinput/plugins')
+.copy('vendor/kartik-v/bootstrap-fileinput/js/plugins/purify.js', 'public/js/bootstrap-fileinput/plugins')
+.copy('vendor/kartik-v/bootstrap-fileinput/js/fileinput.js', 'public/js/bootstrap-fileinput')
+.copy('vendor/kartik-v/bootstrap-fileinput/js/locales/vi.js', 'public/js/bootstrap-fileinput/locales')
+.copy('node_modules/popper.js/dist/popper.js', 'public/js/popper.js');;
+
+

@@ -180,9 +180,19 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
   transition: background-color .2s ease 0s;
 }
 
+.input-group.file-caption-main .input-group-btn span,
+.input-group.file-caption-main .input-group-btn i {
+  font-size: 1.4rem;
+}
+
+.input-group.file-caption-main .input-group-btn .btn-file {
+  background-color: #1BCA06;
+  border-color: #15AE03;
+}
+
 /*
 |---------------------------------
-|- for navigation bar
+|- for homepage
 |- 04/10/2017              
 |- by anhkhoa289          
 |---------------------------------
@@ -240,7 +250,7 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
 
 /*
 |---------------------------------
-|- for navigation bar
+|- for account
 |- 09/10/2017              
 |- by anhkhoa289          
 |---------------------------------
@@ -264,7 +274,11 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
   text-align: center;
 }
 
-.account .trang-ca-nhan .trang-chinh .underline-nav-item {
+.account .trang-ca-nhan .trang-chinh .underline-nav {
+  border-bottom: solid 1px #d1d5da;
+}
+
+.account .trang-ca-nhan .trang-chinh .underline-nav .underline-nav-item {
   display: table-cell;
   padding-right: 20px;
   padding-left: 20px;
@@ -274,9 +288,14 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
   border-bottom: 2px solid transparent;
   white-space: nowrap;
   text-decoration: none;
+  height: 6rem;
 }
 
-.account .trang-ca-nhan .trang-chinh .underline-nav-item .Counter {
+.account .trang-ca-nhan .trang-chinh .underline-nav .underline-nav-item.selected {
+  border-bottom-color: #e36209;
+}
+
+.account .trang-ca-nhan .trang-chinh .underline-nav .underline-nav-item .Counter {
   display: inline-block;
   font-size: 12px;
   font-weight: 600;
@@ -285,5 +304,17 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
   background-color: #1BCA06;
   padding: 2px 5px;
   border-radius: 20px;
+}
+
+/*
+|---------------------------------
+|- for phong
+|- 11/10/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
+
+.phong textarea {
+  resize: none;
 }
 

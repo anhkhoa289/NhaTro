@@ -1,4 +1,4 @@
-@extends('/../Layout/Master')
+@extends('Layout.Master')
 @section('title','Đăng Ký Tài Khoản')
 @section('main')
 <div class="account">
@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="row">
-                {!! Form::open(['url' => 'Account/DangKy', 'id'=>'dangKy']) !!}{{--, 'data-toggle'=>"validator"--}}
+                {!! Form::open(['url' => 'Account/DangKy', 'id'=>'dangKy', 'data-toggle'=>"validator"]) !!}{{----}}
                     <div class="form-group col-md-4{{ $errors->has('holot') ? ' has-error has-danger' : '' }}">
                         {!! Form::label('holot', 'Họ lót') !!}
                         {!! Form::text('holot', null, ['class' => 'form-control', 
@@ -74,7 +74,7 @@
                     {{--  <div class="form-group col-md-4">
                         {!! Form::label('cmnd', 'CMND') !!}
                         {!! Form::number('cmnd', null, ['class' => 'form-control', 
-                        'data-error'=>'Phải có 9 chữ số', 'data-minlength'=>'9', 'data-maxlength'=>'9','required']) !!}
+                        'data-error'=>'Phải có 9 chữ số', 'data-minlength'=>'9', 'maxlength'=>'9','required']) !!}
                         <div class="help-block with-errors"></div>
                     </div>  --}}
                     <div class="form-group col-md-4">
@@ -114,7 +114,7 @@
                     </div>
                     <div class="clearfix"></div>
 
-                    <div class="form-group  col-md-10">
+                    <div class="form-group col-md-10">
                         {!! Form::submit('Đăng ký', ['class' => 'btn btn-success']) !!}
                         Bấm đăng ký nghĩa là bạn đồng ý với mọi điều khoản của chúng tôi
                     </div>
