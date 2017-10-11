@@ -24,7 +24,25 @@ class ThemPhongTroRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'tenPhong' => 'required|max:255',
+            'noiDung' => 'required|max:255',
+            'gia' => 'required',
+            'tinh' => 'required',
+            'quan' => 'required',
+            'phuong' => 'required',
+            'diaChi' => 'required'
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'tenPhong.required' => 'Không được bỏ trống',
+            'noiDung.required' => 'Không được bỏ trống',
+            'gia.required' => 'Không được bỏ trống',
+            'tinh.required' => 'Không được bỏ trống',
+            'quan.required' => 'Không được bỏ trống',
+            'phuong.required' => 'Không được bỏ trống',
+            'diaChi.required' => 'Không được bỏ trống'
         ];
     }
 }

@@ -5,8 +5,12 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
+use App\Repository\TaiKhoanRepository;
 use App\Repository\HinhAnhPhongTroRepository;
+use App\Repository\PhongTroRepository;
+use App\Model\TaiKhoan;
 use App\Model\HinhAnhPhongTro;
+use App\Model\PhongTro;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -27,9 +31,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind('TaiKhoanRepository', function(){
+            $tk = new TaiKhoan();
+            return new TaiKhoanRepository($tk);
+        });
         $this->app->bind('HinhAnhPhongTroRepository',function(){
             $ha = new HinhAnhPhongTro();
             return new HinhAnhPhongTroRepository($ha);
+        });
+        $this->app->bind('PhongTroRepository',function(){
+            $pt = new PhongTro();
+            return new PhongTroRepository($pt);
         });
         $this->app->bind('codeCreate',function(){
             $length = 6;

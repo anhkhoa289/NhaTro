@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class PhongTro extends Model
 {
-    public $timestamps = false;
+    protected $table = 'PhongTro';
+    protected $primaryKey = 'maPhong';
 }

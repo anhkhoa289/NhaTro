@@ -20,7 +20,7 @@
                             </div>
                             <div class="form-group">
                                 {!! Form::submit('Xác nhận', ['class' => 'btn btn-success']) !!}
-                                <a class="btn btn-default" href="{{ URL::to('/')}}">Xác nhận sau</a>
+                                <a class="btn btn-default my-btn-success" href="{{ URL::to('/')}}">Xác nhận sau</a>
                             </div>
                         {!! Form::close() !!}
                     @endif

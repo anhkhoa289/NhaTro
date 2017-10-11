@@ -68,7 +68,8 @@
                             <div class="help-block with-errors">{{ $errors->has('noiDung') ? $errors->first('noiDung') : '' }}</div>
                         </div>
                         <div class="form-group">
-                            {!! Form::submit('Đăng tin', ['class' => 'btn btn-success']) !!}
+                            {!! Form::submit('Đăng tin', ['class' => 'btn btn-success my-btn-success']) !!}
+                            <a class="btn btn-default" href="{{ URL::to('/')}}">Hủy bỏ</a>
                         </div>
                     </div>
                     
@@ -77,4 +78,12 @@
         </div>
     </div>
 </div>
+<script type="text/javascript">
+$("#photo").fileinput({
+    language: "vi",
+    maxFileCount: 10,
+    maxFileSize: 200,
+    allowedFileExtensions: ["jpg", "png", "jpeg", "gif"]
+});
+</script>
 @stop

@@ -6,13 +6,14 @@
 |---------------------------------
 */
 
-// background color
+// background and border color
 $pri-back-color: #fff;
-$sec-back-color: #1BCA06;
-$thi-back-color: #15AE03;
-
+$sec-back-color: rgb(27, 202, 6);
+$thi-back-color: rgb(21, 174, 3);
 $fou-back-color: #E6E5E5;
 
+$dis-pri-back-color: rgba(29, 202, 6, 0.7);
+$dis-sec-back-color: rgba(21, 174, 3,0.7);
 // border color
 $pri-border-color: #e36209;
 $sec-border-color: #d1d5da;
@@ -122,4 +123,16 @@ nav.navbar-phongtro {
         }
     }
 
+}
+.my-btn-success{
+    background-color: $sec-back-color;
+    border-color: $thi-back-color;
+    &.disabled{
+        background-color: $dis-pri-back-color;
+        border-color: $dis-sec-back-color;
+    }
+    &:hover, &:focus{
+        background-color: $thi-back-color;
+        border-color: $thi-back-color;
+    }
 }
