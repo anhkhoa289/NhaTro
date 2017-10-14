@@ -19,4 +19,12 @@ class PhongTroRepository
         $this->PhongTro->save();
         return $this->PhongTro->maPhong;
     }
+    public function get($maPhong){
+        return $this->PhongTro::findOrFail($maPhong);
+    }
+    public function updateClicked($maPhong){
+        $this->PhongTro = PhongTro::findOrFail($maPhong);
+        $this->PhongTro->luotClick = $this->PhongTro->luotClick + 1;
+        $this->PhongTro->save();
+    }
 }

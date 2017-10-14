@@ -44,3 +44,7 @@ Route::group(['prefix' => 'Phong', 'middleware' => 'kiemTraDangNhap'], function 
     Route::view('ThemPhong', 'Phong.ThemPhong');
     Route::post('ThemPhong','PhongController@themPhong');
 });
+Route::group(['prefix' => 'Phong'], function(){
+    Route::get('{maPhong}', 'PhongController@xemPhong');
+    Route::post('LuotClick', 'PhongController@capNhatLuotClick');// AJAX
+});

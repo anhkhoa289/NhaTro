@@ -39,6 +39,9 @@ class TaiKhoanRepository
         $count = $this->TaiKhoan::where("email","=",$email)->count();
         return $count;
     }
+    public function get($id){
+        return $this->TaiKhoan::findOrFail($id);
+    }
     public function getUserByType($type)
     {
         return TaiKhoan::Where('loaiTK', $type)->get();

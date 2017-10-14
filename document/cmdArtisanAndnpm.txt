@@ -17,34 +17,6 @@ php artisan make:seeder [UsersTableSeeder]
 php artisan db:seed
 php artisan db:seed --class=[UsersTableSeeder]
 
+
 //create a symbolic link from public/storage to storage/app/public
 php artisan storage:link
-
-//define Collective in config/app.php
-// ...
-    'providers' => [
-        // ...
-        Collective\Html\HtmlServiceProvider::class,
-        // ...
-    ],
-    // ...
-    'aliases' => [
-        // ...
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
-        // ...
-    ],
-    // ...
-
-
-//define bootstrap-fileinput
-"kartik-v/bootstrap-fileinput": "dev-master"
-to your composer.json file
-
-composer install
-
-
-//JavaScript
-window.location.replace('http://stackoverflow.com');
-window.location.href = 'http://stackoverflow.com';
-window.history.go(-1);

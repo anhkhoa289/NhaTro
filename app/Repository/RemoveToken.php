@@ -6,6 +6,7 @@ class RemoveToken{
         $a = new $class;
         foreach($obj as $k=>$v){
             if($k == '_token') continue;
+            if($k == 'photo') continue;
             $a->$k = $v;
         }
         return $a;

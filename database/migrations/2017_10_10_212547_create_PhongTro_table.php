@@ -16,7 +16,7 @@ class CreatePhongTroTable extends Migration
         Schema::create('PhongTro', function (Blueprint $table) {
             $table->bigIncrements('maPhong');
             $table->char('tenPhong', 100);
-            $table->char('noiDung', 255);
+            $table->string('noiDung', 1000);
             $table->integer('tongSoPhong')->unsigned()->default(1);
             $table->integer('soPhongTrong')->unsigned()->default(1);
             $table->double('gia', 9, 0);

@@ -25,7 +25,7 @@ class ThemPhongTroRequest extends FormRequest
     {
         return [
             'tenPhong' => 'required|max:255',
-            'noiDung' => 'required|max:255',
+            'noiDung' => 'required',
             'gia' => 'required',
             'tinh' => 'required',
             'quan' => 'required',

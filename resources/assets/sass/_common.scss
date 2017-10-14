@@ -136,3 +136,18 @@ nav.navbar-phongtro {
         border-color: $thi-back-color;
     }
 }
+.carousel {
+    &.slide {
+
+        .carousel-inner {
+            .item {
+                img {
+                    margin: auto;
+                }
+            }
+        }
+        .carousel-control {
+            background: rgba(0,0,0,0);
+        }
+    }
+}

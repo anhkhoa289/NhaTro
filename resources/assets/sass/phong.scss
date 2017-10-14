@@ -9,4 +9,21 @@
     textarea {
         resize: none;
     }
+    .xem-phong {
+        >.thong-tin {
+            span, .ten-phong {
+                font-weight: bolder;
+            }
+            .noidung {
+                white-space: pre-line;
+            }
+            .chua-duyet {
+                color: red;
+            }
+            .hien-so {
+                color: $thi-text-color;
+                background-color: #FFF;//$sec-back-color;
+            }
+        }
+    }
 }

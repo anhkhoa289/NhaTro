@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
     {{--  Bootstrap and Font Awesome sass  --}}
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     {{--  datepicker  --}}
@@ -46,7 +47,7 @@
             <div class="collapse navbar-collapse" id="myNavbar">
                 <form class="navbar-form navbar-left">
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit">
                           <i class="glyphicon glyphicon-search"></i>
@@ -55,7 +56,8 @@
                     </div>
                 </form>
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
+                    <li class="{{Request::is('/')?'active':''}}"><a href="{{ URL::to('/')}}">Trang Chủ</a></li>
+                    <li class="{{Request::is('Phong/*')?'active':''}}"><a href="#">Phòng xem gần đây</a></li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -65,7 +67,6 @@
                         </ul>
                     </li>
                     <li><a href="#">Page 2</a></li>
-                    <li><a href="#">Page 3</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if(Session::has('TaiKhoan'))

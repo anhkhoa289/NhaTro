@@ -15,7 +15,7 @@ class CreateLoaitaikhoanTable extends Migration
     {
         Schema::create('loaitaikhoan', function (Blueprint $table) {
             $table->increments('loaiTK');
-            $table->string('tenLoai');
+            $table->char('tenLoai',10);
             $table->timestamps();
         });
         

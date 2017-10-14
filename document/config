@@ -1,0 +1,23 @@
+
+//define Collective in config/app.php
+// ...
+    'providers' => [
+        // ...
+        Collective\Html\HtmlServiceProvider::class,
+        // ...
+    ],
+    // ...
+    'aliases' => [
+        // ...
+        'Form' => Collective\Html\FormFacade::class,
+        'Html' => Collective\Html\HtmlFacade::class,
+        // ...
+    ],
+    // ...
+
+
+//define bootstrap-fileinput
+"kartik-v/bootstrap-fileinput": "dev-master"
+to your composer.json file
+
+composer install

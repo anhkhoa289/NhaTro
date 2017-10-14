@@ -27,4 +27,14 @@ class HinhAnhPhongTroRepository
         // $this->HinhAnhPhongTro->pathImg = $pathImg;
         // $this->HinhAnhPhongTro->save();
     }
+    public function get($maPhong){
+        
+        // trả về mảng của đối tượng có chưa tên cột và giá trị
+        // $photos = DB::table('HinhAnhPhongTro')->where('maPhong',$maPhong)->get(['pathImg']);
+
+        // trả về mảng các giá trị của cột
+        $photos = DB::table('HinhAnhPhongTro')->where('maPhong',$maPhong)->pluck('pathImg');
+        if($photos->count() === 0) return null;
+        else return $photos;
+    }
 }

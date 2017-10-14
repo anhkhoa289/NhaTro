@@ -206,6 +206,14 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
   border-color: #15ae03;
 }
 
+.carousel.slide .carousel-inner .item img {
+  margin: auto;
+}
+
+.carousel.slide .carousel-control {
+  background: transparent;
+}
+
 /*
 |---------------------------------
 |- for homepage
@@ -332,5 +340,23 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
 
 .phong textarea {
   resize: none;
+}
+
+.phong .xem-phong > .thong-tin span,
+.phong .xem-phong > .thong-tin .ten-phong {
+  font-weight: bolder;
+}
+
+.phong .xem-phong > .thong-tin .noidung {
+  white-space: pre-line;
+}
+
+.phong .xem-phong > .thong-tin .chua-duyet {
+  color: red;
+}
+
+.phong .xem-phong > .thong-tin .hien-so {
+  color: #1BCA06;
+  background-color: #FFF;
 }
 

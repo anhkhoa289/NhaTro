@@ -11,4 +11,7 @@ class TaiKhoan extends Model
     {
         return $this->belongsTo('App\Model\LoaiTaiKhoan', 'loaiTK', 'loaiTK');
     }
+    public function PhongTro(){
+        return $this->hasMany('App\Model\PhongTro');
+    }
 }
