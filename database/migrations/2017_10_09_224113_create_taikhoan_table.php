@@ -33,6 +33,7 @@ class CreateTaikhoanTable extends Migration
             $table->integer('loaiTK')->unsigned()->default(1);
             $table->char('CTVHoTro', 255)->nullable();
             $table->rememberToken();
+            $table->char('avatar', 255)->nullable();
             $table->timestamps();
             $table->foreign('CTVHoTro')->references('tenDangNhap')->on('TaiKhoan')
             ->onDelete('set null')->onUpdate('cascade');

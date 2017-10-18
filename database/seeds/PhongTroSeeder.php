@@ -17,6 +17,7 @@ class PhongTroSeeder extends Seeder
             'noiDung' => 'Phục vụ mọi nhu cầu của bạn',
             'tongSoPhong' => 4,
             'soPhongTrong' => 2,
+            'dienTich' => 75,
             'gia' => 3000000,
             'tinh' => 'tp Đà Nẵng',
             'quan' => 'Sơn Trà',
@@ -24,14 +25,18 @@ class PhongTroSeeder extends Seeder
             'diaChi' => '1 Yết Kiêu',
             'chuNha' => 3,
             'tinhTrangDuyet' => 1,
-            'CTVduyet' => 2
+            'CTVduyet' => 2,
+            'pathImg' => 'gIrBZaIbE80uYSn2clhI8VWvkrOTq9aU5BJ8hvwc.jpeg',
+            'created_at' => '2017-10-12 16:14:10',
+            'updated_at' => '2017-10-12 16:14:10'
         ]);
         DB::table('PhongTro')->insert([
             'maPhong' => 2,
             'tenPhong' => 'Phòng Thanh Khê',
-            'noiDung' => "Gần Trường CĐ cho các bạn Quảng Năm xa sôi\nĐặt cọc trước 3 tháng vì giá khá hời",
+            'noiDung' => "Gần Trường CĐ.\nĐặt cọc trước 3 tháng.",
             'tongSoPhong' => 7,
             'soPhongTrong' => 3,
+            'dienTich' => 25,
             'gia' => 1500000,
             'tinh' => 'tp Đà Nẵng',
             'quan' => 'Hải Châu',
@@ -40,15 +45,17 @@ class PhongTroSeeder extends Seeder
             'chuNha' => 3,
             'tinhTrangDuyet' => 1,
             'CTVduyet' => 1,
+            'pathImg' => 'E2TJPvLOyQoI7PwMKtsmjyNs9pRnbLp5JCOWL2yW.jpeg',
             'created_at' => '2017-10-12 16:14:10',
             'updated_at' => '2017-10-12 16:14:10'
         ]);
         DB::table('PhongTro')->insert([
             'maPhong' => 3,
-            'tenPhong' => 'Phòng Thanh Khê',
-            'noiDung' => "Gần Trường CĐ cho các bạn Quảng Năm xa sôi\r\nĐặt cọc trước 1 tháng vì là phòng hạng sang, giá hơi cao",
+            'tenPhong' => 'Phòng Trọ Thanh Khê',
+            'noiDung' => "Gần Trường CĐ.\r\nPhòng hạng sang.\nĐặt cọc trước 2 tháng.",
             'tongSoPhong' => 7,
             'soPhongTrong' => 3,
+            'dienTich' => 50,
             'gia' => 2500000,
             'tinh' => 'tp Đà Nẵng',
             'quan' => 'Hải Châu',
@@ -57,6 +64,7 @@ class PhongTroSeeder extends Seeder
             'chuNha' => 3,
             'tinhTrangDuyet' => 1,
             'CTVduyet' => 1,
+            'pathImg' => 'Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpeg',
             'created_at' => '2017-10-12 16:34:15',
             'updated_at' => '2017-10-12 16:34:15'
         ]);

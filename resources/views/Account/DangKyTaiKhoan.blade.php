@@ -77,9 +77,11 @@
                         'data-error'=>'Phải có 9 chữ số', 'data-minlength'=>'9', 'maxlength'=>'9','required']) !!}
                         <div class="help-block with-errors"></div>
                     </div>  --}}
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-4{{ $errors->has('sdt') ? ' has-error has-danger' : '' }}">
                         {!! Form::label('sdt', 'Số điện thoại') !!}
-                        {!! Form::number('sdt', null, ['class' => 'form-control']) !!}
+                        {!! Form::number('sdt', null, ['class' => 'form-control', 
+                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        <div class="help-block with-errors">{{$errors->first('sdt')}}</div>
                     </div>
                     <div class="clearfix visible-lg-block"></div>
                     <div class="form-group col-md-8{{ $errors->has('email') ? ' has-error has-danger' : '' }}">
@@ -87,7 +89,7 @@
                         {!! Form::email('email', null, ['class' => 'form-control',
                         'data-remote-error'=>'Email này đã được sử dụng',
                         'data-remote'=>'/Account/DangKy/email']) !!}
-                        <div class="help-block with-errors"></div>
+                        <div class="help-block with-errors">{{$errors->first('email')}}</div>
                     </div>
                     <div class="clearfix visible-lg-block"></div>
                     <div class="form-group col-md-4{{ $errors->has('tenDangNhap') ? ' has-error has-danger' : '' }}">

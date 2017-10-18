@@ -223,11 +223,11 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
 */
 
 .homepage .panel-approved {
-  border-color: #FFF200;
+  border-color: #1bca06;
 }
 
 .homepage .panel-approved .panel-heading {
-  background-color: #FFF200;
+  background-color: #1bca06;
   color: #fff;
   font-weight: bolder;
 }
@@ -242,17 +242,44 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
   font-weight: bolder;
 }
 
-.homepage .panel .img-nhatro img {
-  width: 100%;
+.homepage .panel .panel-body {
+  padding: 0 15px;
 }
 
-.homepage .panel .img-ctv {
+.homepage .panel .panel-body a.bordering {
+  color: inherit;
+  display: block;
+  border-top: 1px solid silver;
+}
+
+.homepage .panel .panel-body a.bordering:hover {
+  color: inherit;
+}
+
+.homepage .panel .panel-body a.bordering div.row {
+  padding: 2rem 0;
+  height: auto;
+  width: auto;
+}
+
+.homepage .panel .panel-body a.bordering div.row:hover {
+  background-color: #edf4e8;
+}
+
+.homepage .panel .panel-body a.bordering div.row > .img-nhatro > div {
+  height: 14rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.homepage .panel .panel-body a.bordering div.row > .img-ctv {
   height: -webkit-max-content;
   height: -moz-max-content;
   height: max-content;
 }
 
-.homepage .panel .img-ctv a {
+.homepage .panel .panel-body a.bordering div.row > .img-ctv span {
   float: right;
   text-decoration: none;
   font-style: italic;
@@ -260,14 +287,14 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
 }
 
 @media screen and (min-width: sm) {
-  .homepage .panel .img-ctv a {
+  .homepage .panel .panel-body a.bordering div.row > .img-ctv span {
     position: absolute;
     right: 15px;
     bottom: -88px;
   }
 }
 
-.homepage .panel .img-ctv img {
+.homepage .panel .panel-body a.bordering div.row > .img-ctv img {
   width: 3rem;
   border-radius: 50%;
 }

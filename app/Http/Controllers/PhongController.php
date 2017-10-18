@@ -7,13 +7,20 @@ use App\Http\Requests\ThemPhongTroRequest;
 
 class PhongController extends Controller
 {
+    public function trangChu(){
+        $data['daDuyet'] = app('PhongTroRepository')->getApproval();
+        $data['chuaDuyet'] = app('PhongTroRepository')->getUnapproval();
+        return view('HomePage',$data);
+    }
+
     public function themPhong(ThemPhongTroRequest $req){
-
         //$req->chuNha = $req->session()->get('TaiKhoan.id');
-        $maPhong = app('PhongTroRepository')->add($req, $req->session()->get('TaiKhoan.id'));
+        $maPhong = app('PhongTroRepository')->add($req, $req->session()->get('TaiKhoan.id'),$req->photo);
 
-        if($req->photo !== null)
-            app('HinhAnhPhongTroRepository')->add($req->photo, $maPhong);
+        if($req->photo !== null){
+            $path = app('HinhAnhPhongTroRepository')->add($req->photo, $maPhong);
+            app('PhongTroRepository')->updatePhoto($maPhong,$path);
+        }
         return redirect('Phong/'.$maPhong);
     }
     public function xemPhong($maPhong){

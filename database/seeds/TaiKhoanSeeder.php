@@ -26,7 +26,8 @@ class TaiKhoanSeeder extends Seeder
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'anhkhoa289',
             'matkhau' => bcrypt('1234'),
-            'loaiTK' => 3
+            'loaiTK' => 3,
+            'avatar' => 'avaDefault.jpg'
         ]);
         DB::table('TaiKhoan')->insert([
             'holot' => 'Nguyễn Hoàng Minh',
@@ -43,7 +44,8 @@ class TaiKhoanSeeder extends Seeder
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'thi12345',
             'matkhau' => bcrypt('1234'),
-            'loaiTK' => 2
+            'loaiTK' => 2,
+            'avatar' => 'avaDefault.jpg'
         ]);
         DB::table('TaiKhoan')->insert([
             'holot' => 'Mai Tuấn',
@@ -60,7 +62,8 @@ class TaiKhoanSeeder extends Seeder
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'vu1234',
             'matkhau' => bcrypt('1234'),
-            'loaiTK' => 1
+            'loaiTK' => 1,
+            'avatar' => 'avaDefault.jpg'
         ]);
         DB::table('TaiKhoan')->insert([
             'holot' => 'Mai Kim',
@@ -78,7 +81,8 @@ class TaiKhoanSeeder extends Seeder
             'tenDangNhap' => 'anh1234',
             'matkhau' => bcrypt('1234'),
             'loaiTK' => 1,
-            'CTVHoTro' => 'thi12345'
+            'CTVHoTro' => 'thi12345',
+            'avatar' => 'avaDefault.jpg'
         ]);
     }
 }

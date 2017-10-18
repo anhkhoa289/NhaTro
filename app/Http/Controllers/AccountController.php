@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Repository\TaiKhoanRepository;
 use App\Http\Requests\DangkyTaiKhoanRequest;
+use App\Http\Requests\XacNhanRequest;
 use Auth;
 class AccountController extends Controller
 {
@@ -35,18 +36,24 @@ class AccountController extends Controller
     public function dangKy(DangkyTaiKhoanRequest $request){
         $kq = resolve('TaiKhoanRepository')->add($request->all());
         if($kq->id !== 0) {
-            $data['kq'] = 'Thành công';
-            $data['hoten'] = $kq->holot . ' ' . $kq->ten;
-            if($kq->tinhTrangHoatDong == 0) $data['tinhTrang'] = false;
-            else $data['tinhTrang'] = true;
+            $data['kq'] = $kq;
         }
         else
-            $data= ['kq'=>'Thất bại', 'hoten'=>'', 'tinhTrang'=>null];
+            $data= ['kq'=>null];
         return view('Account.KetQuaDangKy', $data);
+    }
+    
+    public function capNhatSdt(Request $req){
+    
     }
 
     public function xacNhan(Request $request){
-        
+        $kq = app('TaiKhoanRepository')->checkMaXacNhan($request->id, $request->maXacNhan);
+        if($kq->tinhTrangHoatDong == 1)
+            $data['kq'] = $kq;
+        else
+            $data = ['error' => 'Mã xác nhận không chính xác', 'kq' => $kq];
+        return view('Account.KetQuaDangKy', $data);
     }
 
     //Kiểm tra tồn tại tên đăng nhập và email bằng AJAX của Jquery
@@ -64,7 +71,6 @@ class AccountController extends Controller
         else
             return response('Email này đã được sử dụng', 400)->header('Content-Type', 'text/plain');
     }
-
 
     public function viewDangKy(){
         // $data['diaP'] = resolve('diaPhuong');

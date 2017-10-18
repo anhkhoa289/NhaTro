@@ -6,48 +6,69 @@
 |---------------------------------
 */
 
-$back-panel-approved-color: #FFF200;
+$back-panel-approved-color: $sec-back-color; //#FFF200;
 $back-panel-notapproved-color: #D50000;
-
+$back-panel-hover: rgba(0,0,0,.05);
 $ctv-color: #E65100;
 .homepage {
     .panel-approved {
         border-color: $back-panel-approved-color;
-        
         .panel-heading {
-            @include colors($back-panel-approved-color,$sec-text-color);
+            @include colors($back-panel-approved-color, $sec-text-color);
             @include big-font;
         }
     }
-
     .panel-notapproved {
         border-color: $back-panel-notapproved-color;
-
         .panel-heading {
-            @include colors($back-panel-notapproved-color,$sec-text-color);
+            @include colors($back-panel-notapproved-color, $sec-text-color);
             @include big-font;
         }
     }
     .panel {
-        .img-nhatro img {
-            width: 100%;
-        }
-        .img-ctv {
-            height: max-content;
-            a {
-                float: right;
-                text-decoration: none;
-                font-style: italic;
-                color: $ctv-color;
-
-                @media screen and (min-width: sm){
-                    position: absolute;
-                    right: 15px;
-                    bottom: -88px;
+        .panel-body {
+            padding: 0 15px;
+            a.bordering {
+                color: inherit;
+                display: block;
+                border-top: 1px solid silver;
+                &:hover{
+                    color: inherit;
                 }
-            }
-            img {
-                @include circle;
+                div.row {
+                    padding: 2rem 0;
+                    //margin: .1rem;
+                    height: auto;
+                    width: auto;
+                    &:hover{
+                        background-color: #edf4e8;
+                    }
+                    >.img-nhatro {
+                        >div {
+                            height: 14rem; //overflow: hidden;
+                            background-size: cover;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
+                    }
+                    >.img-ctv {
+                        height: max-content;
+                        span {
+                            float: right;
+                            text-decoration: none;
+                            font-style: italic;
+                            color: $ctv-color;
+                            @media screen and (min-width: sm) {
+                                position: absolute;
+                                right: 15px;
+                                bottom: -88px;
+                            }
+                        }
+                        img {
+                            @include circle;
+                        }
+                    }
+                }
             }
         }
     }

@@ -75,7 +75,7 @@
                     </a></li>
                     <li class="user">
                         <a href="{{ URL::to('Account/NguoiDung/'.Session::get('TaiKhoan.id'))}}">
-                            <img src="{{asset('storage/img/user_1.jpg')}}" alt="{{Session::get('TaiKhoan.ten')}}"> {{Session::get('TaiKhoan.ten')}}
+                            <img src="{{asset('storage/img/'.Session::get('TaiKhoan.avatar'))}}" alt="{{Session::get('TaiKhoan.ten')}}"> {{Session::get('TaiKhoan.ten')}}
                         </a>
                     </li>
                     <li><a href="{{ URL::to('DangXuat')}}"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>

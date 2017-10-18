@@ -14,6 +14,7 @@ class HinhAnhPhongTroRepository
     }
     public function add($photos, $maPhong)
     {
+        $path = '';
         foreach($photos as $photo){
             $path = $photo->store('public/img/'.$maPhong);
             $count = strlen('public/img/'.$maPhong.'/');
@@ -23,6 +24,7 @@ class HinhAnhPhongTroRepository
                 ['maPhong' => $maPhong, 'pathImg' => $path]
             );
         }
+        return $path;
         // $this->HinhAnhPhongTro->maPhong = $maPhong;
         // $this->HinhAnhPhongTro->pathImg = $pathImg;
         // $this->HinhAnhPhongTro->save();

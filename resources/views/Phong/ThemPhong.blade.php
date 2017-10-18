@@ -22,19 +22,41 @@
                             'data-error'=>'Không được bỏ trống', 'required']) !!}
                             <div class="help-block with-errors">{{ $errors->has('tenPhong') ? $errors->first('tenPhong') : '' }}</div>
                         </div>
-                        <div class="form-group">
-                            {!! Form::label('tongSoPhong', 'Tổng số phòng') !!}
-                            {!! Form::number('tongSoPhong', 1, ['class' => 'form-control']) !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('soPhongTrong', 'Số phòng trống') !!}
-                            {!! Form::number('soPhongTrong', 1, ['class' => 'form-control']) !!}
-                        </div>
-                        <div class="form-group{{ $errors->has('gia') ? ' has-error has-danger' : '' }}">
-                            {!! Form::label('gia', 'Giá') !!}
-                            {!! Form::number('gia', 1000000, ['class' => 'form-control', 
-                            'data-error'=>'Không được bỏ trống', 'required']) !!}
-                            <div class="help-block with-errors">{{ $errors->has('gia') ? $errors->first('noiDung') : '' }}</div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {!! Form::label('tongSoPhong', 'Tổng số phòng') !!}
+                                    {!! Form::number('tongSoPhong', 1, ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    {!! Form::label('soPhongTrong', 'Số phòng trống') !!}
+                                    {!! Form::number('soPhongTrong', 1, ['class' => 'form-control']) !!}
+                                </div>
+                            </div>
+
+                            <div class="clearfix visible-lg-block"></div>
+                            <div class="col-md-6">
+                                <div class="form-group{{ $errors->has('dienTich') ? ' has-error has-danger' : '' }}">
+                                    {!! Form::label('dienTich', 'Diện tích phòng') !!}
+                                    {!! Form::number('dienTich', 1, ['class' => 'form-control', 
+                                    'data-error'=>'Không được bỏ trống', 'required']) !!}
+                                    <div class="help-block with-errors">
+                                        {{ $errors->has('dienTich') ? $errors->first('dienTich') : '' }}
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group{{ $errors->has('gia') ? ' has-error has-danger' : '' }}">
+                                    {!! Form::label('gia', 'Giá') !!}
+                                    {!! Form::number('gia', 1000000, ['class' => 'form-control', 
+                                    'data-error'=>'Không được bỏ trống', 'required']) !!}
+                                    <div class="help-block with-errors">
+                                        {{ $errors->has('gia') ? $errors->first('gia') : '' }}
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <div class="form-group{{ $errors->has('tinh') ? ' has-error has-danger' : '' }}">
                             {!! Form::label('tinh', 'Tỉnh/Thành phố') !!}

@@ -55,6 +55,10 @@
                             {{$PhongTro->soPhongTrong}}
                         </div>
                         <div class="col-md-12">
+                            <span>Diện tích: </span>
+                            {{$PhongTro->dienTich}}
+                        </div>
+                        <div class="col-md-12">
                             <span>Giá: </span>
                             {{$PhongTro->gia}}
                         </div>
@@ -80,10 +84,6 @@
                         <div class="col-md-12">
                             <span>Ngày đăng: </span>
                             {{$PhongTro->created_at}}
-                        </div>
-                        <div class="col-md-12">
-                            <span>Ngày cập nhật: </span>
-                            {{$PhongTro->updated_at}}
                         </div>
                         <div class="col-md-12">
                             <div class="btn-group btn-group-lg btn-group-justified">
@@ -117,7 +117,7 @@
                 url: "{{URL::to('Phong/LuotClick')}}",
                 data: { 
                     "_token": '{{ csrf_token() }}', 
-                    'maPhong': 2
+                    'maPhong': {{$PhongTro->maPhong}}
                 },
                 //success : function (res){
                         //console.log(res.name);
