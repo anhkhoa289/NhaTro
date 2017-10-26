@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Model\LoaiTaiKhoan;
 use App\Repository\LoaiTaiKhoanRepository;
 use Illuminate\Support\Facades\Hash;
+use MongoDB\Client as MongoDBClient;
 
 class TestController extends Controller
 {
@@ -67,5 +68,15 @@ class TestController extends Controller
         $data['decrypt'] = decrypt($data['encrypt']);
 
         return view('test3',$data);
+    }
+
+    public function mongo(Request $req){
+        $data['DiaPhuong'] = app('DiaPhuongRepository')->all();
+        return view('test4', $data);
+    }
+    public function getQuan(Request $req){
+        $result = app('DiaPhuongRepository')->getTinh($req->tenTinh);
+        return response()->json($result);
+        return response()->json(["mai"=>"ngoc", "minh"=>["tuan", "khnah"]]);
     }
 }

@@ -87,6 +87,7 @@ class AccountController extends Controller
         // $str.=']';
 
         // $data['str'] = $str;
-        return view('Account.DangKyTaiKhoan');
+        $data['DiaPhuong'] = app('DiaPhuong');
+        return view('Account.DangKyTaiKhoan', $data);
     }
 }

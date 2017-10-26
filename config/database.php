@@ -53,7 +53,12 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-
+        'mongodb' => [
+            'driver'   => 'mongodb',
+            'host'     => 'localhost',
+            'port'     => '27017',
+            'database' => 'NhaTro',
+        ],
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),

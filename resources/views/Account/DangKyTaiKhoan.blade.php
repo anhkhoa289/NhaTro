@@ -44,23 +44,35 @@
                     </div>
 
                     <div class="clearfix visible-lg-block"></div>
-
+                    @php
+                    foreach($DiaPhuong as $v) {
+                        $tinh[$v->tenTinh] = $v->tenTinh;
+                    }
+                    foreach($DiaPhuong[0]->quan as $v) {
+                        $quan[$v->tenQuan] = $v->tenQuan;
+                    }
+                    foreach($DiaPhuong[0]->quan[0]->phuong as $v) {
+                        $phuong[$v->tenPhuong] = $v->tenPhuong;
+                    }
+                    @endphp
                     <div class="form-group col-md-4{{ $errors->has('tinh') ? ' has-error has-danger' : '' }}">
                         {!! Form::label('tinh', 'Tỉnh/Thành phố') !!}
-                        {!! Form::text('tinh', null, ['class' => 'form-control', 
-                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        {!! Form::select('tinh',$tinh, "Hà Nội", ['class' => 'form-control',
+                        'data-error'=>'Không được bỏ trống', 'required',
+                        'onchange' => 'getDiaPhuong(value)']) !!}
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group col-md-4{{ $errors->has('quan') ? ' has-error has-danger' : '' }}">
                         {!! Form::label('quan', 'Quận/Huyện') !!}
-                        {!! Form::text('quan', null, ['class' => 'form-control', 
-                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        {!! Form::select('quan', [null], null, ['class' => 'form-control', 
+                        'data-error'=>'Không được bỏ trống', 'required',
+                        'onchange' => 'updatePhuong(value)']) !!}
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="form-group col-md-4{{ $errors->has('phuong') ? ' has-error has-danger' : '' }}">
                         {!! Form::label('phuong', 'Phường/Xã') !!}
-                        {!! Form::text('phuong', null, ['class' => 'form-control', 
-                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        {!! Form::select('phuong', [null], null, ['class' => 'form-control',
+                        'data-error'=>'Không được bỏ trống', 'required',]) !!}
                         <div class="help-block with-errors"></div>
                     </div>
                     <div class="clearfix visible-lg-block"></div>
@@ -156,28 +168,59 @@
                 viewMode: 'years'
             });*/
         });
+
+        $("#tinh").prepend("<option value='' selected='selected'>Chọn tỉnh</option>");
+        $("#quan").prepend("<option value='' selected='selected'>Chọn quận</option>");
+        $("#phuong").prepend("<option value='' selected='selected'>Chọn phường</option>");
+        var quan = <?php echo json_encode($DiaPhuong[0]->quan); ?>;
+
+        function updatePhuong(value) {
+            $("#phuong option").remove();
+            for(i in quan)
+                if(quan[i].tenQuan === value) {
+                    var phuong = quan[i].phuong
+                    var parent = document.getElementById('phuong')
+                    for(j in phuong) {
+                        var ele = document.createElement('option')
+                        ele.value = phuong[j].tenPhuong
+                        ele.innerText = phuong[j].tenPhuong
+                        parent.appendChild(ele)
+                    }
+                    break;
+                }
+            $("#phuong").prepend("<option value='' selected='selected'>Chọn Phường</option>");
+        }
+
+        function getDiaPhuong(value) {
+            $.ajax({
+                type: 'POST',
+                dataType: 'json',
+                url: "{{ action('DiaPhuongController@getQuan') }}",
+                data: { 
+                    "_token": '{{ csrf_token() }}', 
+                    'tenTinh': value
+                },
+                success : function (res) {
+                    quan = res;
+                    $("#quan option").remove();
+                    for(i in quan) {
+                        //var ele = "<option value='" + res[i].tenQuan + "'>" + res[i].tenQuan + "</option>";
+                        var ele = document.createElement("option");
+                        ele.value = quan[i].tenQuan
+                        ele.innerText = quan[i].tenQuan
+                        $("#quan").append(ele);
+                    }
+                    $("#quan").prepend("<option value='' selected='selected'>Chọn quận</option>");
+                    updatePhuong(quan[0].tenQuan)
+                },
+                error : function () {
+                    $("#quan option").remove();
+                    $("#phuong option").remove();
+                    $("#quan").prepend("<option value='' selected='selected'>Chọn quận</option>");
+                    $("#phuong").prepend("<option value='' selected='selected'>Chọn phường</option>");
+                }
+            });
+        }
     </script>
-<!--
-    <div class="form-group col-md-4">
-            {!! Form::label('tinh', 'Tỉnh/Thành phố') !!}
-            {!! Form::select('tinh',['01' => 'Hà Nội', '02'=> 'Sài Gòn', '04'=>'Đà Nẵng'], 
-            null, ['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group col-md-4">
-            {!! Form::label('quan', 'Quận/Huyện') !!}
-            {!! Form::select('quan',['01' => 'Hải Châu', '02'=> 'Sơn Trà', '04'=>'Thanh Khê'], 
-            null, ['class' => 'form-control']) !!}
-        </div>
-        <div class="form-group col-md-4">
-            {!! Form::label('phuong', 'Phường/Xã') !!}
-            {!! Form::select('phuong',['01' => 'Hòa Cường Băc', '02'=> 'Hòa Thuận Tây', '04'=>'Thuận Phước'], 
-            null, ['class' => 'form-control', 'onchange' => 'log(value)']) !!}
-        </div>
-    <script type="text/javascript">
-            function log(valuee) {
-                var x = document.getElementById("phuong");
-                console.log(valuee)
-            }
-        </script>
--->
+
 @stop

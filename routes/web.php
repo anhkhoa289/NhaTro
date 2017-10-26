@@ -18,10 +18,13 @@ Route::get('testView', function () {
 Route::get('test','TestController@testcode');
 Route::post('test/val', 'TestController@testVal');
 Route::get('test3/{str}','TestController@encrypt');
+Route::get('mongo','TestController@mongo');
+Route::post('getQuan','TestController@getQuan');
 ///////////////////////////////////////////////////////////////////
 
-
+// general
 Route::get('/', 'PhongController@trangChu');
+Route::post('getQuan','DiaPhuongController@getQuan');
 
 Route::get('DangKyTaiKhoan', 'AccountController@viewDangKy');
 Route::get('DangNhap', function () {
@@ -40,7 +43,7 @@ Route::group(['prefix' => 'Account'], function () {
 });
 
 Route::group(['prefix' => 'Phong', 'middleware' => 'kiemTraDangNhap'], function () {
-    Route::view('ThemPhong', 'Phong.ThemPhong');
+    Route::view('ThemPhong', 'Phong.ThemPhong', ['DiaPhuong' => app('DiaPhuong')]);
     Route::post('ThemPhong','PhongController@themPhong');
 
 });

@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Schema;
 use App\Repository\TaiKhoanRepository;
 use App\Repository\HinhAnhPhongTroRepository;
 use App\Repository\PhongTroRepository;
+use App\Repository\DiaPhuongRepository;
 use App\Model\TaiKhoan;
 use App\Model\HinhAnhPhongTro;
 use App\Model\PhongTro;
@@ -42,6 +43,13 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('PhongTroRepository',function(){
             $pt = new PhongTro();
             return new PhongTroRepository($pt);
+        });
+        
+        $this->app->bind('DiaPhuongRepository', function ($app) {
+            return new DiaPhuongRepository();
+        });
+        $this->app->bind('DiaPhuong', function ($app) {
+            return app('DiaPhuongRepository')->all();
         });
         $this->app->bind('codeCreate',function(){
             $length = 6;
