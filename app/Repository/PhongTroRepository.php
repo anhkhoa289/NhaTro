@@ -3,6 +3,7 @@ namespace App\Repository;
 
 use App\Model\PhongTro;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class PhongTroRepository
 {
@@ -39,5 +40,11 @@ class PhongTroRepository
     }
     public function getUnapproval(){
         return $this->PhongTro::where('tinhTrangDuyet',0)->orderBy('updated_at','desc')->take(10)->get();
+    }
+    public function increaseLuotDatCho($maPhong) {
+        $this->PhongTro = PhongTro::findOrFail($maPhong);
+        $this->PhongTro->luotDatCho = $this->PhongTro->luotDatCho + 1;
+        $this->PhongTro->datChoLuc = Carbon::now();
+        $this->PhongTro->save();
     }
 }

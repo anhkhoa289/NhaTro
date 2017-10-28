@@ -10,9 +10,7 @@ use App\Http\Requests\XacNhanRequest;
 use Auth;
 class AccountController extends Controller
 {
-    public function nguoiDung(Request $request){
-        return view('Account.TrangTongQuan');
-    }
+    
     public function dangXuat(Request $request){
         //$request->session()->forget('TaiKhoan');
         $request->session()->flush();

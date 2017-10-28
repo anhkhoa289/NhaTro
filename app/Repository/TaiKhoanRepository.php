@@ -66,4 +66,7 @@ class TaiKhoanRepository
         }
         return $this->TaiKhoan;
     }
+    public function getPhongTroSoHuu($id) {
+        return $this->TaiKhoan::find($id)->ChuPhongTro()->orderBy("datChoLuc", 'desc')->get();
+    }
 }

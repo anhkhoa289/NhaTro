@@ -9,9 +9,15 @@ use App\Repository\TaiKhoanRepository;
 use App\Repository\HinhAnhPhongTroRepository;
 use App\Repository\PhongTroRepository;
 use App\Repository\DiaPhuongRepository;
+use App\Repository\KhachHangRepository;
+use App\Repository\ThongBaoRepository;
+use App\Repository\DatChoRepository;
 use App\Model\TaiKhoan;
 use App\Model\HinhAnhPhongTro;
 use App\Model\PhongTro;
+use App\Model\KhachHang;
+use App\Model\ThongBao;
+use App\Model\DatCho;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -44,6 +50,19 @@ class AppServiceProvider extends ServiceProvider
             $pt = new PhongTro();
             return new PhongTroRepository($pt);
         });
+        $this->app->bind('KhachHangRepository',function(){
+            $kh = new KhachHang();
+            return new KhachHangRepository($kh);
+        });
+        $this->app->bind('ThongBaoRepository',function(){
+            $tb = new ThongBao();
+            return new ThongBaoRepository($tb);
+        });
+        $this->app->bind('DatChoRepository',function(){
+            $dc = new DatCho();
+            return new DatChoRepository($dc);
+        });
+        
         
         $this->app->bind('DiaPhuongRepository', function ($app) {
             return new DiaPhuongRepository();
@@ -51,6 +70,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('DiaPhuong', function ($app) {
             return app('DiaPhuongRepository')->all();
         });
+
+
         $this->app->bind('codeCreate',function(){
             $length = 6;
             $chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

@@ -214,6 +214,10 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
   background: transparent;
 }
 
+table tr.not-read {
+  font-weight: bolder;
+}
+
 /*
 |---------------------------------
 |- for homepage

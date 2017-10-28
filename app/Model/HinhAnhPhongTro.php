@@ -18,4 +18,7 @@ class HinhAnhPhongTro extends Model
     
     //     return $query;
     // }
+    public function PhongTro() {
+        return $this->belongsTo('App\Model\PhongTro', 'maPhong', 'maPhong');
+    }
 }

@@ -6,5 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class PhanHoi extends Model
 {
-    public $timestamps = false;
+    protected $table = 'PhanHoi';
 }
