@@ -30,6 +30,7 @@ class CreatePhongTroTable extends Migration
             $table->bigInteger('luotPhanHoi')->unsigned()->default(0);
             $table->integer('luotDatCho')->unsigned()->default(0);
             $table->dateTime('datChoLuc')->nullable();
+            $table->dateTime('capNhatLuc');
             $table->bigInteger('CTVduyet')->nullable();
             $table->boolean('tinhTrangDuyet')->default(0);
             $table->boolean('tinhTrangHienThi')->default(1);

@@ -21,12 +21,16 @@ class CreateTaikhoanTable extends Migration
             $table->enum('gioiTinh', ['M', 'F', 'U']);
             $table->date('ngSinh');
             $table->char('email', 200)->nullable();
-            $table->char('sdt', 15)->nullable();
+            $table->char('sdt', 15);
             $table->char('tinh', 50);
             $table->char('quan', 50);
             $table->char('phuong', 50);
             $table->char('diaChi', 255);
             $table->boolean('tinhTrangHoatDong')->default(0);
+            $table->integer('slgThongBao')->unsigned()->default(0);// new
+            $table->integer('slgPhongTroSoHuu')->default(0);
+            $table->integer('slgDatCho')->default(0);
+            $table->integer('slgDuyet')->unsigned()->default(0);// new (Just for CTV and Admin)
             $table->char('maKichHoat', 6)->nullable();
             $table->char('tenDangNhap', 255)->unique();
             $table->char('matkhau', 255);

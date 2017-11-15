@@ -16,6 +16,8 @@ class CreateLoaiThongBaoTable extends Migration
         Schema::create('LoaiThongBao', function (Blueprint $table) {
             $table->increments('loaiTB');
             $table->string('tenLoai');
+            $table->string('mau', 1000)->nullable();
+            $table->string('ghiChu')->nullable();
             $table->timestamps();
         });
     }

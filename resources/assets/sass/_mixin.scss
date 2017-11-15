@@ -5,7 +5,7 @@
 |- by anhkhoa289          
 |---------------------------------
 */
-@mixin colors($back-color, $text-color){
+@mixin colors($back-color, $text-color) {
     background-color: $back-color;
     color: $text-color;
 }
@@ -21,7 +21,50 @@
 
 
 ///imgae Circle
-@mixin circle{
+@mixin circle {
     width: 3rem;
     border-radius:50%;
+}
+
+/*
+|---------------------------------
+|- for persional page
+|- 11/11/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
+@mixin xem-thong-tin-phong-tro {
+    span, .ten-phong {
+        font-weight: bolder;
+    }
+    .noidung {
+        white-space: pre-line;
+    }
+    .chua-duyet {
+        color: red;
+    }
+    .hien-so {
+        color: $thi-text-color;
+        background-color: #FFF;//$sec-back-color;
+    }
+}
+
+@mixin trangcanhan-img-noidung {
+    align-items: center;
+    display: flex;
+
+    .img-nhatro {
+        display: inline-block;
+        >div {
+            width: 7rem;
+            height: 7rem;
+        }
+    }
+    >.noi-dung {
+        margin-left: 2rem;
+        text-align: justify;
+        >.title {
+            font-weight: bolder;
+        }
+    }
 }

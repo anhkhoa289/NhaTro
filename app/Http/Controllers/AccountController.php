@@ -22,7 +22,7 @@ class AccountController extends Controller
         else{
             $kq = resolve(TaiKhoanRepository::class)->login($request->only('tenDangNhap', 'matkhau'));
             if ($kq === false) {
-                return view('Account.DangNhap', ['error'=> 'Tên đăng nhập hoặc mật khảu không chính xác']);
+                return view('Account.DangNhap', ['error'=> 'Tên đăng nhập hoặc mật khẩu không chính xác']);
             }
             else {
                 $request->session()->put('TaiKhoan', $kq);

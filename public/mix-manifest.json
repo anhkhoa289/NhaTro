@@ -2,15 +2,13 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/style.css": "/css/style.css",
-    "/js/validator.js": "/js/validator.js",
-    "/js/jquery.js": "/js/jquery.js",
-    "/js/moment-with-locales.js": "/js/moment-with-locales.js",
-    "/js/bootstrap-datetimepicker.js": "/js/bootstrap-datetimepicker.js",
+    "/js/react/myApp.js": "/js/react/myApp.js",
+    "/css/bootstrap-datepicker3.standalone.css": "/css/bootstrap-datepicker3.standalone.css",
     "/css/bootstrap-fileinput/fileinput.css": "/css/bootstrap-fileinput/fileinput.css",
     "/js/bootstrap-fileinput/plugins/piexif.js": "/js/bootstrap-fileinput/plugins/piexif.js",
     "/js/bootstrap-fileinput/plugins/sortable.js": "/js/bootstrap-fileinput/plugins/sortable.js",
     "/js/bootstrap-fileinput/plugins/purify.js": "/js/bootstrap-fileinput/plugins/purify.js",
     "/js/bootstrap-fileinput/fileinput.js": "/js/bootstrap-fileinput/fileinput.js",
     "/js/bootstrap-fileinput/locales/vi.js": "/js/bootstrap-fileinput/locales/vi.js",
-    "/js/popper.js": "/js/popper.js"
+    "/resources/assets/js/copied/bootstrap-datepicker.vi.min.js": "/resources/assets/js/copied/bootstrap-datepicker.vi.min.js"
 }

@@ -14,8 +14,8 @@ class DatChoRepository
     }
 
     public function insert($datcho) {
-        $this->DatCho->sdtKhachHang = $datcho['sdtKhachHang'];
-        $this->DatCho->TB_id = $datcho['TB_id'];
+        $this->DatCho->sdtKhachHang = $datcho->sdtKhachHang;
+        $this->DatCho->TB_id = $datcho->TB_id;
         $this->DatCho->save();
     }
 }

@@ -17,7 +17,7 @@ class HinhAnhPhongTroRepository
         $path = '';
         foreach($photos as $photo){
             $path = $photo->store('public/img/'.$maPhong);
-            $count = strlen('public/img/'.$maPhong.'/');
+            $count = strlen('public/img/');
             $path = substr($path,$count);
 
             DB::table('HinhAnhPhongTro')->insert(

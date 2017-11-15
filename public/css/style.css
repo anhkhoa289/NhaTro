@@ -16,6 +16,14 @@
 
 /*
 |---------------------------------
+|- for persional page
+|- 11/11/2017              
+|- by anhkhoa289          
+|---------------------------------
+*/
+
+/*
+|---------------------------------
 |- for navigation bar
 |- 04/10/2017              
 |- by anhkhoa289          
@@ -70,6 +78,14 @@ nav.navbar-phongtro .navbar-form .input-group .form-control:-ms-input-placeholde
   transition: background-color .2s ease 0s;
 }
 
+nav.navbar-phongtro .navbar-form .input-group .form-control::-ms-input-placeholder {
+  color: #2d2d2d;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
 nav.navbar-phongtro .navbar-form .input-group .form-control::placeholder {
   color: #2d2d2d;
   -webkit-transition: color .2s ease 0s;
@@ -90,6 +106,16 @@ nav.navbar-phongtro .navbar-form .input-group .form-control:focus::-webkit-input
 
 nav.navbar-phongtro .navbar-form .input-group .form-control:hover:-ms-input-placeholder,
 nav.navbar-phongtro .navbar-form .input-group .form-control:focus:-ms-input-placeholder {
+  color: #1BCA06;
+  font-weight: bolder;
+  -webkit-transition: color .2s ease 0s;
+  transition: color .2s ease 0s;
+  -webkit-transition: background-color .2s ease 0s;
+  transition: background-color .2s ease 0s;
+}
+
+nav.navbar-phongtro .navbar-form .input-group .form-control:hover::-ms-input-placeholder,
+nav.navbar-phongtro .navbar-form .input-group .form-control:focus::-ms-input-placeholder {
   color: #1BCA06;
   font-weight: bolder;
   -webkit-transition: color .2s ease 0s;
@@ -210,12 +236,19 @@ nav.navbar-phongtro .dropdown-menu > li > a:hover {
   margin: auto;
 }
 
+.carousel.slide .carousel-inner .item.active {
+  max-height: 41rem;
+}
+
 .carousel.slide .carousel-control {
   background: transparent;
 }
 
-table tr.not-read {
-  font-weight: bolder;
+div.img-nhatro > div {
+  height: 14rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /*
@@ -268,13 +301,6 @@ table tr.not-read {
 
 .homepage .panel .panel-body a.bordering div.row:hover {
   background-color: #edf4e8;
-}
-
-.homepage .panel .panel-body a.bordering div.row > .img-nhatro > div {
-  height: 14rem;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .homepage .panel .panel-body a.bordering div.row > .img-ctv {
@@ -359,6 +385,142 @@ table tr.not-read {
   background-color: #1bca06;
   padding: 2px 5px;
   border-radius: 20px;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul {
+  list-style: none;
+  padding: 0;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:hover,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:focus,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:hover,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:focus {
+  color: inherit;
+  text-decoration: none;
+  padding: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a .img-nhatro,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:hover .img-nhatro,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:focus .img-nhatro,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a .img-nhatro,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:hover .img-nhatro,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:focus .img-nhatro {
+  display: inline-block;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a .img-nhatro > div,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:hover .img-nhatro > div,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:focus .img-nhatro > div,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a .img-nhatro > div,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:hover .img-nhatro > div,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:focus .img-nhatro > div {
+  width: 7rem;
+  height: 7rem;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a > .noi-dung,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:hover > .noi-dung,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:focus > .noi-dung,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a > .noi-dung,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:hover > .noi-dung,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:focus > .noi-dung {
+  margin-left: 2rem;
+  text-align: justify;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a > .noi-dung > .title,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:hover > .noi-dung > .title,
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:focus > .noi-dung > .title,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a > .noi-dung > .title,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:hover > .noi-dung > .title,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:focus > .noi-dung > .title {
+  font-weight: bolder;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li > a:hover,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li > a:hover {
+  background: #E6E5E5;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul > li.the-end,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul > li.the-end {
+  height: 7rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.account .trang-ca-nhan .trang-chinh .chi-tiet-thong-bao > .datcho > .thong-tin {
+  padding: 1rem;
+}
+
+.account .trang-ca-nhan .trang-chinh .chi-tiet-thong-bao > .datcho > .thong-tin span,
+.account .trang-ca-nhan .trang-chinh .chi-tiet-thong-bao > .datcho > .thong-tin .ten-phong {
+  font-weight: bolder;
+}
+
+.account .trang-ca-nhan .trang-chinh .chi-tiet-thong-bao > .datcho > .thong-tin .noidung {
+  white-space: pre-line;
+}
+
+.account .trang-ca-nhan .trang-chinh .chi-tiet-thong-bao > .datcho > .thong-tin .chua-duyet {
+  color: red;
+}
+
+.account .trang-ca-nhan .trang-chinh .chi-tiet-thong-bao > .datcho > .thong-tin .hien-so {
+  color: #1BCA06;
+  background-color: #FFF;
+}
+
+.account .trang-ca-nhan .trang-chinh .chi-tiet-thong-bao > .datcho > .thong-tin .hinh-anh {
+  position: absolute;
+  right: 1rem;
+}
+
+.account .trang-ca-nhan .trang-chinh .chi-tiet-thong-bao > .datcho > .thong-tin .hinh-anh > img {
+  max-width: 38rem;
+  max-height: 38rem;
+}
+
+.account .trang-ca-nhan .trang-chinh .danh-sach-dat-cho td {
+  vertical-align: middle;
+}
+
+.account .trang-ca-nhan .trang-chinh .danh-sach-dat-cho td > div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.account .trang-ca-nhan .trang-chinh .danh-sach-dat-cho td > div .img-nhatro {
+  display: inline-block;
+}
+
+.account .trang-ca-nhan .trang-chinh .danh-sach-dat-cho td > div .img-nhatro > div {
+  width: 7rem;
+  height: 7rem;
+}
+
+.account .trang-ca-nhan .trang-chinh .danh-sach-dat-cho td > div > .noi-dung {
+  margin-left: 2rem;
+  text-align: justify;
+}
+
+.account .trang-ca-nhan .trang-chinh .danh-sach-dat-cho td > div > .noi-dung > .title {
+  font-weight: bolder;
 }
 
 /*

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class KhachHangController extends Controller
 {
@@ -47,19 +48,33 @@ class KhachHangController extends Controller
     public function maXacNhan(Request $req) {
         $ma1 = strtoupper($req->maXacNhan);
         $ma2 = strtoupper($req->session()->get('maXacNhan'));
-        if($ma1 === $ma2){
-            $datcho = [
-                'loaiTB' => 1, 
-                'maPhong' => $req->maPhong, 
+
+        // kiểm tra mã xác nhận
+        if($ma1 === $ma2) {
+            $datcho = (object)[
+                'tenTB' => 'DatCho', 
+                'maLienKet' => $req->maPhong, 
                 'TK_id' => $req->chuNha, 
                 'sdtKhachHang' => $req->sdtKhachHang
             ];
+            
+            // kiểm tra thông báo đặt chỗ gần đây chưa đọc
+            $ThongBao = app('ThongBaoRepository')->getThongBaoDatCho($req->maPhong);
 
             DB::beginTransaction();
-            $datcho['TB_id'] = app('ThongBaoRepository')->insert($datcho);
+
+            // Nếu có thì dùng lại TB_id cũ, không thì tạo thông báo mới
+            if($ThongBao !== null)
+                $datcho->TB_id = $ThongBao->id;
+            else {
+                $datcho->TB_id = app('ThongBaoRepository')->insert($datcho);
+                app('TaiKhoanRepository')->updateSlgThongBao($req->chuNha, 1);
+            }
             app('DatChoRepository')->insert($datcho);
-            app('KhachHangRepository')->updateTinhTrang($req->sdtKhachHang);
+            app('KhachHangRepository')->updateTinhTrang($req->sdtKhachHang,1);
             app('PhongTroRepository')->increaseLuotDatCho($req->maPhong);
+            app('TaiKhoanRepository')->updateSlgDatCho($req->chuNha, 1);
+
             DB::commit();
             return response('success',200)->header('Content-Type', 'text/plain');
         }

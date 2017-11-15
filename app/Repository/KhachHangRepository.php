@@ -32,9 +32,9 @@ class KhachHangRepository
         $this->KhachHang->save();
         return $this->KhachHang->maXacNhan;
     }
-    public function updateTinhTrang($sdt) {
+    public function updateTinhTrang($sdt, $tinhTrang) {
         $this->KhachHang = $this->get($sdt);
-        $this->KhachHang->tinhTrangDatCho = 1;
+        $this->KhachHang->tinhTrangDatCho = $tinhTrang;
         $this->KhachHang->save();
     }
 }

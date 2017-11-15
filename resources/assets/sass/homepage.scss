@@ -43,14 +43,7 @@ $ctv-color: #E65100;
                     &:hover{
                         background-color: #edf4e8;
                     }
-                    >.img-nhatro {
-                        >div {
-                            height: 14rem; //overflow: hidden;
-                            background-size: cover;
-                            background-position: center;
-                            background-repeat: no-repeat;
-                        }
-                    }
+                    
                     >.img-ctv {
                         height: max-content;
                         span {

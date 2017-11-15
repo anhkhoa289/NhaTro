@@ -13,15 +13,16 @@ class PhongTroRepository
     {
         $this->PhongTro = $PhongTro;
     }
-    public function add($obj, $chuNha, $photo)
+    public function add($obj, $chuNha)
     {
         $this->PhongTro = RemoveToken::remove($obj->all(), PhongTro::class);
         $this->PhongTro->chuNha = $chuNha;
+        $this->PhongTro->capNhatLuc = Carbon::now();
         $this->PhongTro->save();
         return $this->PhongTro->maPhong;
     }
     public function updatePhoto($maPhong,$path){
-        $this->PhongTro::findOrFail($maPhong);
+        $this->PhongTro = $this->PhongTro::find($maPhong);
         $this->PhongTro->pathImg = $path;
         $this->PhongTro->save();
     }
@@ -45,6 +46,11 @@ class PhongTroRepository
         $this->PhongTro = PhongTro::findOrFail($maPhong);
         $this->PhongTro->luotDatCho = $this->PhongTro->luotDatCho + 1;
         $this->PhongTro->datChoLuc = Carbon::now();
+        $this->PhongTro->save();
+    }
+    public function decreaseLuotDatCho($maPhong) {
+        $this->PhongTro = PhongTro::findOrFail($maPhong);
+        $this->PhongTro->luotDatCho = $this->PhongTro->luotDatCho - 1;
         $this->PhongTro->save();
     }
 }

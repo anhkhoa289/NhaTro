@@ -14,23 +14,16 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap-fileinput/fileinput.css')}}">
     {{--  Mice  --}}
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    {{--  jquery, Bootstrap.js and Mice  --}}
+
+    {{--  jquery, Bootstrap.js, bootstrap-validator, popper.js, bootstrap-datepicker and moment  --}}
     <script type="text/javascript" src="{{asset('js/app.js')}}"></script>
-    {{--  datepicker  --}}
-    <script type="text/javascript" src="{{asset('js/bootstrap-datepicker.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/moment-with-locales.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/bootstrap-datepicker.vi.min.js')}}"></script>
-    <script type="text/javascript" src="{{asset('js/validator.js')}}"></script>
     {{--  file input  --}}
     <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/plugins/piexif.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/plugins/sortable.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/plugins/purify.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/fileinput.js')}}"></script>
     <script type="text/javascript" src="{{asset('js/bootstrap-fileinput/locales/vi.js')}}"></script>
-    {{--  Popper.js  --}}
-    <script type="text/javascript" src="{{asset('js/popper.js')}}"></script>
-
-    {{--  <script type="text/javascript" src="{{asset('js/bootstrap-datetimepicker.js')}}"></script>  --}}
+    
     <title>Nhà Trọ | @yield('title')</title>
 </head>
 <body>
@@ -57,7 +50,7 @@
                 </form>
                 <ul class="nav navbar-nav">
                     <li class="{{Request::is('/')?'active':''}}"><a href="{{ URL::to('/')}}">Trang Chủ</a></li>
-                    <li class="{{Request::is('Phong/*')?'active':''}}"><a href="#">Phòng xem gần đây</a></li>
+                    {{--  <li class="{{Request::is('Phong/*')?'active':''}}"><a href="#">Phòng xem gần đây</a></li>  --}}
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -74,7 +67,7 @@
                         <span class="glyphicon glyphicon-plus"></span> Thêm phòng trọ
                     </a></li>
                     <li class="user">
-                        <a href="{{ URL::to('Account/NguoiDung/'.Session::get('TaiKhoan.id'))}}">
+                        <a href="{{ URL::to('Account/NguoiDung')}}">
                             <img src="{{asset('storage/img/'.Session::get('TaiKhoan.avatar'))}}" alt="{{Session::get('TaiKhoan.ten')}}"> {{Session::get('TaiKhoan.ten')}}
                         </a>
                     </li>
@@ -92,6 +85,6 @@
         @yield('main')
     </div>
 
-
+    <script src="{{asset('js/react/myApp.js')}}"></script>
 </body>
 </html>

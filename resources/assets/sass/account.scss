@@ -58,6 +58,56 @@
                     }
                 }
             }
-        }
+
+            // Trang thông báo
+            .thong-bao, .phong-cua-toi{
+                ul {
+                    list-style: none;
+                    padding: 0;
+                    >li {
+                        >a, >a:hover, >a:focus {
+                            color: inherit;
+                            text-decoration: none;
+                            padding: 2rem;
+                            @include trangcanhan-img-noidung;
+                        }
+                        >a:hover {
+                            background: $fou-back-color;
+                        }
+
+                        &.the-end {
+                            height: 7rem;
+                            text-align: center;
+                            font-size: 2.5rem;
+                        }
+                    }
+                }
+            }
+            .chi-tiet-thong-bao {
+                >.datcho {
+                    >.thong-tin {
+                        @include xem-thong-tin-phong-tro;
+                        padding: 1rem;
+                        .hinh-anh {
+                            position: absolute;
+                            right: 1rem;
+                            >img {
+                                max-width: 38rem;
+                                max-height: 38rem;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .danh-sach-dat-cho {
+                td {
+                    vertical-align: middle;
+                    >div {
+                        @include trangcanhan-img-noidung;
+                    }
+                }
+            }
+        }// end Trang Chính
     }
 }

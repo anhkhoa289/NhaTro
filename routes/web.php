@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+
 /*
 |---------------------------------------------------------------------------------------------------------
 |- 04/10/2017              
@@ -27,6 +30,12 @@ Route::post('test/val', 'TestController@testVal');
 Route::get('test3/{str}','TestController@encrypt');
 Route::get('mongo','TestController@mongo');
 Route::post('getQuan','TestController@getQuan');
+Route::get('testreact', function() {
+    return view('testReact');
+});
+Route::get('testreact2', function() {
+    return view('testReact');
+});
 ///////////////////////////////////////////////////////////////////
 
 /*
@@ -56,8 +65,14 @@ Route::group(['prefix' => 'Account'], function () {
     Route::post('DangNhap','AccountController@dangNhap');
 });
 Route::group(['prefix' => 'Account', 'middleware' => 'kiemTraDangNhap'], function () {
-    Route::get('NguoiDung/{id}','TrangCaNhanController@nguoiDung');
+    Route::get('NguoiDung','TrangCaNhanController@nguoiDung');
     Route::get('DanhSachDatCho','TrangCaNhanController@danhSachDatCho');
+
+    Route::get('ThongBao','TrangCaNhanController@thongBao');
+    Route::get('UpdateThongBao','TrangCaNhanController@updateThongBao');// AJAX
+    Route::get('ThongBaoChiTiet/{loaiTB}/{TB_id}','TrangCaNhanController@thongBaoChiTiet');
+
+    Route::get('PhongCuaToi','TrangCaNhanController@phongCuaToi');
     Route::view('CapNhatAvatar', 'Account.updateAvatar'); // chưa có
 });
 /*
@@ -85,5 +100,18 @@ Route::group(['prefix' => 'KhachHang'], function () {
     Route::get('CheckSDT','KhachHangController@checkSDT');
     Route::post('DangKy','KhachHangController@dangKyDatCho');
     Route::post('XacNhan','KhachHangController@maXacNhan');
+    
+});
+
+
+/*
+|---------------------------------------------------------------------------------------------------------
+|- Admin
+|---------------------------------------------------------------------------------------------------------
+*/
+Route::group(['prefix' => 'Admin', 'middleware' => 'kiemTraAdmin'], function () {
+    Route::get('CapNhatTaiKhoan','AdminController@viewCapNhatTK');
+    Route::post('CapNhatLTK','AdminController@capNhatLTK');
+    Route::get('KiemTra','AdminController@kiemTra'); // AJAX
     
 });

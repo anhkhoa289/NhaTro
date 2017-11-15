@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ThemPhongTroRequest;
 
 class PhongController extends Controller
@@ -15,12 +16,56 @@ class PhongController extends Controller
 
     public function themPhong(ThemPhongTroRequest $req){
         //$req->chuNha = $req->session()->get('TaiKhoan.id');
-        $maPhong = app('PhongTroRepository')->add($req, $req->session()->get('TaiKhoan.id'),$req->photo);
 
+        
+        DB::beginTransaction();
+        // Thêm Phòng trọ vào CSDL
+        $maPhong = app('PhongTroRepository')->add($req, $req->session()->get('TaiKhoan.id'));
+
+        // Thêm hình ảnh vào CSDL
         if($req->photo !== null){
             $path = app('HinhAnhPhongTroRepository')->add($req->photo, $maPhong);
             app('PhongTroRepository')->updatePhoto($maPhong,$path);
         }
+        else {
+            $path = 'defaultImg.jpg';
+            app('PhongTroRepository')->updatePhoto($maPhong,$path);
+        }
+        // Tăng số lượng phòng trọ sở hữu
+        $TaiKhoan = app('TaiKhoanRepository')->updateSlgPhongTroSoHuu($req->session()->get('TaiKhoan.id'), 1);
+
+        // Cập nhật lại Session của người dùng
+        $req->session()->put('TaiKhoan', $TaiKhoan);
+
+        // Tìm CTV Phù hợp
+        $CTV = app('TaiKhoanRepository')->getCTV($req->tinh, $req->quan, $req->phuong);
+        if($CTV->count() == 0) {
+            $CTV = app('TaiKhoanRepository')->getCTV($req->tinh, $req->quan);
+            if($CTV->count() == 0) {
+                $CTV = app('TaiKhoanRepository')->getCTV($req->tinh);
+                if($CTV->count() == 0) {
+                    $CTV = app('TaiKhoanRepository')->getCTV();
+                }
+            }
+        }
+        $min = app('TaiKhoanRepository')->getMin($CTV);
+        $CTVduyet = null;
+        foreach($CTV as $val)
+            if($val->slgDuyet <= $min)
+                $CTVduyet = $val->id;
+
+        // Thông báo cho CTV
+        $thongBao = (object)[
+            'tenTB' => 'PhanCongDuyet',
+            'TK_id' => $CTVduyet,
+            'maLienKet' => $maPhong
+        ];
+        app('ThongBaoRepository')->insert($thongBao);
+        app('TaiKhoanRepository')->updateSlgThongBao($CTVduyet, 1);
+        app('TaiKhoanRepository')->updateSlgDuyet($CTVduyet, 1);
+
+        DB::commit();
+            
         return redirect('Phong/'.$maPhong);
     }
     public function xemPhong($maPhong){

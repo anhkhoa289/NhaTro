@@ -13,11 +13,8 @@ let mix = require('laravel-mix');
 
 mix.sass('resources/assets/sass/app.scss', 'public/css')
 .sass('resources/assets/sass/style.scss', 'public/css')
-.js('resources/assets/js/app.js', 'public/js')
-.js('node_modules/bootstrap-validator/dist/validator.js', 'public/js')
-.copy('node_modules/jquery/dist/jquery.js', 'public/js')
-.copy('node_modules/moment/min/moment-with-locales.js', 'public/js')
-.copy('resources/assets/js/bootstrap-datetimepicker.js', 'public/js')
+.copy('node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.css', 'public/css/bootstrap-datepicker3.standalone.css')
+//.copy('node_modules/moment/min/moment-with-locales.js', 'public/js')
 
 .copy('vendor/kartik-v/bootstrap-fileinput/css/fileinput.css', 'public/css/bootstrap-fileinput')
 .copy('vendor/kartik-v/bootstrap-fileinput/js/plugins/piexif.js', 'public/js/bootstrap-fileinput/plugins')
@@ -25,6 +22,9 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
 .copy('vendor/kartik-v/bootstrap-fileinput/js/plugins/purify.js', 'public/js/bootstrap-fileinput/plugins')
 .copy('vendor/kartik-v/bootstrap-fileinput/js/fileinput.js', 'public/js/bootstrap-fileinput')
 .copy('vendor/kartik-v/bootstrap-fileinput/js/locales/vi.js', 'public/js/bootstrap-fileinput/locales')
-.copy('node_modules/popper.js/dist/popper.js', 'public/js/popper.js');;
+
+//.copy('node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.vi.min.js', 'resources/assets/js/copied/bootstrap-datepicker.vi.min.js')
+.js('resources/assets/js/app.js', 'public/js')
+.react('resources/assets/jsx/myApp.js','public/js/react')
 
 

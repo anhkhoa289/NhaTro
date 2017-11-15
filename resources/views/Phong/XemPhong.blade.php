@@ -9,20 +9,32 @@
                     <div id="HinhAnhPhongTro" class="carousel slide" data-ride="carousel">
                         <!-- Indicators -->
                         <ol class="carousel-indicators">
-                            @for($i = 0; $i<$photos->count(); $i++)
-                                <li data-target="#HinhAnhPhongTro" data-slide-to="{{$i}}" 
-                                    class="{{$i===0 ? 'active':''}}"></li>
-                            @endfor
+                            @if($photos !== null)
+                                @for($i = 0; $i<$photos->count(); $i++)
+                                    <li data-target="#HinhAnhPhongTro" data-slide-to="{{$i}}" 
+                                        class="{{$i===0 ? 'active':''}}"></li>
+                                @endfor
+                            @else
+                                <li data-target="#HinhAnhPhongTro" data-slide-to="0" 
+                                    class="active"></li>
+                            @endif
                         </ol>
 
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner">
-                            @for($i = 0; $i<$photos->count(); $i++)
-                                <div class="item {{$i===0 ? 'active':''}}">
-                                    <img src="{{asset('storage/img/'.$PhongTro->maPhong.'/'.$photos[$i])}}" 
+                            @if($photos !== null)
+                                @for($i = 0; $i<$photos->count(); $i++)
+                                    <div class="item {{$i===0 ? 'active':''}}">
+                                        <img src="{{asset('storage/img/'.$photos[$i])}}" 
+                                            alt="photo">
+                                    </div>
+                                @endfor
+                            @else
+                                <div class="item active">
+                                    <img src="{{asset('storage/img/'.$PhongTro->pathImg)}}" 
                                         alt="photo">
                                 </div>
-                            @endfor
+                            @endif
                         </div>
 
                         <!-- Left and right controls -->
@@ -231,7 +243,7 @@
                     $("#maXacNhan").val(null);
                     thongBao('Đặt chỗ thành công');
                 }
-                else {
+                else { 
                     $('#thongbaoxacnhan').text('Mã xác nhận không chính xác');
                     $('#thongbaoxacnhan').parent().addClass('has-error has-danger');
                 }

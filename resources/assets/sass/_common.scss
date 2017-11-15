@@ -144,6 +144,9 @@ nav.navbar-phongtro {
                 img {
                     margin: auto;
                 }
+                &.active {
+                    max-height: 41rem;
+                }
             }
         }
         .carousel-control {
@@ -151,8 +154,11 @@ nav.navbar-phongtro {
         }
     }
 }
-table {
-    tr.not-read {
-        font-weight: bolder;
+div.img-nhatro { // style="background-image:url()
+    >div {
+        height: 14rem; //overflow: hidden;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
     }
 }

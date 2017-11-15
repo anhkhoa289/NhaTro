@@ -23,8 +23,8 @@
                         
                         <div class="row">
                             <div class="col-md-4 col-xs-12 img-nhatro">
-                                <div class="col-md-12"
-                                style="background-image:url({{asset('storage/img/'.$item->maPhong.'/'.$item->pathImg)}});">
+                                <div
+                                style="background-image:url({{asset('storage/img/'.$item->pathImg)}});">
                                 </div>
                             </div>
                             <div class="col-md-8 col-xs-12">{{$item->tenPhong}}</div>

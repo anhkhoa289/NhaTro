@@ -5,6 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
+use App\Repository\LoaiTaiKhoanRepository;
+use App\Repository\LoaiThongBaoRepository;
 use App\Repository\TaiKhoanRepository;
 use App\Repository\HinhAnhPhongTroRepository;
 use App\Repository\PhongTroRepository;
@@ -12,6 +14,8 @@ use App\Repository\DiaPhuongRepository;
 use App\Repository\KhachHangRepository;
 use App\Repository\ThongBaoRepository;
 use App\Repository\DatChoRepository;
+use App\Model\LoaiTaiKhoan;
+use App\Model\LoaiThongBao;
 use App\Model\TaiKhoan;
 use App\Model\HinhAnhPhongTro;
 use App\Model\PhongTro;
@@ -38,6 +42,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind('LoaiTaiKhoanRepository', function(){
+            $ltk = new LoaiTaiKhoan();
+            return new LoaiTaiKhoanRepository($ltk);
+        });
         $this->app->bind('TaiKhoanRepository', function(){
             $tk = new TaiKhoan();
             return new TaiKhoanRepository($tk);
@@ -53,6 +61,10 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('KhachHangRepository',function(){
             $kh = new KhachHang();
             return new KhachHangRepository($kh);
+        });
+        $this->app->bind('LoaiThongBaoRepository', function(){
+            $ltb = new LoaiThongBao();
+            return new LoaiThongBaoRepository($ltb);
         });
         $this->app->bind('ThongBaoRepository',function(){
             $tb = new ThongBao();

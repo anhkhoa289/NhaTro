@@ -26,7 +26,8 @@ class PhongTroSeeder extends Seeder
             'chuNha' => 3,
             'tinhTrangDuyet' => 1,
             'CTVduyet' => 2,
-            'pathImg' => 'gIrBZaIbE80uYSn2clhI8VWvkrOTq9aU5BJ8hvwc.jpeg',
+            'capNhatLuc' => '2017-10-12 16:14:10',
+            'pathImg' => '1/gIrBZaIbE80uYSn2clhI8VWvkrOTq9aU5BJ8hvwc.jpeg',
             'created_at' => '2017-10-12 16:14:10',
             'updated_at' => '2017-10-12 16:14:10'
         ]);
@@ -45,7 +46,8 @@ class PhongTroSeeder extends Seeder
             'chuNha' => 3,
             'tinhTrangDuyet' => 1,
             'CTVduyet' => 1,
-            'pathImg' => 'E2TJPvLOyQoI7PwMKtsmjyNs9pRnbLp5JCOWL2yW.jpeg',
+            'capNhatLuc' => '2017-10-12 16:14:10',
+            'pathImg' => '2/E2TJPvLOyQoI7PwMKtsmjyNs9pRnbLp5JCOWL2yW.jpeg',
             'created_at' => '2017-10-12 16:14:10',
             'updated_at' => '2017-10-12 16:14:10'
         ]);
@@ -64,7 +66,8 @@ class PhongTroSeeder extends Seeder
             'chuNha' => 3,
             'tinhTrangDuyet' => 1,
             'CTVduyet' => 1,
-            'pathImg' => 'Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpeg',
+            'capNhatLuc' => '2017-10-12 16:34:15',
+            'pathImg' => '3/Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpeg',
             'created_at' => '2017-10-12 16:34:15',
             'updated_at' => '2017-10-12 16:34:15'
         ]);

@@ -21,3 +21,9 @@ const app = new Vue({
     el: '#app'
 });
 */
+
+require("bootstrap-validator");
+require("popper.js");
+require("bootstrap-datepicker");
+require("moment");
+require("./copied/bootstrap-datepicker.vi.min")
