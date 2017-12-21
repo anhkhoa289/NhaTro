@@ -54,7 +54,7 @@ class DiaPhuong extends React.Component{
         this.getQuan('Hà Nội')
     }
     getTinh() {
-        axios.post(location.origin + '/getTinhs',{
+        axios.post(location.origin + '/getTinhs', {
             _token: $('meta[name="csrf-token"]').attr('content')
         }).then((res) => {
             this.setState({tinh: res.data})

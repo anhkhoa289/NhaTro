@@ -597,6 +597,16 @@ div.img-nhatro > div {
   white-space: nowrap;
 }
 
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div > div.action a.trash,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div > div.action a.trash {
+  color: #D94A38;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div > div.action a.trash:hover,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div > div.action a.trash:hover {
+  color: #89372E;
+}
+
 .account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div > div.action span,
 .account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div > div.action span {
   font-size: 3rem;

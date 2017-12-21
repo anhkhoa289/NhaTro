@@ -34,8 +34,8 @@ mix
 
 
 // Front End
-.react('resources/assets/front/PhongCuaToi.js','public/js/app')
 .react('resources/assets/front/XemPhong.jsx','public/js/app')
 */
+.react('resources/assets/front/PhongCuaToi.js','public/js/app')
 .react('resources/assets/front/TrangChu.jsx','public/js/app')
 

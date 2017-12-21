@@ -1,0 +1,309 @@
+[
+    { 
+        "tenTinh":"Hà Nội",
+        "maTinh":"01", 
+        "quan": [
+            {"maQuan": "01", "tenQuan": "Quận Ba Đình", "phuong": [
+                {"maPhuong": "01", "tenPhuong": "Phường Cống Vị", "madp": "01-01-01"},
+                {"maPhuong": "02", "tenPhuong": "Phường Điện Biên", "madp": "01-01-02"},
+                {"maPhuong": "03", "tenPhuong": "Phường Đội Cấn", "madp": "01-01-03"},
+                {"maPhuong": "04", "tenPhuong": "Phường Giảng Võ", "madp": "01-01-04"},
+                {"maPhuong": "05", "tenPhuong": "Phường Kim Mã", "madp": "01-01-05"},
+                {"maPhuong": "06", "tenPhuong": "Phường Liễu Giai", "madp": "01-01-06"},
+                {"maPhuong": "07", "tenPhuong": "Phường Ngọc Hà", "madp": "01-01-07"},
+                {"maPhuong": "08", "tenPhuong": "Phường Ngọc Khánh", "madp": "01-01-08"},
+                {"maPhuong": "09", "tenPhuong": "Phường Nguyễn Trung Trực", "madp": "01-01-09"},
+                {"maPhuong": "10", "tenPhuong": "Phường Phúc Xá", "madp": "01-01-10"},
+                {"maPhuong": "11", "tenPhuong": "Phường Quán Thánh", "madp": "01-01-11"},
+                {"maPhuong": "12", "tenPhuong": "Phường Thành Công", "madp": "01-01-12"},
+                {"maPhuong": "13", "tenPhuong": "Phường Trúc Bạch", "madp": "01-01-13"}
+            ]},
+            {"maQuan": "02", "tenQuan": "Quận Hoàn Kiếm", "phuong": [
+                {"maPhuong": "01", "tenPhuong": "Phường Chương Dương Độ", "madp": "01-02-01"},
+                {"maPhuong": "02", "tenPhuong": "Phường Cửa Đông", "madp": "01-02-02"},
+                {"maPhuong": "03", "tenPhuong": "Phường Cửa Nam", "madp": "01-02-03"},
+                {"maPhuong": "04", "tenPhuong": "Phường Đồng Xuân", "madp": "01-02-04"},
+                {"maPhuong": "05", "tenPhuong": "Phường Hàng Bông", "madp": "01-02-05"},
+                {"maPhuong": "06", "tenPhuong": "Phường Hàng Gai", "madp": "01-02-06"},
+                {"maPhuong": "07", "tenPhuong": "Phường Hàng Bạc", "madp": "01-02-07"},
+                {"maPhuong": "08", "tenPhuong": "Phường Hàng Bài", "madp": "01-02-08"},
+                {"maPhuong": "09", "tenPhuong": "Phường Hàng Bồ", "madp": "01-02-09"},
+                {"maPhuong": "10", "tenPhuong": "Phường Hàng Buồm", "madp": "01-02-10"},
+                {"maPhuong": "11", "tenPhuong": "Phường Hàng Đào", "madp": "01-02-11"},
+                {"maPhuong": "12", "tenPhuong": "Phường Hàng Mã", "madp": "01-02-12"},
+                {"maPhuong": "13", "tenPhuong": "Phường Hàng Trống", "madp": "01-02-13"},
+                {"maPhuong": "14", "tenPhuong": "Phường Lý Thái Tổ", "madp": "01-02-14"},
+                {"maPhuong": "15", "tenPhuong": "Phường Phan Chu Trinh", "madp": "01-02-15"},
+                {"maPhuong": "16", "tenPhuong": "Phường Phúc Tân", "madp": "01-02-16"},
+                {"maPhuong": "17", "tenPhuong": "Phường Tràng Tiền", "madp": "01-02-17"},
+                {"maPhuong": "18", "tenPhuong": "Phường Trần Hưng Đạo", "madp": "01-02-18"}
+            ]},
+            {"maQuan": "03", "tenQuan": "Quận Hai Bà Trưng", "phuong": [
+                {"maPhuong": "01", "tenPhuong": "Phường Bạch Đằng", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Bách Khoa", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Bạch Mai", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Bùi Thị Xuân", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Cầu Dền", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Đống Mác", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Đồng Nhân", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Đồng Tâm", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Lê Đại Hành", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Minh Khai", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Ngô Thì Nhậm", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Nguyễn Du", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Phạm Đình Hỗ", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Phố Huế", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Quỳnh Lôi", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Quỳnh Mai", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Thanh Lương", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Thanh Nhàn", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Trương Định", "madp": "01-03-01"},
+                {"maPhuong": "01", "tenPhuong": "Phường Vĩnh Tuy", "madp": "01-03-01"}
+            ]}
+        ]
+    },
+    {
+        "tenTinh": "Sài Gòn",
+        "maTinh": "02",
+        "quan":[
+            {"maQuan": "01", "tenQuan": "Quận 1", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "02", "tenQuan": "Quận 2", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "03", "tenQuan": "Quận 3", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "04", "tenQuan": "Quận 4", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "05", "tenQuan": "Quận 5", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "06", "tenQuan": "Quận 6", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "07", "tenQuan": "Quận 7", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "08", "tenQuan": "Quận 8", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "09", "tenQuan": "Quận 9", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "10", "tenQuan": "Quận 10", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "11", "tenQuan": "Quận 11", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "12", "tenQuan": "Quận 12", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "13", "tenQuan": "Quận Gò Vấp", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "14", "tenQuan": "Quận Tân Bình", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "15", "tenQuan": "Quận Tân Phú", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "16", "tenQuan": "Quận Bình Thạnh", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "17", "tenQuan": "Quận Phú Nhuận", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "18", "tenQuan": "Quận Thủ Đức", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "19", "tenQuan": "Quận Bình Tân", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "Phường An Lạc", "madp": "02-19-01"},
+                {"maPhuong": "02", "tenPhuong": "Phường An Lạc A", "madp": "02-19-02"},
+                {"maPhuong": "03", "tenPhuong": "Phường Bình Hưng Hòa", "madp": "02-19-03"},
+                {"maPhuong": "04", "tenPhuong": "Phường Bình Hưng Hòa A", "madp": "02-19-04"},
+                {"maPhuong": "05", "tenPhuong": "Phường Bình Hưng Hòa B", "madp": "02-19-05"},
+                {"maPhuong": "06", "tenPhuong": "Phường Bình Trị Đông", "madp": "02-19-06"},
+                {"maPhuong": "07", "tenPhuong": "Phường Bình Trị Đông A", "madp": "02-19-07"},
+                {"maPhuong": "08", "tenPhuong": "Phường Bình Trị Đông B", "madp": "02-19-08"},
+                {"maPhuong": "09", "tenPhuong": "Phường Tân Tạo", "madp": "02-19-09"},
+                {"maPhuong": "10", "tenPhuong": "Phường Tân Tạo A", "madp": "02-19-10"}
+            ]},
+            {"maQuan": "20", "tenQuan": "Huyện Bình Chánh", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "21", "tenQuan": "Huyện Củ Chi", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "22", "tenQuan": "Huyện Hóc Môn", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "Xã Bà Điểm", "madp": "02-22-01"},
+                {"maPhuong": "02", "tenPhuong": "Xã Đông Thạnh", "madp": "02-22-02"},
+                {"maPhuong": "03", "tenPhuong": "Xã Nhị Bình", "madp": "02-22-03"},
+                {"maPhuong": "04", "tenPhuong": "Xã Tân Hiệp", "madp": "02-22-04"},
+                {"maPhuong": "05", "tenPhuong": "Xã Tân Thới Nhì", "madp": "02-22-05"},
+                {"maPhuong": "06", "tenPhuong": "Xã Tân Xuân", "madp": "02-22-06"},
+                {"maPhuong": "07", "tenPhuong": "Xã Thới Tam Thôn", "madp": "02-22-07"},
+                {"maPhuong": "08", "tenPhuong": "Xã Trung Chánh", "madp": "02-22-08"},
+                {"maPhuong": "09", "tenPhuong": "Xã Xuân Thới Đông", "madp": "02-22-09"},
+                {"maPhuong": "10", "tenPhuong": "Xã Xuân Thới Sơn", "madp": "02-22-10"},
+                {"maPhuong": "11", "tenPhuong": "Xã Xuân Thới Thượng", "madp": "02-22-11"}
+            ]},
+            {"maQuan": "23", "tenQuan": "Huyện Nhà Bè", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "Xã Hiệp Phước", "madp": "02-23-01"},
+                {"maPhuong": "02", "tenPhuong": "Xã Long Thới", "madp": "02-23-02"},
+                {"maPhuong": "03", "tenPhuong": "Thị Trấn Nhà Bè", "madp": "02-23-03"},
+                {"maPhuong": "04", "tenPhuong": "Xã Nhơn Đức", "madp": "02-23-04"},
+                {"maPhuong": "05", "tenPhuong": "Xã Phú Xuân", "madp": "02-23-05"},
+                {"maPhuong": "06", "tenPhuong": "Xã Phước Kiển", "madp": "02-23-06"},
+                {"maPhuong": "07", "tenPhuong": "Xã Phước Lộc", "madp": "02-23-07"}
+            ]},
+            {"maQuan": "24", "tenQuan": "Huyện Cần Giờ", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "Xã An Thới Đông", "madp": "02-24-01"},
+                {"maPhuong": "02", "tenPhuong": "Xã Bình Khánh", "madp": "02-24-02"},
+                {"maPhuong": "03", "tenPhuong": "Thị Trấn Cần Thạnh", "madp": "02-24-03"},
+                {"maPhuong": "04", "tenPhuong": "Xã Long Hòa", "madp": "02-24-04"},
+                {"maPhuong": "05", "tenPhuong": "Xã Lý Nhơn", "madp": "02-24-05"},
+                {"maPhuong": "06", "tenPhuong": "Xã Tam Thôn Hiệp", "madp": "02-24-06"},
+                {"maPhuong": "07", "tenPhuong": "Xã Thạnh An", "madp": "02-24-07"}
+            ]}
+        ]
+    },
+    {
+        "tenTinh": "TP Hải Phòng",
+        "maTinh": "03",
+        "quan":[
+            {"maQuan": "01", "tenQuan": "Quận Hông Bàng", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-01-01"}
+            ]},
+            {"maQuan": "02", "tenQuan": "Quận Lê Chân", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-02-01"},
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "03-02-ZZ"}
+            ]},
+            {"maQuan": "03", "tenQuan": "Quận Ngô Quyền", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-03-01"}
+            ]},
+            {"maQuan": "04", "tenQuan": "Quận Kiến An", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-04-01"}
+            ]},
+            {"maQuan": "05", "tenQuan": "Quận Hải An", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-05-01"}
+            ]},
+            {"maQuan": "06", "tenQuan": "Quận Đồ Sơn", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-06-01"}
+            ]},
+            {"maQuan": "07", "tenQuan": "Huyện An Lão", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-07-01"}
+            ]},
+            {"maQuan": "08", "tenQuan": "Huyện Kiến Thụy", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-08-01"}
+            ]},
+            {"maQuan": "09", "tenQuan": "Huyện Thủy Nguyên", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-09-01"}
+            ]},
+            {"maQuan": "10", "tenQuan": "Huyện An Dương", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-10-01"}
+            ]},
+            {"maQuan": "11", "tenQuan": "Huyện Tiên Lãng", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-11-01"}
+            ]},
+            {"maQuan": "12", "tenQuan": "Huyện Vĩnh Bảo", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-12-01"}
+            ]},
+            {"maQuan": "13", "tenQuan": "Huyện Cát Hãi", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-13-01"}
+            ]},
+            {"maQuan": "14", "tenQuan": "Huyện Bạch Long Vĩ", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-14-01"}
+            ]},
+            {"maQuan": "15", "tenQuan": "Quận Dương Kinh", "phuong":[
+                {"maPhuong": "01", "tenPhuong": "tenPhuong", "madp": "03-15-01"}
+            ]}
+        ]
+    },
+    {
+        "tenTinh": "TP Đà Nẵng",
+        "maTinh": "04",
+        "quan":[
+            {
+                "maQuan": "01",
+                "tenQuan": "Quận Hải Châu", 
+                "phuong":[
+                    {"maPhuong": "01", "tenPhuong": "Phường Bình Hiên", "madp": "04-01-01"},
+                    {"maPhuong": "02", "tenPhuong": "Phường Bình Thuận", "madp": "04-01-02"},
+                    {"maPhuong": "03", "tenPhuong": "Phường Hải Châu I", "madp": "04-01-03"},
+                    {"maPhuong": "04", "tenPhuong": "Phường Hải Châu II", "madp": "04-01-04"},
+                    {"maPhuong": "05", "tenPhuong": "Phường Hòa Cường Bắc", "madp": "04-01-05"},
+                    {"maPhuong": "06", "tenPhuong": "Phường Hòa Cường Nam", "madp": "04-01-06"},
+                    {"maPhuong": "07", "tenPhuong": "Phường Hòa Thuận Đông", "madp": "04-01-07"},
+                    {"maPhuong": "08", "tenPhuong": "Phường Hòa Thuận Tây", "madp": "04-01-08"},
+                    {"maPhuong": "09", "tenPhuong": "Phường Nam Dương", "madp": "04-01-09"},
+                    {"maPhuong": "10", "tenPhuong": "Phường Phước Ninh", "madp": "04-01-10"},
+                    {"maPhuong": "11", "tenPhuong": "Phường Thạch Thang", "madp": "04-01-11"},
+                    {"maPhuong": "12", "tenPhuong": "Phường Thạnh Bình", "madp": "04-01-12"},
+                    {"maPhuong": "13", "tenPhuong": "Phường Thuận Phước", "madp": "04-01-13"}
+                ]
+            },
+            {"maQuan": "02", "tenQuan": "Quận Thanh Khê", "phuong":[
+                {"maPhuong":"01", "tenPhuong": "Phường An Khê", "madp": "04-02-01"},
+                {"maPhuong":"02", "tenPhuong": "Phường Chính Gian", "madp": "04-02-02"},
+                {"maPhuong":"03", "tenPhuong": "Phường Hòa Khê", "madp": "04-02-03"},
+                {"maPhuong":"04", "tenPhuong": "Phường Tam Thuận", "madp": "04-02-04"},
+                {"maPhuong":"05", "tenPhuong": "Phường Tân Chính", "madp": "04-02-05"},
+                {"maPhuong":"06", "tenPhuong": "Phường Thạc Gián", "madp": "04-02-06"},
+                {"maPhuong":"07", "tenPhuong": "Phường Thanh Khê Đông", "madp": "04-02-07"},
+                {"maPhuong":"08", "tenPhuong": "Phường Thanh Khê Tây", "madp": "04-02-08"},
+                {"maPhuong":"09", "tenPhuong": "Phường Vĩnh Trung", "madp": "04-02-09"},
+                {"maPhuong":"10", "tenPhuong": "Phường Xuân Hà", "madp": "04-02-10"}
+            ]},
+            {"maQuan":"03", "tenQuan": "Quận Sơn Trà", "phuong": [
+                {"maPhuong":"01", "tenPhuong": "Phường An Hải Bắc", "madp": "04-03-01"},
+                {"maPhuong":"02", "tenPhuong": "Phường An Hải Đông", "madp": "04-03-02"},
+                {"maPhuong":"03", "tenPhuong": "Phường An Hải Tây", "madp": "04-03-03"},
+                {"maPhuong":"04", "tenPhuong": "Phường Mân Thái", "madp": "04-03-04"},
+                {"maPhuong":"05", "tenPhuong": "Phường Nại Hiên Đông", "madp": "04-03-05"},
+                {"maPhuong":"06", "tenPhuong": "Phường Phước Mỹ", "madp": "04-03-06"},
+                {"maPhuong":"07", "tenPhuong": "Phường Thọ Quang", "madp": "04-03-07"}
+            ]},
+            {"maQuan":"04", "tenQuan": "Quận Ngũ Hanh Sơn", "phuong": [
+                {"maPhuong":"01", "tenPhuong": "Phường Hòa Hải", "madp": "04-04-01"},
+                {"maPhuong":"02", "tenPhuong": "Phường Hòa Quý", "madp": "04-04-02"},
+                {"maPhuong":"03", "tenPhuong": "Phường Khuê Mỹ", "madp": "04-04-03"},
+                {"maPhuong":"04", "tenPhuong": "Phường Mỹ An", "madp": "04-04-04"}
+            ]},
+            {"maQuan":"05", "tenQuan": "Quận Liên Chiểu", "phuong": [
+                {"maPhuong":"01", "tenPhuong": "Phường Hòa Hiệp Bắc", "madp": "04-05-01"},
+                {"maPhuong":"02", "tenPhuong": "Phường Hòa Hiệp Nam", "madp": "04-05-02"},
+                {"maPhuong":"03", "tenPhuong": "Phường Hòa Khánh Bắc", "madp": "04-05-03"},
+                {"maPhuong":"04", "tenPhuong": "Phường Hòa Khánh Nam", "madp": "04-05-04"},
+                {"maPhuong":"05", "tenPhuong": "Phường Hòa Minh", "madp": "04-05-05"}
+            ]},
+            {"maQuan":"06", "tenQuan": "Huyện Hòa Vang", "phuong": [
+                {"maPhuong":"01", "tenPhuong": "Xã Hòa Bắc", "madp": "04-06-01"},
+                {"maPhuong":"02", "tenPhuong": "Xã Hòa Châu", "madp": "04-06-02"},
+                {"maPhuong":"03", "tenPhuong": "Xã Hòa Khương", "madp": "04-06-03"},
+                {"maPhuong":"04", "tenPhuong": "Xã Hòa Liên", "madp": "04-06-04"},
+                {"maPhuong":"05", "tenPhuong": "Xã Hòa Nhơn", "madp": "04-06-05"},
+                {"maPhuong":"06", "tenPhuong": "Xã Hòa Ninh", "madp": "04-06-06"},
+                {"maPhuong":"07", "tenPhuong": "Xã Hòa Phong", "madp": "04-06-07"},
+                {"maPhuong":"08", "tenPhuong": "Xã Hòa Phú", "madp": "04-06-08"},
+                {"maPhuong":"09", "tenPhuong": "Xã Hòa Phước", "madp": "04-06-09"},
+                {"maPhuong":"10", "tenPhuong": "Xã Hòa Sơn", "madp": "04-06-10"},
+                {"maPhuong":"11", "tenPhuong": "Xã Hòa Tiến", "madp": "04-06-11"}
+            ]},
+            {"maQuan":"07", "tenQuan": "Quận Cẩm Lệ", "phuong": [
+                {"maPhuong":"01", "tenPhuong": "Phường Hòa An", "madp": "04-07-01"},
+                {"maPhuong":"02", "tenPhuong": "Phường Hòa Phát", "madp": "04-07-02"},
+                {"maPhuong":"03", "tenPhuong": "Phường Hòa Thọ Đông", "madp": "04-07-03"},
+                {"maPhuong":"04", "tenPhuong": "Phường Hòa Thọ Tây", "madp": "04-07-04"},
+                {"maPhuong":"05", "tenPhuong": "Phường Hòa Xuân", "madp": "04-07-05"},
+                {"maPhuong":"06", "tenPhuong": "Phường Khuê Trung", "madp": "04-07-06"}
+            ]},
+            {"maQuan":"08", "tenQuan": "Huyện Hoàng Sa", "phuong": [
+                {"maPhuong":"00", "tenPhuong": null, "madp": "04-08-00"}
+            ]}
+        ]
+    }
+]

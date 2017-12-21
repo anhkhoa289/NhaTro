@@ -90,4 +90,8 @@ class PhongController extends Controller
         app('PhongTroRepository')->updateClicked($request->maPhong);
         return response("hihi",200)->header('Content-Type', 'text/plain');
     }
+
+    public function xoaPhong(Request $request) {
+        
+    }
 }

@@ -1,0 +1,47 @@
+[
+    {
+        "tenTinh": "tenTinh",
+        "maTinh": "XX",
+        "quan":[
+            {
+                "maQuan": "YY",
+                "tenQuan": "tenQuan",
+                "phuong":[
+                    {
+                        "maPhuong": "ZZ",
+                        "tenPhuong": "tenPhuong",
+                        "madp": "XX-YY-ZZ"
+                    }]
+            },
+            { 
+                "maQuan": "YY",
+                "tenQuan": "tenQuan",
+                "phuong":[
+                    {
+                        "maPhuong": "ZZ",
+                        "tenPhuong": "tenPhuong",
+                        "madp": "XX-YY-ZZ"
+                    },
+                    {
+                        "maPhuong": "ZZ",
+                        "tenPhuong": "tenPhuong",
+                        "madp": "XX-YY-ZZ"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "tenTinh": "tenTinh",
+        "maTinh": "XX",
+        "quan":[
+            {"maQuan": "YY", "tenQuan": "tenQuan", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]},
+            {"maQuan": "YY", "tenQuan": "tenQuan", "phuong":[
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"},
+                {"maPhuong": "ZZ", "tenPhuong": "tenPhuong", "madp": "XX-YY-ZZ"}
+            ]}
+        ]
+    }
+]

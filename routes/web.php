@@ -71,12 +71,15 @@ Route::group(['prefix' => 'Account', 'middleware' => 'kiemTraDangNhap'], functio
     Route::get('QuanTri','TrangCaNhanController@quanTri');
 
     Route::get('ThongBao','TrangCaNhanController@thongBao');
-    Route::get('UpdateThongBao','TrangCaNhanController@updateThongBao');// AJAX
+    Route::get('UpdateThongBao','TrangCaNhanController@updateThongBao'); // AJAX
     Route::get('ThongBaoChiTiet/{loaiTB}/{TB_id}','TrangCaNhanController@thongBaoChiTiet');
 
     Route::get('PhongCuaToi','TrangCaNhanController@phongCuaToi');
-    Route::get('render', 'TrangCaNhanController@phongCuaToiRender');// AJAX
-    Route::get('update/{maPhong}','TrangCaNhanController@capNhatPhongTro');
+    Route::get('render', 'TrangCaNhanController@phongCuaToiRender'); // AJAX
+    Route::post('delete','TrangCaNhanController@xoaPhong')
+        ->middleware('kiemTraTinhTrangHoatDongTaiKhoan'); // AJAX
+    Route::get('update/{maPhong}','TrangCaNhanController@capNhatPhongTro')
+        ->middleware('kiemTraTinhTrangHoatDongTaiKhoan');
 
     Route::get('XacThucTaiKhoan','TrangCaNhanController@xacThucTaiKhoan');
     
@@ -88,7 +91,8 @@ Route::group(['prefix' => 'Account', 'middleware' => 'kiemTraDangNhap'], functio
 |---------------------------------------------------------------------------------------------------------
 */
 Route::group(['prefix' => 'Phong', 'middleware' => 'kiemTraDangNhap'], function () {
-    Route::view('ThemPhong', 'Phong.ThemPhong', ['DiaPhuong' => app('DiaPhuong')]);
+    Route::view('ThemPhong', 'Phong.ThemPhong', ['DiaPhuong' => app('DiaPhuong')])
+        ->middleware('kiemTraTinhTrangHoatDongTaiKhoan');
     Route::post('ThemPhong','PhongController@themPhong');
 
 });

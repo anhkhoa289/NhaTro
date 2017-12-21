@@ -9,9 +9,12 @@ export class PhongCuaToi extends React.Component{
             mang : [],
             thongbao: true,
             remaining: true,
-            skip: 0
+            skip: 0,
+            deleteItem : null,
+            deleteIndex: null
         }
         this.getJSON = this.getJSON.bind(this)
+        this.actionDelete = this.actionDelete.bind(this)
     }
     getJSON() {
         let mang = this.state.mang
@@ -32,6 +35,26 @@ export class PhongCuaToi extends React.Component{
             })
 
     }
+    deleteAction(phong, index) {
+        this.setState({deleteItem: phong, deleteIndex: index})
+        $("#xoa-phong").modal('show')
+    }
+    actionDelete() {
+        axios.post(location.origin + '/Account/delete', {
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            maPhong: this.state.deleteItem.maPhong
+        }).then((res) => {
+            if(res.data = 'success') {
+                
+                this.setState((prevState, props) => {
+                    let mang = prevState.mang
+                    mang.splice(prevState.deleteIndex, 1)
+                    return {deleteItem: null, deleteIndex: null, mang: mang}
+                })
+                $("#xoa-phong").modal('hide')
+            }
+        })
+    }
     componentDidMount() {
         window.addEventListener('scroll', () => {
             if(this.state.remaining)
@@ -50,21 +73,54 @@ export class PhongCuaToi extends React.Component{
             xemThem = null
             theEnd = <li className="the-end">Không còn phòng để hiển thị</li>
         }
+
         return (
+            <div>
                 <ul className="new-ul">
                     {
-                        this.state.mang.map((va, inde) =>
-                            <PhongCuaToiItem key={inde} urlEdit={va.urlEdit} tenPhong={va.tenPhong} 
-                            noiDung={va.noiDung} backgroundImg={va.backgroundImg} sdt={va.sdt}/>
+                        this.state.mang.map((va, index) =>
+                            <PhongCuaToiItem key={index} urlEdit={va.urlEdit} tenPhong={va.tenPhong} 
+                            noiDung={va.noiDung} backgroundImg={va.backgroundImg} sdt={va.sdt}
+                            deleteAction={() => this.deleteAction(va, index)}/>
                         )
                     }
                     {xemThem}
                     {theEnd}
                 </ul>
+                
+                <div id="xoa-phong" className="modal fade" role="dialog">
+                    <div className="modal-dialog">
+
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <button type="button" className="close" data-dismiss="modal">&times;</button>
+                                <h4 className="modal-title">Xóa Phòng Trọ</h4>
+                            </div>
+                            <div className="modal-body">
+                                {/* <form data-toggle="validator" role="form">
+                                    <div className="form-group">
+                                        <label htmlFor='maXacNhan'>Nhập mã xác nhận nhận được qua tin nhắn </label>
+                                        <input type='text' id='maXacNhan' name='maXacNhan' className='form-control'
+                                        data-error='không được bỏ trống' required></input>
+                                        <div id="thongbaoxacnhan" className="help-block with-errors" style={{whiteSpace: 'pre-line'}}></div>
+                                    </div>
+                                </form> */}
+                                Bạn có chắc muốn xóa phòng:
+                                <b>{(this.state.deleteItem != null) ? this.state.deleteItem.tenPhong : null}</b>
+                            </div>
+                            <div className="modal-footer">
+                                <button type="button" className='btn btn-success my-btn-success' id="xacNhan"
+                                    onClick={this.actionDelete}>Xác nhận</button>
+                                <button type="button" className="btn btn-default" data-dismiss="modal">Đóng lại</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
         )
     }
 }
-
 
 class PhongCuaToiItem extends React.Component {
     constructor(props) {
@@ -100,8 +156,11 @@ class PhongCuaToiItem extends React.Component {
                             {this.props.noiDung}
                         </div>
                         <div className="action">
-                            <a href={this.props.urlEdit}>
+                            <a href={this.props.urlEdit} className="edit">
                                 <span className="glyphicon glyphicon-edit" data-toggle="tooltip" title="Chỉnh Sửa"></span>
+                            </a>
+                            <a onClick={this.props.deleteAction} className="trash">
+                                <span className="glyphicon glyphicon-trash" data-toggle="tooltip" title="Xóa"></span>
                             </a>
                             {chevron}
                         </div>
@@ -112,11 +171,13 @@ class PhongCuaToiItem extends React.Component {
         )
     }
 }
+
 function Chevron(props) {
     return <span className={"glyphicon glyphicon-chevron-" + props.type} 
             data-toggle="tooltip" title={props.title}
             onClick={props.onClick}></span>
 }
+
 function CompSdt(props) {
     return (
         <div className="table">

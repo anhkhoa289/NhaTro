@@ -89,6 +89,15 @@
                 >div.action {
                     flex-grow: 1;
                     white-space: nowrap;
+                    a.edit {
+
+                    }
+                    a.trash {
+                        color: #D94A38;
+                        &:hover {
+                            color: #89372E;
+                        }
+                    }
                     span {
                         font-size: 3rem;
                         margin: 0 0 0 2rem;

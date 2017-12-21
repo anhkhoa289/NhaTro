@@ -103,4 +103,16 @@ class PhongTroRepository
         )
         ->get();
     }
+
+    public function deletePhongTro($maPhong) {
+        $this->PhongTro = PhongTro::findOrFail($maPhong);
+        $this->PhongTro->tinhTrangSoHuu = 0;
+        $this->PhongTro->save();
+    }
+
+    public function hidePhongTro($maPhong) {
+        $this->PhongTro = PhongTro::findOrFail($maPhong);
+        $this->PhongTro->tinhTrangHienThi = 0;
+        $this->PhongTro->save();
+    }
 }

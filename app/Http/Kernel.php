@@ -59,5 +59,6 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'kiemTraDangNhap' => \App\Http\Middleware\KiemTraDangNhap::class,
         'kiemTraAdmin' => \App\Http\Middleware\KiemTraAdmin::class,
+        'kiemTraTinhTrangHoatDongTaiKhoan' => \App\Http\Middleware\KiemTraTinhTrangHoatDongTaiKhoan::class,
     ];
 }

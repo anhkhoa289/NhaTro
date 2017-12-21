@@ -42,7 +42,7 @@ class ThongBaoRepository
 
     /**
      * Trả về thông báo đặt chỗ gần nhất mà chưa đọc để gộp nhiều đơn đặt chỗ vào 1 thông báo
-     * @param maPhong có cùng mã phòng vs nó
+     * @param maPhong = malienKet của ThongBao
      * Lưu ý khi lấy danh sách thông báo thì sắp xếp thèo thời gian cập nhật thông báo giảm dần
      */
     public function getThongBaoDatCho($maPhong) {

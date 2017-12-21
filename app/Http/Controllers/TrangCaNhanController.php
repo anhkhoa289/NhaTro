@@ -11,13 +11,17 @@ class TrangCaNhanController extends Controller
 {
     public $data;
 
-    // Trang Admin và CTV
+    /**
+     * Trang Admin và CTV
+     */
     public function quanTri(Request $request){
         $this->data['test'] = null;
         return view('TrangCaNhan.TrangQuanTri', $this->data);
     }
 
-    // Thông báo
+    /**
+     * Thông báo
+     */
     public function thongBao(Request $req) {
         $this->data['ThongBao'] = app('ThongBaoRepository')->get10ThongBao($req->session()->get('TaiKhoan.id'));
         return view('TrangCaNhan.ThongBao', $this->data);
@@ -66,7 +70,9 @@ class TrangCaNhanController extends Controller
         }
     }
 
-    // Phòng của tôi
+    /**
+     * Phòng của tôi
+     */
     public function phongCuaToi(Request $req) {
         return view('TrangCaNhan.PhongCuaToi');
     }
@@ -95,5 +101,21 @@ class TrangCaNhanController extends Controller
     public function xacThucTaiKhoan(Request $req) {
         $data['kq'] = $req->session()->get('TaiKhoan');
         return view('Account.KetQuaDangKy', $data);
+    }
+
+    /**
+     * Xóa phòng
+     */
+    public function xoaPhong(Request $req) {
+        app('PhongTroRepository')->deletePhongTro($req->maPhong);
+        return response('success',200)->header('Content-Type', 'text/plain');
+    }
+
+    /**
+     * Ẩn phòng
+     */
+    public function anPhong(Request $req) {
+        app('PhongTroRepository')->hidePhongTro($req->maPhong);
+        return response('success',200)->header('Content-Type', 'text/plain');
     }
 }
