@@ -63,12 +63,6 @@ class TaiKhoanRepository
         }
         return $this->TaiKhoan;
     }
-    public function getPhongTroSoHuu10($id, $skip = 0) {
-        return $this->TaiKhoan::find($id)->ChuPhongTro()->orderBy("capNhatLuc", 'desc')
-            ->skip($skip)
-            ->take(1)
-            ->get();
-    }
     public function updateSlgThongBao($id, $slg) {
         $this->TaiKhoan = $this->TaiKhoan::find($id);
         $this->TaiKhoan->slgThongBao = $this->TaiKhoan->slgThongBao + $slg;
@@ -119,5 +113,21 @@ class TaiKhoanRepository
             if($val->slgDuyet<$min)
                 $min = $val->slgDuyet;
         return $min;
+    }
+
+    public function getPhongTroSoHuu10($id, $skip = 0) {
+        return DB::table('TaiKhoan')
+        ->join('PhongTro', 'TaiKhoan.id', '=', 'PhongTro.chuNha')
+        ->where([['TaiKhoan.id', '=', $id], ['PhongTro.tinhTrangSoHuu', '=', 1]])
+        ->select(
+            'PhongTro.maPhong as maPhong',
+            'PhongTro.tenPhong as tenPhong', 
+            'PhongTro.noiDung as noiDung',
+            'PhongTro.pathImg as backgroundImg'
+        )
+        ->orderBy("capNhatLuc", 'desc')
+        ->skip($skip)
+        ->take(10)
+        ->get();
     }
 }

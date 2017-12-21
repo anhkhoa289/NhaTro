@@ -11,10 +11,10 @@ class TrangCaNhanController extends Controller
 {
     public $data;
 
-    // Trang Tổng Quan
-    public function nguoiDung(Request $request){
+    // Trang Admin và CTV
+    public function quanTri(Request $request){
         $this->data['test'] = null;
-        return view('TrangCaNhan.TrangTongQuan', $this->data);
+        return view('TrangCaNhan.TrangQuanTri', $this->data);
     }
 
     // Thông báo
@@ -27,11 +27,11 @@ class TrangCaNhanController extends Controller
         return response()->json($result);
     }
     public function thongBaoChiTiet(Request $req) {
-        if($req->loaiTB == 1) {
-            $DanhSachDatCho = app('ThongBaoRepository')->getThongBaoChiTiet($req->TB_id, $req->loaiTB);
+        $ThongBaoChiTiet = app('ThongBaoRepository')->getThongBaoChiTiet($req->TB_id, $req->loaiTB);
 
+        if($req->loaiTB == 1) {
             // kiểm tra chủ sở hữu thông báo
-            $ThongBao = $DanhSachDatCho[0];
+            $ThongBao = $ThongBaoChiTiet[0];
             if($req->session()->get('TaiKhoan.id') !== $ThongBao->TK_id)
                 return abort(404);
 
@@ -51,7 +51,7 @@ class TrangCaNhanController extends Controller
             return view('ThongBao.ChiTietDatCho', $this->data);
         }
         if($req->loaiTB == 2) {
-            $phongDuyet = app('ThongBaoRepository')->getThongBaoChiTiet($req->TB_id, $req->loaiTB);
+            $phongDuyet = $ThongBaoChiTiet;
 
             if($req->session()->get('TaiKhoan.id') !== $phongDuyet->TK_id)
                 return abort(404);
@@ -68,18 +68,32 @@ class TrangCaNhanController extends Controller
 
     // Phòng của tôi
     public function phongCuaToi(Request $req) {
-        $PhongTroCuaToi = app('TaiKhoanRepository')->getPhongTroSoHuu10($req->session()->get('TaiKhoan.id'));
-        $this->data['PhongTroCuaToi'] = $PhongTroCuaToi;
-        return view('TrangCaNhan.PhongCuaToi', $this->data);
+        return view('TrangCaNhan.PhongCuaToi');
     }
-    public function updatePhongCuaToi(Request $req) {
-        $result = app('ThongBaoRepository')->get10ThongBao($req->session()->get('TaiKhoan.id'), $req->skip);
-        return response()->json($result);
+    public function phongCuaToiRender(Request $req) {
+        $phongtui = app('TaiKhoanRepository')->getPhongTroSoHuu10($req->session()->get('TaiKhoan.id'), $req->skip);
+
+        for($i = 0; $i < count($phongtui); $i++) {
+            $phongtui[$i]->sdt = app('PhongTroRepository')->getSdtDatChoOfMaPhong($phongtui[$i]->maPhong);
+            $phongtui[$i]->urlEdit = url("/Account/update/{$phongtui[$i]->maPhong}");
+            $phongtui[$i]->backgroundImg = url("/storage/img/{$phongtui[$i]->backgroundImg}");
+        }
+        return response()->json($phongtui);
+        // return response((string) $phongtui, 200)
+        //     ->header('Content-Type', 'text/plain');
     }
-    // Danh sách đặt chỗ
-    public function danhSachDatCho(Request $req) {
-        $PhongTroCuaToi = app('TaiKhoanRepository')->getPhongTroSoHuu($req->session()->get('TaiKhoan.id'));
-        $this->data['PhongTroCuaToi'] = $PhongTroCuaToi;
-        return view('TrangCaNhan.DanhSachDatCho', $this->data);
+
+    public function capNhatPhongTro(Request $req) {
+
+        return view('Phong.SuaPhong');
+    }
+
+
+    /**
+     * Xác thực tài khoản
+     */
+    public function xacThucTaiKhoan(Request $req) {
+        $data['kq'] = $req->session()->get('TaiKhoan');
+        return view('Account.KetQuaDangKy', $data);
     }
 }

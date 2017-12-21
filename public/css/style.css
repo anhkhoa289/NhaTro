@@ -17,7 +17,15 @@
 /*
 |---------------------------------
 |- for persional page
-|- 11/11/2017              
+|- 11/11/2017 - 21/11/2017          
+|- by anhkhoa289          
+|---------------------------------
+*/
+
+/*
+|---------------------------------
+|- for persional page
+|- 23/11/2017 - 21/11/2017          
 |- by anhkhoa289          
 |---------------------------------
 */
@@ -249,6 +257,7 @@ div.img-nhatro > div {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 8rem;
 }
 
 /*
@@ -259,24 +268,99 @@ div.img-nhatro > div {
 |---------------------------------
 */
 
-.homepage .panel-approved {
-  border-color: #1bca06;
+.homepage > .row > div {
+  padding-left: 0;
+  padding-right: 0;
 }
 
-.homepage .panel-approved .panel-heading {
-  background-color: #1bca06;
-  color: #fff;
-  font-weight: bolder;
+.homepage .result .panel {
+  border-right: 0;
 }
 
-.homepage .panel-notapproved {
-  border-color: #D50000;
+.homepage .result .panel .panel-heading {
+  line-height: 3.6rem;
+  font-weight: bold;
 }
 
-.homepage .panel-notapproved .panel-heading {
-  background-color: #D50000;
-  color: #fff;
-  font-weight: bolder;
+.homepage #filter {
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homepage #filter > button {
+  width: 30rem;
+  padding: 1rem;
+  border: none;
+  font-weight: bold;
+  background: #ffffff;
+}
+
+.homepage #filter > button.active,
+.homepage #filter > button:hover {
+  background: #1bca06;
+  color: #ffffff;
+}
+
+.homepage #filter > button.back,
+.homepage #filter > button.ok {
+  width: 4.5rem;
+}
+
+.homepage #filter > select,
+.homepage #filter > .dia-phuong {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.homepage #filter > .dia-phuong {
+  width: 100%;
+}
+
+.homepage #filter > .dia-phuong > select {
+  margin: .5rem;
+}
+
+.homepage #filter-conditional > div {
+  display: inline-block;
+}
+
+.homepage #filter-conditional > div > .cond {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: .5rem;
+  padding-right: 1rem;
+  margin: .5rem;
+  border-radius: 5rem;
+  background-color: #777777;
+  color: white;
+  font-weight: bold;
+  line-height: 1.6rem;
+  white-space: nowrap;
+}
+
+.homepage #filter-conditional > div > .cond > button {
+  border: none;
+  background-color: transparent;
+  line-height: 1.3rem;
+}
+
+.homepage #filter-conditional > div > .cond > button > span {
+  font-size: 1.3rem;
+}
+
+.homepage #filter-conditional > div > .long-cond {
+  white-space: normal;
 }
 
 .homepage .panel .panel-body {
@@ -460,6 +544,89 @@ div.img-nhatro > div {
   font-size: 2.5rem;
 }
 
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div {
+  padding: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div .img-nhatro,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div .img-nhatro {
+  display: inline-block;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div .img-nhatro > div,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div .img-nhatro > div {
+  width: 7rem;
+  height: 7rem;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div > .noi-dung,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div > .noi-dung {
+  margin-left: 2rem;
+  text-align: justify;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div > .noi-dung > .title,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div > .noi-dung > .title {
+  font-weight: bolder;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div > div.noi-dung,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div > div.noi-dung {
+  width: 80%;
+  white-space: pre-wrap;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div > div.action,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div > div.action {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  white-space: nowrap;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div > div.action span,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div > div.action span {
+  font-size: 3rem;
+  margin: 0 0 0 2rem;
+  cursor: pointer;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div > div.table,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div > div.table {
+  width: 100%;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul > li > div:hover,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul > li > div:hover {
+  background-color: #E6E5E5;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul li.xem-them,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul li.xem-them {
+  height: 7rem;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
+.account .trang-ca-nhan .trang-chinh .thong-bao ul.new-ul li.xem-them:hover,
+.account .trang-ca-nhan .trang-chinh .phong-cua-toi ul.new-ul li.xem-them:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .account .trang-ca-nhan .trang-chinh .chi-tiet-thong-bao > .datcho > .thong-tin {
   padding: 1rem;
 }
@@ -551,5 +718,81 @@ div.img-nhatro > div {
 .phong .xem-phong > .thong-tin .hien-so {
   color: #1BCA06;
   background-color: #FFF;
+}
+
+.phong .sua-phong span,
+.phong .sua-phong .ten-phong {
+  font-weight: bolder;
+}
+
+.phong .sua-phong .noidung {
+  white-space: pre-line;
+}
+
+.phong .sua-phong .contain-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.phong .sua-phong .contain-label > label {
+  width: 33.333333333%;
+  height: 33.333333333%;
+  position: relative;
+  cursor: pointer;
+}
+
+.phong .sua-phong .contain-label > label > img {
+  width: 100%;
+  height: 100%;
+}
+
+.phong .sua-phong .contain-label > label > .checkmark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+  opacity: 0.3;
+  border-radius: 50%;
+}
+
+.phong .sua-phong .contain-label > label > .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 50%;
+  top: 39%;
+  width: 4rem;
+  height: 8rem;
+  border: solid white;
+  border-width: 0 12px 12px 0;
+  -webkit-transform: translate(-50%, -50%) rotate(45deg);
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.phong .sua-phong .contain-label > label:hover > input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.phong .sua-phong .contain-label > label > input {
+  position: absolute;
+  opacity: 0;
+}
+
+.phong .sua-phong .contain-label > label > input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.phong .sua-phong .contain-label > label > input:checked ~ .checkmark:after {
+  display: block;
 }
 

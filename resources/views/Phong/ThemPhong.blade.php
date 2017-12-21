@@ -63,37 +63,37 @@
 
 
 
-                    @php
-                    foreach($DiaPhuong as $v) {
-                        $tinh[$v->tenTinh] = $v->tenTinh;
-                    }
-                    foreach($DiaPhuong[0]->quan as $v) {
-                        $quan[$v->tenQuan] = $v->tenQuan;
-                    }
-                    foreach($DiaPhuong[0]->quan[0]->phuong as $v) {
-                        $phuong[$v->tenPhuong] = $v->tenPhuong;
-                    }
-                    @endphp
-                    <div class="form-group{{ $errors->has('tinh') ? ' has-error has-danger' : '' }}">
-                        {!! Form::label('tinh', 'Tỉnh/Thành phố') !!}
-                        {!! Form::select('tinh',$tinh, "Hà Nội", ['class' => 'form-control',
-                        'data-error'=>'Không được bỏ trống', 'required',
-                        'onchange' => 'getDiaPhuong(value)']) !!}
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group{{ $errors->has('quan') ? ' has-error has-danger' : '' }}">
-                        {!! Form::label('quan', 'Quận/Huyện') !!}
-                        {!! Form::select('quan', [null], null, ['class' => 'form-control', 
-                        'data-error'=>'Không được bỏ trống', 'required',
-                        'onchange' => 'updatePhuong(value)']) !!}
-                        <div class="help-block with-errors"></div>
-                    </div>
-                    <div class="form-group{{ $errors->has('phuong') ? ' has-error has-danger' : '' }}">
-                        {!! Form::label('phuong', 'Phường/Xã') !!}
-                        {!! Form::select('phuong', [null], null, ['class' => 'form-control',
-                        'data-error'=>'Không được bỏ trống', 'required',]) !!}
-                        <div class="help-block with-errors"></div>
-                    </div>
+                        @php
+                        foreach($DiaPhuong as $v) {
+                            $tinh[$v->tenTinh] = $v->tenTinh;
+                        }
+                        foreach($DiaPhuong[0]->quan as $v) {
+                            $quan[$v->tenQuan] = $v->tenQuan;
+                        }
+                        foreach($DiaPhuong[0]->quan[0]->phuong as $v) {
+                            $phuong[$v->tenPhuong] = $v->tenPhuong;
+                        }
+                        @endphp
+                        <div class="form-group{{ $errors->has('tinh') ? ' has-error has-danger' : '' }}">
+                            {!! Form::label('tinh', 'Tỉnh/Thành phố') !!}
+                            {!! Form::select('tinh',$tinh, "Hà Nội", ['class' => 'form-control',
+                            'data-error'=>'Không được bỏ trống', 'required',
+                            'onchange' => 'getDiaPhuong(value)']) !!}
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group{{ $errors->has('quan') ? ' has-error has-danger' : '' }}">
+                            {!! Form::label('quan', 'Quận/Huyện') !!}
+                            {!! Form::select('quan', [null], null, ['class' => 'form-control', 
+                            'data-error'=>'Không được bỏ trống', 'required',
+                            'onchange' => 'updatePhuong(value)']) !!}
+                            <div class="help-block with-errors"></div>
+                        </div>
+                        <div class="form-group{{ $errors->has('phuong') ? ' has-error has-danger' : '' }}">
+                            {!! Form::label('phuong', 'Phường/Xã') !!}
+                            {!! Form::select('phuong', [null], null, ['class' => 'form-control',
+                            'data-error'=>'Không được bỏ trống', 'required',]) !!}
+                            <div class="help-block with-errors"></div>
+                        </div>
 
 
 

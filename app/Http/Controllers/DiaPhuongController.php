@@ -16,4 +16,8 @@ class DiaPhuongController extends Controller
         $result = app('DiaPhuongRepository')->getTinh($req->tenTinh);
         return response()->json($result);
     }
+    public function getTinhs(Request $req) {
+        $result = app('DiaPhuongRepository')->all();
+        return response()->json($result);
+    }
 }

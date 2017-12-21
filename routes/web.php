@@ -44,7 +44,9 @@ Route::get('testreact2', function() {
 |---------------------------------------------------------------------------------------------------------
 */
 Route::get('/', 'PhongController@trangChu');
+Route::post('getTinhs','DiaPhuongController@getTinhs');
 Route::post('getQuan','DiaPhuongController@getQuan');
+Route::post('TrangChuReact', 'PhongController@trangChuReact');
 
 /*
 |---------------------------------------------------------------------------------------------------------
@@ -63,16 +65,21 @@ Route::group(['prefix' => 'Account'], function () {
     Route::get('DangKy/email','AccountController@dangKyCheckEmail');// AJAX
     Route::post('XacNhan','AccountController@xacNhan');
     Route::post('DangNhap','AccountController@dangNhap');
+    
 });
 Route::group(['prefix' => 'Account', 'middleware' => 'kiemTraDangNhap'], function () {
-    Route::get('NguoiDung','TrangCaNhanController@nguoiDung');
-    Route::get('DanhSachDatCho','TrangCaNhanController@danhSachDatCho');
+    Route::get('QuanTri','TrangCaNhanController@quanTri');
 
     Route::get('ThongBao','TrangCaNhanController@thongBao');
     Route::get('UpdateThongBao','TrangCaNhanController@updateThongBao');// AJAX
     Route::get('ThongBaoChiTiet/{loaiTB}/{TB_id}','TrangCaNhanController@thongBaoChiTiet');
 
     Route::get('PhongCuaToi','TrangCaNhanController@phongCuaToi');
+    Route::get('render', 'TrangCaNhanController@phongCuaToiRender');// AJAX
+    Route::get('update/{maPhong}','TrangCaNhanController@capNhatPhongTro');
+
+    Route::get('XacThucTaiKhoan','TrangCaNhanController@xacThucTaiKhoan');
+    
     Route::view('CapNhatAvatar', 'Account.updateAvatar'); // chưa có
 });
 /*

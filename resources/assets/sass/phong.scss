@@ -14,4 +14,12 @@
             @include xem-thong-tin-phong-tro;
         }
     }
+    .sua-phong {
+        @include in-dam-ten-phong-span();
+        @include noi-dung-phong-tro();
+        .contain-label {
+            @include display-grid-picture;
+            @include checkbox-bigger;
+        }
+    }
 }

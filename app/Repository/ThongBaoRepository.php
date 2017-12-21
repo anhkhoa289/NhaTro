@@ -4,6 +4,7 @@ namespace App\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Carbon\Carbon;
 use App\Model\ThongBao;
 
 class ThongBaoRepository
@@ -12,6 +13,10 @@ class ThongBaoRepository
 
     public function __construct(ThongBao $ThongBao) {
         $this->ThongBao = $ThongBao;
+    }
+
+    public function get($id) {
+        return $this->ThongBao->find($id);
     }
 
     public function insert($TB) {
@@ -29,17 +34,20 @@ class ThongBaoRepository
             ->join('PhongTro', 'ThongBao.maLienket', '=', 'PhongTro.maPhong')
             ->where('TaiKhoan.id', '=', $TK_id)
             ->select('*', 'ThongBao.noiDung as noiDungTB', 'ThongBao.id as TB_id')
+            ->orderBy('thGianCapNhat', 'desc')
             ->skip($skip)
             ->take(10)
             ->get();
     }
 
+    /**
+     * Trả về thông báo đặt chỗ gần nhất mà chưa đọc để gộp nhiều đơn đặt chỗ vào 1 thông báo
+     * @param maPhong có cùng mã phòng vs nó
+     * Lưu ý khi lấy danh sách thông báo thì sắp xếp thèo thời gian cập nhật thông báo giảm dần
+     */
     public function getThongBaoDatCho($maPhong) {
         $query = [["tinhTrangXem", "=", 0], ["maLienKet", "=", $maPhong], ['loaiTB', '=', 1]];
         return $this->ThongBao->where($query)->first();
-    }
-    public function get($id) {
-        return $this->ThongBao->find($id);
     }
 
     public function getThongBaoChiTiet($id, $loaiTB) {
@@ -63,6 +71,12 @@ class ThongBaoRepository
     public function updateTinhTrangXem($id, $tinhTrang) {
         $this->ThongBao = $this->ThongBao::find($id);
         $this->ThongBao->tinhTrangXem = $tinhTrang;
+        $this->ThongBao->save();
+    }
+
+    public function updateThGianCapNhat($id) {
+        $this->ThongBao = $this->ThongBao::find($id);
+        $this->ThongBao->thGianCapNhat = Carbon::now();
         $this->ThongBao->save();
     }
 }

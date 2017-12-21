@@ -19,7 +19,8 @@ class KhachHangController extends Controller
         // gt = 1,  == true, return true
         // gt = 1,  == false, return false
         // default is ==
-        else{
+        else {
+            $rs = app('KhachHangRepository')->check5Phut($rs);
             if($rs->tinhTrangDatCho)
                 return response("Bạn đã đặt chỗ bằng số điện thoại này rồi", 403)
                 ->header('Content-Type', 'text/plain');
@@ -34,6 +35,7 @@ class KhachHangController extends Controller
             $maXacNhan = app('KhachHangRepository')->insert($req);
         }
         else {
+            $rs = app('KhachHangRepository')->check5Phut($rs);
             if($rs->tinhTrangDatCho)
                 return response("Số điện thoại đang chờ liên hệ. \nVui lòng chờ 5 phút hoặc sử dụng số điện thoại khác.", 200)
                 ->header('Content-Type', 'text/plain');
@@ -74,6 +76,7 @@ class KhachHangController extends Controller
             app('KhachHangRepository')->updateTinhTrang($req->sdtKhachHang,1);
             app('PhongTroRepository')->increaseLuotDatCho($req->maPhong);
             app('TaiKhoanRepository')->updateSlgDatCho($req->chuNha, 1);
+            app('ThongBaoRepository')->updateThGianCapNhat($datcho->TB_id);
 
             DB::commit();
             return response('success',200)->header('Content-Type', 'text/plain');

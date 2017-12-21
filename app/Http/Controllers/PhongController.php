@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Requests\ThemPhongTroRequest;
+use Log;
 
 class PhongController extends Controller
 {
@@ -12,6 +13,13 @@ class PhongController extends Controller
         $data['daDuyet'] = app('PhongTroRepository')->getApproval();
         $data['chuaDuyet'] = app('PhongTroRepository')->getUnapproval();
         return view('HomePage',$data);
+    }
+
+    public function trangChuReact(Request $req) {
+        $result = new \stdClass;
+
+        $result->result = app('PhongTroRepository')->get10($req->skip, $req->cond);
+        return response()->json($result);
     }
 
     public function themPhong(ThemPhongTroRequest $req){

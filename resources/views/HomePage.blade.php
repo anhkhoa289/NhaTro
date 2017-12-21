@@ -1,54 +1,69 @@
 @extends('Layout.Master')
 @section('title','Trang Chủ')
 @section('main')
-<div class="homepage">
-    <div class="row">
-        <div class="col-md-6 col-xs-12">
-            <div class="panel panel-approved">
-                <div class="panel-heading">Đã duyệt</div>
-                <div class="panel-body">
-                
-                    @php
-                    $i = true;
-                    @endphp
-                    @foreach($daDuyet as $item)
-                        @if($i)
-                        <a class="bordering" href="{{URL::to('Phong/'.$item->maPhong)}}" style="border: 0px">
-                        @php
-                        $i = false;
-                        @endphp
-                        @else
-                        <a class="bordering" href="{{URL::to('Phong/'.$item->maPhong)}}">
-                        @endif
-                        
-                        <div class="row">
-                            <div class="col-md-4 col-xs-12 img-nhatro">
-                                <div
-                                style="background-image:url({{asset('storage/img/'.$item->pathImg)}});">
-                                </div>
-                            </div>
-                            <div class="col-md-8 col-xs-12">{{$item->tenPhong}}</div>
-                            <div class="col-md-8 col-xs-12">Giá: {{$item->gia}}</div>
-                            <div class="col-md-8 col-xs-12">Diện tích: {{$item->dienTich}}</div>
-                            <div class="col-md-8 col-xs-12">Địa chỉ: {{$item->diaChiPhongTro}}</div>
-                            <div class="col-md-8 col-xs-12 img-ctv">
-                                <span href="#">Duyệt bởi {{$item->ten}} 
-                                    <img src="{{asset('storage/img/'.$item->avatar)}}" alt="{{$item->ten}}">
-                                </span>
-                            </div>
-                        </div>
-                    </a>
-                    @endforeach
-                </div>
-            </div>
-        </div>
-        <div class="col-md-6 col-xs-12">
-            <div class="panel panel-notapproved">
-                <div class="panel-heading">Chưa duyệt</div>
-                <div class="panel-body">Panel Content</div>
-                <div class="panel-footer">Panel Footer</div>
-            </div>
-        </div>
+
+<div class="homepage" id="app"></div>
+<script src="{{asset('js/app/TrangChu.js')}}"></script>
+
+{{--
+    <div class="tim-kiem-but">
+        <button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
     </div>
-</div>
+    <div class="row" id="tim-kiem">
+        <h2>Tìm kiếm theo</h2>
+        <nav class="col-md-6 col-md-offset-3">
+            <div class="row">
+                <ul>
+                    <li class="active"><a href="#">Tên phòng</a></li>
+                    <li><a href="#">Địa phương</a></li>
+                    <li><a href="#">Giá tiền</a></li>
+                    <li><a href="#">Diện tích phòng</a></li>
+                </ul>
+            </div>
+            <div class="row filter">
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm">
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        {!! Form::select('giaTien', 
+                        [
+                            '2000000' => '< 2 000 000',
+                            '3000000' => '2 000 000 - 3 000 000',
+                            '4000000' => '3 000 000 - 4 000 000',
+                            '5000000' => '4 000 000 - 5 000 000',
+                            '6000000' => '5 000 000 - 6 000 000',
+                            '7000000' => '> 6 000 000'
+                        ], 
+                        null, ['class' => 'form-control'])!!}
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        {!! Form::select('giaTien', 
+                        [
+                            '10' => '<= 10 m',
+                            '20' => '10 - 20',
+                            '30' => '20 - 30',
+                            '40' => '30 - 40',
+                            '50' => '40 - 50',
+                            '60' => '> 50'
+                        ], 
+                        null, ['class' => 'form-control'])!!}
+                    </div>
+                </div>
+
+            </div>
+        </nav>
+    </div>
+--}}
+
 @stop

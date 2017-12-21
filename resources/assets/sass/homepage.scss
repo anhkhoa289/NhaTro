@@ -11,20 +11,89 @@ $back-panel-notapproved-color: #D50000;
 $back-panel-hover: rgba(0,0,0,.05);
 $ctv-color: #E65100;
 .homepage {
-    .panel-approved {
-        border-color: $back-panel-approved-color;
-        .panel-heading {
-            @include colors($back-panel-approved-color, $sec-text-color);
-            @include big-font;
+    > .row > div {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .result {
+        .panel {
+            border-right: 0;
+            .panel-heading {
+                line-height: 3.6rem;
+                font-weight: bold;
+            }
         }
     }
-    .panel-notapproved {
-        border-color: $back-panel-notapproved-color;
-        .panel-heading {
-            @include colors($back-panel-notapproved-color, $sec-text-color);
-            @include big-font;
+
+    #filter {
+        padding: 0;
+        display: flex;
+        align-items: center;
+        > button {
+            width: 30rem;
+            padding: 1rem;
+            border: none;
+            font-weight: bold;
+            background: #ffffff;
+
+            &.active, &:hover {
+                background: $sec-back-color;
+                color: #ffffff;
+            }
+
+            &.back, &.ok {
+                width: 4.5rem;
+            }
+        }
+        > select, > .dia-phuong {
+            margin-top: auto;
+            margin-bottom: auto;
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+        > .dia-phuong {
+            width: 100%;
+            > select {
+                //display: inline-block;
+                //width: 30%;
+                //margin-left: .5rem;
+                //margin-right: .5rem;
+                margin: .5rem
+            }
         }
     }
+
+    #filter-conditional {
+        > div {
+            display: inline-block;
+            > .cond {
+                display: flex;
+                width: fit-content;
+                padding: .5rem;
+                padding-right: 1rem;
+                margin: .5rem;
+                border-radius: 5rem;
+                background-color: #777777;
+                color: white;
+                font-weight: bold;
+                line-height:1.6rem;
+                white-space: nowrap;
+
+                > button {
+                    border: none;
+                    background-color: rgba(0,0,0,0);
+                    line-height: 1.3rem;
+                    > span {
+                        font-size: 1.3rem;
+                    }
+                }
+            }
+            > .long-cond {
+                white-space: normal;
+            }
+        }
+    }
+
     .panel {
         .panel-body {
             padding: 0 15px;
@@ -65,4 +134,53 @@ $ctv-color: #E65100;
             }
         }
     }
+    
+    // .tim-kiem-but {
+    //     position: fixed;
+    //     z-index: 3;
+    //     left: 90%;
+    //     @media (min-width: 768px) {
+    //         left: 90%;
+    //     }
+    //     @media (min-width: 992px) {
+    //         left: 89%;
+    //     }
+    //     @media (min-width: 1200px) {
+    //         left: 85%;
+    //     }
+    //     @media (min-width: 1500px) {
+    //         left: 79%;
+    //     }
+            
+    // }
+    // #tim-kiem {
+    //     margin-bottom: 2rem;
+    //     h2 {
+    //         text-align: center;
+    //     }
+    //     nav {
+    //         @include navigation-ul;
+    //         .filter {
+    //             background-color: $sec-back-color;
+    //             > * {
+    //                 padding: 1rem;
+    //             }
+    //         }
+    //     }
+    // }
+
+    // .panel-approved {
+    //     border-color: $back-panel-approved-color;
+    //     .panel-heading {
+    //         @include colors($back-panel-approved-color, $sec-text-color);
+    //         @include big-font;
+    //     }
+    // }
+    // .panel-notapproved {
+    //     border-color: $back-panel-notapproved-color;
+    //     .panel-heading {
+    //         @include colors($back-panel-notapproved-color, $sec-text-color);
+    //         @include big-font;
+    //     }
+    // }
 }

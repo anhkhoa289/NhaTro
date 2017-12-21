@@ -47,8 +47,11 @@ class AccountController extends Controller
 
     public function xacNhan(Request $request){
         $kq = app('TaiKhoanRepository')->checkMaXacNhan($request->id, $request->maXacNhan);
-        if($kq->tinhTrangHoatDong == 1)
+        if($kq->tinhTrangHoatDong == 1) {
             $data['kq'] = $kq;
+            if($request->session()->has('TaiKhoan'))
+                $request->session()->put('TaiKhoan', $kq);
+        }
         else
             $data = ['error' => 'Mã xác nhận không chính xác', 'kq' => $kq];
         return view('Account.KetQuaDangKy', $data);

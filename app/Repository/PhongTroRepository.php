@@ -4,6 +4,7 @@ namespace App\Repository;
 use App\Model\PhongTro;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
+use Log;
 
 class PhongTroRepository
 {
@@ -42,6 +43,44 @@ class PhongTroRepository
     public function getUnapproval(){
         return $this->PhongTro::where('tinhTrangDuyet',0)->orderBy('updated_at','desc')->take(10)->get();
     }
+
+    public function get10($skip = 0, $q) {
+        $query = [['tinhTrangHienThi', '=', 1], ['tinhTrangSoHuu', '=', 1]];
+        foreach($q as $value)
+        {
+            switch($value['type']) {
+                case 'ten':
+                    array_push($query, ["tenPhong", 'like', "%".$value['value']."%"]);
+                    break;
+                case 'dientich':
+                    array_push($query, ["dienTich", '>=', $value['min']]);
+
+                    if($value['value'] != 70)
+                        array_push($query, ["dienTich", '<=', $value['max']]);
+                    break;
+                case 'giatien':
+                    array_push($query, ["gia", '>=', $value['min']]);
+
+                    if($value['value'] != 7000000)
+                        array_push($query, ["gia", '<=', $value['max']]);
+                    break;
+                case 'diaphuong':
+                    if($value['tinh'] != null)
+                        array_push($query, ["tinh", '=', $value['tinh']]);
+                    if($value['quan'] != null)
+                        array_push($query, ["quan", '=', $value['quan']]);
+                    if($value['phuong'] != null)
+                        array_push($query, ["phuong", '=', $value['phuong']]);
+                    break;
+            }
+        }
+        return DB::table('PhongTro')
+            ->where($query)
+            ->skip($skip)
+            ->take(5)
+            ->get();
+    }
+
     public function increaseLuotDatCho($maPhong) {
         $this->PhongTro = PhongTro::findOrFail($maPhong);
         $this->PhongTro->luotDatCho = $this->PhongTro->luotDatCho + 1;
@@ -52,5 +91,16 @@ class PhongTroRepository
         $this->PhongTro = PhongTro::findOrFail($maPhong);
         $this->PhongTro->luotDatCho = $this->PhongTro->luotDatCho - 1;
         $this->PhongTro->save();
+    }
+    public function getSdtDatChoOfMaPhong($maPhong) {
+        return DB::table('PhongTro')
+        ->join('ThongBao', 'PhongTro.maPhong', '=', 'ThongBao.maLienKet')
+        ->join('DatCho', 'ThongBao.id', '=', 'DatCho.TB_id')
+        ->where('PhongTro.maPhong', '=', $maPhong)
+        ->select(
+            'DatCho.sdtKhachHang as sdtKhachHang',
+            'DatCho.created_at as datChoLuc'
+        )
+        ->get();
     }
 }

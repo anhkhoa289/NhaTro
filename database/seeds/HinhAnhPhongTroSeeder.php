@@ -13,39 +13,104 @@ class HinhAnhPhongTroSeeder extends Seeder
     {
         DB::table('HinhAnhPhongTro')->insert([
             'maPhong' => 1,
-            'pathImg' => '1/gIrBZaIbE80uYSn2clhI8VWvkrOTq9aU5BJ8hvwc.jpeg'
+            'pathImg' => '1/gIrBZaIbE80uYSn2clhI8VWvkrOTq9aU5BJ8hvwc.jpg'
         ]);
         DB::table('HinhAnhPhongTro')->insert([
             'maPhong' => 1,
-            'pathImg' => '1/Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpeg'
+            'pathImg' => '1/Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpg'
         ]);
         DB::table('HinhAnhPhongTro')->insert([
             'maPhong' => 1,
-            'pathImg' => '1/K6mET8lPJPeNnwKLEBCzj6YctYUhTKnY7iVQEakc.jpeg'
+            'pathImg' => '1/K6mET8lPJPeNnwKLEBCzj6YctYUhTKnY7iVQEakc.jpg'
+        ]);
+
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 2,
+            'pathImg' => '2/E2TJPvLOyQoI7PwMKtsmjyNs9pRnbLp5JCOWL2yW.jpg'
         ]);
         DB::table('HinhAnhPhongTro')->insert([
             'maPhong' => 2,
-            'pathImg' => '2/E2TJPvLOyQoI7PwMKtsmjyNs9pRnbLp5JCOWL2yW.jpeg'
+            'pathImg' => '2/HRwpEYn4HhSqWmZi3RH8B2nTXjvq8qIqKAhKUQp9.jpg'
         ]);
         DB::table('HinhAnhPhongTro')->insert([
             'maPhong' => 2,
-            'pathImg' => '2/HRwpEYn4HhSqWmZi3RH8B2nTXjvq8qIqKAhKUQp9.jpeg'
+            'pathImg' => '2/NWJyz3x79uOPP0nBtff9veaqu83L0dz79nX8LuKh.jpg'
         ]);
         DB::table('HinhAnhPhongTro')->insert([
             'maPhong' => 2,
-            'pathImg' => '2/NWJyz3x79uOPP0nBtff9veaqu83L0dz79nX8LuKh.jpeg'
+            'pathImg' => '2/NWJyz3x79uOPP0nBtff9veaqu83L0dz79nX8LuK-q.jpg'
+        ]);
+        
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 3,
+            'pathImg' => '3/gIrBZaIbE80uYSn2clhI8VWvkrOTq9aU5BJ8hvwc.jpg'
         ]);
         DB::table('HinhAnhPhongTro')->insert([
             'maPhong' => 3,
-            'pathImg' => '3/gIrBZaIbE80uYSn2clhI8VWvkrOTq9aU5BJ8hvwc.jpeg'
+            'pathImg' => '3/Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpg'
         ]);
         DB::table('HinhAnhPhongTro')->insert([
             'maPhong' => 3,
-            'pathImg' => '3/Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpeg'
+            'pathImg' => '3/K6mET8lPJPeNnwKLEBCzj6YctYUhTKnY7iVQEakc.jpg'
         ]);
         DB::table('HinhAnhPhongTro')->insert([
             'maPhong' => 3,
-            'pathImg' => '3/K6mET8lPJPeNnwKLEBCzj6YctYUhTKnY7iVQEakc.jpeg'
+            'pathImg' => '3/guestthumb745x510.20140426171228559.jpg'
+        ]);
+        
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 4,
+            'pathImg' => '4/gIrBZaIbE80uYSn2clhI8VWvkrOTq9aU5BJ8hvwc.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 4,
+            'pathImg' => '4/Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 4,
+            'pathImg' => '4/K6mET8lPJPeNnwKLEBCzj6YctYUhTKnY7iVQEakc.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 4,
+            'pathImg' => '4/guestthumb745x510BCzj6YctYUhTKnY7iVQEakc.jpg'
+        ]);
+
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 5,
+            'pathImg' => '5/Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 5,
+            'pathImg' => '5/12884621_566296933537213_465564108_n.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 5,
+            'pathImg' => '5/esi1507898518.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 5,
+            'pathImg' => '5/nd_1448687709_3uHP.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 5,
+            'pathImg' => '5/nhadatgiaodich_abc_xyx_3.20160507150239-50e6.jpg'
+        ]);
+
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 6,
+            'pathImg' => '6/Qzn84KzvUptwcfXnkERosl1hz3qv97eSmC7idZlx.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 6,
+            'pathImg' => '6/b001c81402850586_3903-w618-h411-b0-p0--rustic-bedroom.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 6,
+            'pathImg' => '6/e83e043c-a0c4-4a21-8827-109096f837d7.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 6,
+            'pathImg' => '6/multi-functional-artist-studio-raanan-stern-designboom01.jpg'
         ]);
     }
 }

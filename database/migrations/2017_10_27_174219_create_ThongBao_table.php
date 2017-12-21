@@ -20,6 +20,7 @@ class CreateThongBaoTable extends Migration
             $table->bigInteger('maLienKet'); // maPhong
             $table->string('noiDung', 1000)->nullable();
             $table->boolean('tinhTrangXem')->default(0);
+            $table->dateTime('thGianCapNhat')->nullable();
             $table->timestamps();
             $table->foreign('LoaiTB')->references('id')->on('LoaiThongBao')
             ->onDelete('set null')->onUpdate('cascade');

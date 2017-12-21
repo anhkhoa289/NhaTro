@@ -82,7 +82,22 @@
                         }
                     }
                 }
+
+                // Trang phòng trọ của tôi
+                ul.new-ul {
+                    @include trangcanhan-img-noidung-v2;
+                    li.xem-them {
+                        height: 7rem;
+                        text-align: center;
+                        font-size: 2.5rem;
+                        &:hover {
+                            text-decoration: underline;
+                            cursor: pointer;
+                        }
+                    }
+                }
             }
+
             .chi-tiet-thong-bao {
                 >.datcho {
                     >.thong-tin {

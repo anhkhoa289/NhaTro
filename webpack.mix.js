@@ -11,8 +11,13 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.sass('resources/assets/sass/app.scss', 'public/css')
+mix
+
+//.sass('resources/assets/sass/app.scss', 'public/css')
+
 .sass('resources/assets/sass/style.scss', 'public/css')
+
+/*
 .copy('node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.standalone.css', 'public/css/bootstrap-datepicker3.standalone.css')
 //.copy('node_modules/moment/min/moment-with-locales.js', 'public/js')
 
@@ -25,6 +30,12 @@ mix.sass('resources/assets/sass/app.scss', 'public/css')
 
 //.copy('node_modules/bootstrap-datepicker/dist/locales/bootstrap-datepicker.vi.min.js', 'resources/assets/js/copied/bootstrap-datepicker.vi.min.js')
 .js('resources/assets/js/app.js', 'public/js')
-.react('resources/assets/jsx/myApp.js','public/js/react')
 
+
+
+// Front End
+.react('resources/assets/front/PhongCuaToi.js','public/js/app')
+.react('resources/assets/front/XemPhong.jsx','public/js/app')
+*/
+.react('resources/assets/front/TrangChu.jsx','public/js/app')
 

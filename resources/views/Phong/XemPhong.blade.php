@@ -98,12 +98,16 @@
                             {{$PhongTro->created_at}}
                         </div>
                         <div class="col-md-12">
+                            <span>Số điện thoại liên hệ: </span>
+                            {{$chuNha->sdt}}
+                        </div>
+                        <div class="col-md-12">
                             <div class="btn-group btn-group-lg btn-group-justified">
-                                <div class="btn-group">
+                                {{--  <div class="btn-group">
                                     <button type="button" class="btn btn-success my-btn-success" onclick="hienso(this)">
                                         Hiện số điện thoại
                                     </button>
-                                </div>
+                                </div>  --}}
                                 <div class="btn-group">
                                     <button type="button" class="btn btn-success my-btn-success"
                                     data-toggle="modal" data-target="#dat-cho">Đăng ký đặt chỗ</button>
@@ -112,151 +116,31 @@
                         </div>
                     </div>
                 </div> {{-- thong-tin --}}
+
+
+                {{-- ReactJs app --}}
+                <div id="dat-cho-react"></div>
+                <script>
+                    var clickHienSo = false, maPhong = {{$PhongTro->maPhong}}, chuNha = {{$PhongTro->chuNha}};
+                </script>
+                <script src="{{asset('js/app/XemPhong.js')}}"></script>
+
+
+
+
             </div> {{-- xem-phong --}}
         </div>
     </div>
 </div>
 
-<!-- Modal -->
-<div id="dat-cho" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Đăng ký đặt chỗ</h4>
-            </div>
-            <div class="modal-body">
-                <form data-toggle="validator" role="form">
-                    <div class="form-group">
-                        {!! Form::label('sdtKhachHang', 'Nhập số điện thoại của bạn') !!}
-                        {!! Form::text('sdtKhachHang', null, ['class' => 'form-control', 
-                        'data-error'=>'không được bỏ trống', 'required',
-                        'data-remote-error'=>"Số điện thoại đang chờ liên hệ. \nVui lòng chờ 5 phút hoặc sử dụng số điện thoại khác.",
-                        'data-remote'=>'/KhachHang/CheckSDT']) !!}
-                        <div class="help-block with-errors" style="white-space: pre-line">Lưu ý nếu đặt chỗ thành công, số điện thoại của bạn sẽ bị khóa 5 phút</div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class='btn btn-success my-btn-success' id="dangKy">Đăng ký</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy bỏ</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-<div id="xac-nhan" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Đăng ký đặt chỗ</h4>
-            </div>
-            <div class="modal-body">
-                <form data-toggle="validator" role="form">
-                    <div class="form-group">
-                        {!! Form::label('maXacNhan', 'Nhập mã xác nhận nhận được qua tin nhắn') !!}
-                        {!! Form::text('maXacNhan', null, ['class' => 'form-control', 
-                        'data-error'=>'không được bỏ trống', 'required']) !!}
-                        <div id="thongbaoxacnhan" class="help-block with-errors" style="white-space: pre-line"></div>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Thay đổi số điện thoại</button>
-                <button type="button" class='btn btn-success my-btn-success' id="xacNhan">Xác nhận</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng lại</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-<div id="thong-bao" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Đăng ký đặt chỗ</h4>
-            </div>
-            <div class="modal-body">
-                <span></span>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Đóng lại</button>
-            </div>
-        </div>
-
-    </div>
-</div>
-
 <script>
-    var clickHienSo = false;
     function hienso(sdt){
         sdt.innerHTML = "{{$chuNha->sdt}}";
         $(sdt).addClass("hien-so");
         capNhatLuotClick();
     }
 
-    $("#dangKy").click(function(){
-        $.ajax({
-            type: 'POST',
-            dataType: 'text',
-            url: "{{URL::to('KhachHang/DangKy')}}",
-            data: { 
-                "_token": '{{ csrf_token() }}', 
-                'sdtKhachHang': $("#sdtKhachHang").val()
-            },
-            success : function (res) {
-                $('#dat-cho').modal('hide');
-                capNhatLuotClick();
-                if(res === 'success')
-                    $("#xac-nhan").modal('show');
-                else
-                    thongBao(res)
-            }
-        });
-    });
-
-    $('#xacNhan').click(function(){
-        $.ajax({
-            type : 'POST',
-            dataType: 'text',
-            url: "{{URL::to('KhachHang/XacNhan')}}",
-            data: { 
-                "_token": '{{ csrf_token() }}', 
-                'sdtKhachHang': $("#sdtKhachHang").val(),
-                'maXacNhan': $("#maXacNhan").val(),
-                'maPhong': {{$PhongTro->maPhong}},
-                'chuNha': {{$PhongTro->chuNha}}
-            },
-            success : function(res){
-                if(res === 'success') {
-                    $("#xac-nhan").modal('hide');
-                    clickHienSo = false;
-                    capNhatLuotClick();
-                    $("#maXacNhan").val(null);
-                    thongBao('Đặt chỗ thành công');
-                }
-                else { 
-                    $('#thongbaoxacnhan').text('Mã xác nhận không chính xác');
-                    $('#thongbaoxacnhan').parent().addClass('has-error has-danger');
-                }
-            }
-        })
-    })
-    function thongBao(notice) {
-        $('#thong-bao').find('span').text(notice);
-        $('#thong-bao').modal('show');
-        window.setTimeout(function(){
-            $('#thong-bao').modal('hide');
-        }, 7000);
-    }
+    
     function capNhatLuotClick() {
         if(!clickHienSo){
             clickHienSo = true;

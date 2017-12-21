@@ -29,17 +29,23 @@
 /*
 |---------------------------------
 |- for persional page
-|- 11/11/2017              
+|- 11/11/2017 - 21/11/2017          
 |- by anhkhoa289          
 |---------------------------------
 */
-@mixin xem-thong-tin-phong-tro {
+@mixin in-dam-ten-phong-span {
     span, .ten-phong {
         font-weight: bolder;
     }
+}
+@mixin noi-dung-phong-tro {
     .noidung {
         white-space: pre-line;
     }
+}
+@mixin xem-thong-tin-phong-tro {
+    @include in-dam-ten-phong-span();
+    @include noi-dung-phong-tro();
     .chua-duyet {
         color: red;
     }
@@ -66,5 +72,171 @@
         >.title {
             font-weight: bolder;
         }
+    }
+}
+
+@mixin trangcanhan-img-noidung-v2 { // for ul
+    >li {
+        >div {
+            padding: 2rem;
+            flex-wrap: wrap;
+            >div {
+                @include trangcanhan-img-noidung;
+                >div.noi-dung {
+                    width: 80%;
+                    white-space: pre-wrap;
+                }
+                >div.action {
+                    flex-grow: 1;
+                    white-space: nowrap;
+                    span {
+                        font-size: 3rem;
+                        margin: 0 0 0 2rem;
+                        cursor: pointer;
+                    }
+                }
+            }
+            >div.table {
+                width: 100%;
+            }
+        }
+        >div:hover {
+            background-color: $fou-back-color;
+        }
+    }
+}
+
+/*
+|---------------------------------
+|- for persional page
+|- 23/11/2017 - 21/11/2017          
+|- by anhkhoa289          
+|---------------------------------
+*/
+@mixin checkbox-blue { // for some .contain class, wrap input by label please
+    >label { 
+        > .checkmark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+        
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 8px;
+                top: 1px;
+                width: 10px;
+                height: 17px;
+                border: solid white;
+                border-width: 0 5px 5px 0;
+                -webkit-transform: rotate(45deg);
+                -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+            }
+        }
+        &:hover > input ~ .checkmark {
+            background-color: #ccc;
+        }
+        > input {
+            position: absolute;
+            opacity: 0;
+            &:checked ~ .checkmark {
+                background-color: #2196F3;
+            }
+            &:checked ~ .checkmark:after {
+                display: block;
+            }
+        }
+    }
+}
+@mixin checkbox-bigger { // for some .contain class, wrap input by label please
+    >label { 
+        > .checkmark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 25px;
+            width: 25px;
+            background-color: #eee;
+            opacity: 0.3;
+            border-radius: 50%;
+        
+            &:after {
+                content: "";
+                position: absolute;
+                display: none;
+                left: 50%;
+                top: 39%;
+                width: 4rem;
+                height: 8rem;
+                border: solid white;
+                border-width: 0 12px 12px 0;
+                -webkit-transform: translate(-50%,-50%) rotate(45deg);
+                -ms-transform: translate(-50%,-50%) rotate(45deg);
+                transform: translate(-50%,-50%) rotate(45deg);
+            }
+        }
+        &:hover > input ~ .checkmark {
+            background-color: #ccc;
+        }
+        > input {
+            position: absolute;
+            opacity: 0;
+            &:checked ~ .checkmark {
+                background-color: #2196F3;
+            }
+            &:checked ~ .checkmark:after {
+                display: block;
+            }
+        }
+    }
+}
+@mixin display-grid-picture { // for contain
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    > label {
+        width: 33.333333333%;
+        height: 33.333333333%;
+        position: relative;
+        cursor: pointer;
+        > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@mixin navigation-ul {
+    ul {
+        list-style-type: none;
+        margin-bottom: 0;
+        -webkit-padding-start: 0;
+
+        > li {
+            display: inline-block;
+            > a {
+                display: block;
+                padding: 1rem;
+                font-weight: bold;
+                color: black;
+            }
+        }
+        > li {
+            &.active, &:hover {
+                background-color: #1bca06;
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+
     }
 }

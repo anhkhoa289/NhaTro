@@ -4,6 +4,8 @@ namespace App\Repository;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Model\KhachHang;
+use Carbon\Carbon;
+use Log;
 
 class KhachHangRepository
 {
@@ -36,5 +38,17 @@ class KhachHangRepository
         $this->KhachHang = $this->get($sdt);
         $this->KhachHang->tinhTrangDatCho = $tinhTrang;
         $this->KhachHang->save();
+    }
+
+    public function check5Phut($rs) {
+        if($rs->tinhTrangDatCho) {
+            $no = Carbon::now();
+            $no->subMinutes(5);
+            if($no >= $rs->updated_at){
+                $rs->tinhTrangDatCho = 0;
+                $rs->save();
+            }
+        }
+        return $rs;
     }
 }

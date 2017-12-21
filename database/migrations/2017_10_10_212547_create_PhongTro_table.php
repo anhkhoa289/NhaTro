@@ -34,6 +34,7 @@ class CreatePhongTroTable extends Migration
             $table->bigInteger('CTVduyet')->nullable();
             $table->boolean('tinhTrangDuyet')->default(0);
             $table->boolean('tinhTrangHienThi')->default(1);
+            $table->boolean('tinhTrangSoHuu')->default(1);
             $table->char('pathImg', 255)->nullable();
             $table->timestamps();
             $table->foreign('chuNha')->references('id')->on('TaiKhoan')

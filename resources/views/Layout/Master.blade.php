@@ -27,7 +27,7 @@
     <title>Nhà Trọ | @yield('title')</title>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-phongtro">
+    <nav id="navbar-phongtro" class="navbar navbar-inverse navbar-phongtro">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,10 +35,10 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>                        
                 </button>
-                <a class="navbar-brand" href="{{ URL::to('/')}}">Logo</a>
+                <a class="navbar-brand" href="{{ URL::to('/')}}">Nhà Trọ.com</a>
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
-                <form class="navbar-form navbar-left">
+                {{--  <form class="navbar-form navbar-left">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Tìm kiếm">
                         <div class="input-group-btn">
@@ -47,10 +47,9 @@
                         </button>
                         </div>
                     </div>
-                </form>
-                <ul class="nav navbar-nav">
+                </form>  --}}
+                {{--  <ul class="nav navbar-nav">
                     <li class="{{Request::is('/')?'active':''}}"><a href="{{ URL::to('/')}}">Trang Chủ</a></li>
-                    {{--  <li class="{{Request::is('Phong/*')?'active':''}}"><a href="#">Phòng xem gần đây</a></li>  --}}
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -60,14 +59,14 @@
                         </ul>
                     </li>
                     <li><a href="#">Page 2</a></li>
-                </ul>
+                </ul>  --}}
                 <ul class="nav navbar-nav navbar-right">
                     @if(Session::has('TaiKhoan'))
                     <li><a href="{{ URL::to('Phong/ThemPhong')}}">
                         <span class="glyphicon glyphicon-plus"></span> Thêm phòng trọ
                     </a></li>
                     <li class="user">
-                        <a href="{{ URL::to('Account/NguoiDung')}}">
+                        <a href="{{ URL::to('Account/ThongBao')}}">
                             <img src="{{asset('storage/img/'.Session::get('TaiKhoan.avatar'))}}" alt="{{Session::get('TaiKhoan.ten')}}"> {{Session::get('TaiKhoan.ten')}}
                         </a>
                     </li>
@@ -85,6 +84,6 @@
         @yield('main')
     </div>
 
-    <script src="{{asset('js/react/myApp.js')}}"></script>
+
 </body>
 </html>

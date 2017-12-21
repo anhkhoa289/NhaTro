@@ -82,7 +82,6 @@ class TaiKhoanSeeder extends Seeder
             'tenDangNhap' => 'anh1234',
             'matkhau' => bcrypt('1234'),
             'loaiTK' => 1,
-            'CTVHoTro' => 'thi12345',
             'avatar' => 'avaDefault.jpg'
         ]);
         DB::table('TaiKhoan')->insert([
@@ -108,13 +107,13 @@ class TaiKhoanSeeder extends Seeder
             'ten' => 'B',
             'gioiTinh' => 'M',
             'ngSinh' => '1996-08-05',
-            'email' => 'ahoang@gmail.com',
+            'email' => 'bhoang@gmail.com',
             'sdt' => '0122345678',
             'tinh' => 'TP Đà Nẵng',
             'quan' => 'Quận Hải Châu',
             'phuong' => 'Phường Hải Châu I',
             'diaChi' => '44 Huỳnh Tấn Phát',
-            'tinhTrangHoatDong' => '1',
+            'tinhTrangHoatDong' => 0,
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'b12345678',
             'matkhau' => bcrypt('1234'),
