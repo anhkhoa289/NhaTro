@@ -75,11 +75,11 @@ Route::group(['prefix' => 'Account', 'middleware' => ['kiemTraDangNhap', 'kiemTr
 
     Route::get('PhongCuaToi','TrangCaNhanController@phongCuaToi');
     Route::get('render', 'TrangCaNhanController@phongCuaToiRender'); // AJAX
+
     Route::post('delete','TrangCaNhanController@xoaPhong')
         ->middleware('kiemTraTinhTrangHoatDongTaiKhoan'); // AJAX
     Route::post('hide','TrangCaNhanController@anPhong')
         ->middleware('kiemTraTinhTrangHoatDongTaiKhoan'); // AJAX
-    
     Route::get('update/{maPhong}','TrangCaNhanController@capNhatPhongTro')
         ->middleware('kiemTraTinhTrangHoatDongTaiKhoan');
 
