@@ -29,11 +29,17 @@
                             Phòng trọ của tôi 
                             <span class="Counter">{{Session::get('TaiKhoan.slgPhongTroSoHuu')}}</span>
                         </a>
+                        @if(Session::get('TaiKhoan.loaiTK') === 2 || Session::get('TaiKhoan.loaiTK') === 3)
+                            <a aria-selected="true" role="tab" href="{{ URL::to('CTV/DanhSachPhongDuyet')}}" 
+                                class="underline-nav-item {{Request::is('CTV/DanhSachPhongDuyet')?'selected':''}}">
+                                Danh sách phòng duyệt
+                                <span class="Counter">{{Session::get('TaiKhoan.slgDuyet')}}</span>
+                            </a>
+                        @endif
                         @if(Session::get('TaiKhoan.loaiTK') === 3)
-                            <a aria-selected="true" role="tab" href="{{ URL::to('Account/QuanTri')}}" 
-                                class="underline-nav-item {{Request::is('Account/QuanTri')?'selected':''}}">
+                            <a aria-selected="true" role="tab" href="{{ URL::to('Admin/QuanTri')}}" 
+                                class="underline-nav-item {{Request::is('Admin/QuanTri*')?'selected':''}}">
                                 Trang Quản Trị
-                                <span class="Counter">0</span>
                             </a>
                         @endif
                         @if(Session::get('TaiKhoan.tinhTrangHoatDong') === 0)

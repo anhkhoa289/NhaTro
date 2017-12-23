@@ -134,14 +134,7 @@ export class SearchPanel extends React.Component {
         this.changeDisplayStatus = this.changeDisplayStatus.bind(this)
         this.addCond = this.addCond.bind(this)
 
-        /** xóa điều kiện
-         * @param index stt trong mảng điều kiện
-         */
         this.removeCond = this.removeCond.bind(this)
-
-        /** kiểm tra điều kiện có tồn tại
-         * @param type loại điều kiện
-         */
         this.checkCond = this.checkCond.bind(this)
     }
     
@@ -163,6 +156,10 @@ export class SearchPanel extends React.Component {
     changeDisplayStatus(id = 'nav') {
         this.setState({display: id})
     }
+
+        /** kiểm tra điều kiện có tồn tại
+         * @param type loại điều kiện
+         */
     checkCond(type) {
         let ind = false
         this.state.filterCond.forEach((value, index) => {
@@ -171,6 +168,7 @@ export class SearchPanel extends React.Component {
         })
         return ind
     }
+        
     addCond(idItem) {
         // kiểm tra điều kiện trùng lặp
         let index = this.checkCond(idItem)
@@ -228,20 +226,29 @@ export class SearchPanel extends React.Component {
         // đổi trạng thái nav filter
         this.changeDisplayStatus()
 
-        // Câp nhật trang chủ
+        // đặt lại scrollTop
+        $(window).scrollTop(0)
+
+        // Cập nhật trang chủ
         this.props.capNhatDanhSach(newFilterCond)
     }
 
     /**
      * Filter Conditional
+     * xóa điều kiện
+     * @param index stt trong mảng điều kiện
      */
     removeCond(index, funcCall = false) {
         let newFilterCond = this.state.filterCond
         newFilterCond.splice(index, 1)
         this.setState({filterCond : newFilterCond})
-        // Câp nhật trang chủ
-        if(!funcCall)
+        
+        if(!funcCall) {
+            // đặt lại scrollTop
+            $(window).scrollTop(0)
+            // Cập nhật trang chủ
             this.props.capNhatDanhSach(newFilterCond)
+        }
     }
 
     render() {

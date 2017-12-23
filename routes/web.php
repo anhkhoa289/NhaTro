@@ -47,7 +47,7 @@ Route::get('/', 'PhongController@trangChu');
 Route::post('getTinhs','DiaPhuongController@getTinhs');
 Route::post('getQuan','DiaPhuongController@getQuan');
 Route::post('TrangChuReact', 'PhongController@trangChuReact');
-
+Route::get('CanhBao', 'AccountController@canhBao');
 /*
 |---------------------------------------------------------------------------------------------------------
 |- Tài Khoản
@@ -67,8 +67,7 @@ Route::group(['prefix' => 'Account'], function () {
     Route::post('DangNhap','AccountController@dangNhap');
     
 });
-Route::group(['prefix' => 'Account', 'middleware' => 'kiemTraDangNhap'], function () {
-    Route::get('QuanTri','TrangCaNhanController@quanTri');
+Route::group(['prefix' => 'Account', 'middleware' => ['kiemTraDangNhap', 'kiemTraKhoaTaiKhoan']], function () {
 
     Route::get('ThongBao','TrangCaNhanController@thongBao');
     Route::get('UpdateThongBao','TrangCaNhanController@updateThongBao'); // AJAX
@@ -78,6 +77,9 @@ Route::group(['prefix' => 'Account', 'middleware' => 'kiemTraDangNhap'], functio
     Route::get('render', 'TrangCaNhanController@phongCuaToiRender'); // AJAX
     Route::post('delete','TrangCaNhanController@xoaPhong')
         ->middleware('kiemTraTinhTrangHoatDongTaiKhoan'); // AJAX
+    Route::post('hide','TrangCaNhanController@anPhong')
+        ->middleware('kiemTraTinhTrangHoatDongTaiKhoan'); // AJAX
+    
     Route::get('update/{maPhong}','TrangCaNhanController@capNhatPhongTro')
         ->middleware('kiemTraTinhTrangHoatDongTaiKhoan');
 
@@ -90,7 +92,7 @@ Route::group(['prefix' => 'Account', 'middleware' => 'kiemTraDangNhap'], functio
 |- Phòng Trọ
 |---------------------------------------------------------------------------------------------------------
 */
-Route::group(['prefix' => 'Phong', 'middleware' => 'kiemTraDangNhap'], function () {
+Route::group(['prefix' => 'Phong', 'middleware' => ['kiemTraDangNhap', 'kiemTraKhoaTaiKhoan']], function () {
     Route::view('ThemPhong', 'Phong.ThemPhong', ['DiaPhuong' => app('DiaPhuong')])
         ->middleware('kiemTraTinhTrangHoatDongTaiKhoan');
     Route::post('ThemPhong','PhongController@themPhong');
@@ -114,13 +116,33 @@ Route::group(['prefix' => 'KhachHang'], function () {
     
 });
 
+/*
+|---------------------------------------------------------------------------------------------------------
+|- CTV
+|---------------------------------------------------------------------------------------------------------
+*/
+Route::group([
+    'prefix' => 'CTV', 
+    'middleware' => [
+        'kiemTraDangNhap', 
+        'kiemTraTinhTrangHoatDongTaiKhoan',
+        'kiemTraCTVvaAdmin',
+        'kiemTraKhoaTaiKhoan'
+    ]
+], function () {
+    Route::get('DanhSachPhongDuyet','CTVController@viewDanhSachPhongDuyet');
+    Route::post('GetDanhSachPhongDuyet','CTVController@danhSachPhongDuyet');
+    Route::post('UpdateTinhTrangDuyet','CTVController@updateTinhTrangDuyet');
+    
+});
 
 /*
 |---------------------------------------------------------------------------------------------------------
 |- Admin
 |---------------------------------------------------------------------------------------------------------
 */
-Route::group(['prefix' => 'Admin', 'middleware' => 'kiemTraAdmin'], function () {
+Route::group(['prefix' => 'Admin', 'middleware' => ['kiemTraDangNhap','kiemTraAdmin']], function () {
+    Route::get('QuanTri','AdminController@quanTri');
     Route::get('CapNhatTaiKhoan','AdminController@viewCapNhatTK');
     Route::post('CapNhatLTK','AdminController@capNhatLTK');
     Route::get('KiemTra','AdminController@kiemTra'); // AJAX

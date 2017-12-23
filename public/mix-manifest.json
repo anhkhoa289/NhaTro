@@ -1,5 +1,6 @@
 {
     "/js/app/PhongCuaToi.js": "/js/app/PhongCuaToi.js",
     "/css/style.css": "/css/style.css",
-    "/js/app/TrangChu.js": "/js/app/TrangChu.js"
+    "/js/app/XemPhong.js": "/js/app/XemPhong.js",
+    "/js/app/DanhSachDuyetPhong.js": "/js/app/DanhSachDuyetPhong.js"
 }

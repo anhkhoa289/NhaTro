@@ -163,3 +163,9 @@ div.img-nhatro { // style="background-image:url()
         height: 8rem
     }
 }
+.input-sdt {
+    input[type=number]::-webkit-inner-spin-button, 
+    input[type=number]::-webkit-outer-spin-button {
+        appearance: none;
+    }
+}

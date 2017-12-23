@@ -6,6 +6,13 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
+    /**
+     * Trang Admin
+     */
+    public function quanTri(Request $request){
+        $data['test'] = null;
+        return view('TrangCaNhan.TrangQuanTri', $data);
+    }
     public function viewCapNhatTK(){
         $result = app('LoaiTaiKhoanRepository')->getAll();
         foreach($result as $v)

@@ -23,8 +23,6 @@ class PhongController extends Controller
     }
 
     public function themPhong(ThemPhongTroRequest $req){
-        //$req->chuNha = $req->session()->get('TaiKhoan.id');
-
         
         DB::beginTransaction();
         // Thêm Phòng trọ vào CSDL
@@ -76,14 +74,18 @@ class PhongController extends Controller
             
         return redirect('Phong/'.$maPhong);
     }
-    public function xemPhong($maPhong){
-        $data['PhongTro'] = app('PhongTroRepository')->get($maPhong);
-        $data['photos'] = app('HinhAnhPhongTroRepository')->get($maPhong);
+    public function xemPhong(Request $req){
+        $data['PhongTro'] = app('PhongTroRepository')->get($req->maPhong);
+        $data['photos'] = app('HinhAnhPhongTroRepository')->get($req->maPhong);
         $data['chuNha'] = app('TaiKhoanRepository')->get($data['PhongTro']->chuNha);
         if($data['PhongTro']->tinhTrangDuyet === 1) 
             $data["CTV"] = app('TaiKhoanRepository')->get($data['PhongTro']->CTVduyet);
         else
             $data["CTV"] = null;
+        if($req->session()->get('TaiKhoan.id') === $data['PhongTro']->CTVduyet)
+            $data["ChucNanngDuyet"] = true;
+        else
+            $data["ChucNanngDuyet"] = false;
         return view('Phong.XemPhong',$data);
     }
     public function capNhatLuotClick(Request $request) {

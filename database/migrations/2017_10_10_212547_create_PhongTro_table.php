@@ -32,7 +32,7 @@ class CreatePhongTroTable extends Migration
             $table->dateTime('datChoLuc')->nullable();
             $table->dateTime('capNhatLuc');
             $table->bigInteger('CTVduyet')->nullable();
-            $table->boolean('tinhTrangDuyet')->default(0);
+            $table->tinyInteger('tinhTrangDuyet')->default(0);
             $table->boolean('tinhTrangHienThi')->default(1);
             $table->boolean('tinhTrangSoHuu')->default(1);
             $table->char('pathImg', 255)->nullable();

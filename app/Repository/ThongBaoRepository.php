@@ -25,14 +25,18 @@ class ThongBaoRepository
         $this->ThongBao->TK_id = $TB->TK_id;
         $this->ThongBao->maLienKet = $TB->maLienKet;
         $this->ThongBao->noiDung = $loaiTB->mau;
+        $this->ThongBao->thGianCapNhat = Carbon::now();
         $this->ThongBao->save();
         return $this->ThongBao->id;
     }
     public function get10ThongBao($TK_id, $skip = 0, $loaiTB = null) {
+        $q = [['TaiKhoan.id', '=', $TK_id]];
+        if($loaiTB != null)
+            array_push($q, ['ThongBao.loaiTB', '=', $loaiTB]);
         return DB::table('TaiKhoan')
             ->join('ThongBao', 'TaiKhoan.id', '=', 'ThongBao.TK_id')
             ->join('PhongTro', 'ThongBao.maLienket', '=', 'PhongTro.maPhong')
-            ->where('TaiKhoan.id', '=', $TK_id)
+            ->where($q)
             ->select('*', 'ThongBao.noiDung as noiDungTB', 'ThongBao.id as TB_id')
             ->orderBy('thGianCapNhat', 'desc')
             ->skip($skip)
@@ -59,7 +63,7 @@ class ThongBaoRepository
                 ->select('*', 'ThongBao.noiDung as noiDungTB', 'PhongTro.noiDung as NoiDung',
                     'DatCho.created_at as thGianDatCho')
                 ->get();
-        else
+        if($loaiTB == 2)
             return DB::table('ThongBao')
                 ->join('PhongTro', 'ThongBao.maLienket', '=', 'PhongTro.maPhong')
                 ->join('TaiKhoan', 'TaiKhoan.id', '=', 'PhongTro.chuNha')
@@ -67,6 +71,7 @@ class ThongBaoRepository
                 ->select('*', 'ThongBao.noiDung as noiDungTB', 'PhongTro.noiDung as NoiDung', 
                     'ThongBao.id as TB_id', 'TaiKhoan.id as chuNha')
                 ->first();
+        else return null;
     }
     public function updateTinhTrangXem($id, $tinhTrang) {
         $this->ThongBao = $this->ThongBao::find($id);

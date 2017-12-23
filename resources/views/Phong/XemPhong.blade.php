@@ -102,6 +102,10 @@
                             {{$chuNha->sdt}}
                         </div>
                         <div class="col-md-12">
+                            <span>Dành cho CTV: </span>
+                            <div id="ForCTV"></div>
+                        </div>
+                        <div class="col-md-12">
                             <div class="btn-group btn-group-lg btn-group-justified">
                                 {{--  <div class="btn-group">
                                     <button type="button" class="btn btn-success my-btn-success" onclick="hienso(this)">
@@ -120,12 +124,13 @@
 
                 {{-- ReactJs app --}}
                 <div id="dat-cho-react"></div>
+                
                 <script>
-                    var clickHienSo = false, maPhong = {{$PhongTro->maPhong}}, chuNha = {{$PhongTro->chuNha}};
+                    var clickHienSo = false, maPhong = {{$PhongTro->maPhong}}, chuNha = {{$PhongTro->chuNha}}
+                    var cND = {{$ChucNanngDuyet}}
+                    var phongDuyet = <?php echo json_encode($PhongTro); ?>
                 </script>
                 <script src="{{asset('js/app/XemPhong.js')}}"></script>
-
-
 
 
             </div> {{-- xem-phong --}}

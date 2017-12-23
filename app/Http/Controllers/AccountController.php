@@ -91,4 +91,21 @@ class AccountController extends Controller
         $data['DiaPhuong'] = app('DiaPhuong');
         return view('Account.DangKyTaiKhoan', $data);
     }
+
+    /**
+     * View Cảnh báo
+     */
+    public function canhBao(Request $req) {
+        $data = [];
+        if($req->session()->has('TaiKhoan')) {
+            if($req->session()->get('TaiKhoan.khoaTaiKhoan') == 1)
+                array_push($data, 'Tài khoản của bạn đã bị khóa, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết');
+            if($req->session()->get('TaiKhoan.tinhTrangHoatDong') == 0)
+                array_push($data, 'Tài khoản của bạn chưa được kích hoạt');
+        }
+        else {
+            array_push($data, 'Bạn chưa đăng nhập');
+        }
+        return view('Account.CanhBao', ['data' => $data]);
+    }
 }

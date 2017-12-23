@@ -60,5 +60,7 @@ class Kernel extends HttpKernel
         'kiemTraDangNhap' => \App\Http\Middleware\KiemTraDangNhap::class,
         'kiemTraAdmin' => \App\Http\Middleware\KiemTraAdmin::class,
         'kiemTraTinhTrangHoatDongTaiKhoan' => \App\Http\Middleware\KiemTraTinhTrangHoatDongTaiKhoan::class,
+        'kiemTraCTVvaAdmin' => \App\Http\Middleware\KiemTraCTVvaAdmin::class,
+        'kiemTraKhoaTaiKhoan' => \App\Http\Middleware\KiemTraKhoaTaiKhoan::class,
     ];
 }

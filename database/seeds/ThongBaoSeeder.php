@@ -11,15 +11,26 @@ class ThongBaoSeeder extends Seeder
      */
     public function run()
     {
-        // DB::table('ThongBao')->insert([
-        //     'loaiTB' => 1,
-        //     'TK_id' => 3,
-        //     'maLienKet' => 1,
-        //     'noiDung' => str_random(10) . " " . str_random(10) . " " . str_random(10)
-        //     . " " . str_random(10) . " " . str_random(10) . " " . str_random(10)
-        //     . " " . str_random(10) . " " . str_random(10) . " " . str_random(10)
-        //     . " " . str_random(10) . " " . str_random(10) . " " . str_random(10)
-        // ]);
-
+        DB::table('ThongBao')->insert([
+            'loaiTB' => 2,
+            'TK_id' => 2,
+            'maLienKet' => 7,
+            'noiDung' => 'Phòng {0} đã được phân công cho bạn duyệt',
+            'thGianCapNhat' => '2017-12-14 19:54:15'
+        ]);
+        DB::table('ThongBao')->insert([
+            'loaiTB' => 2,
+            'TK_id' => 2,
+            'maLienKet' => 8,
+            'noiDung' => 'Phòng {0} đã được phân công cho bạn duyệt',
+            'thGianCapNhat' => '2017-12-14 19:59:15'
+        ]);
+        DB::table('ThongBao')->insert([
+            'loaiTB' => 2,
+            'TK_id' => 2,
+            'maLienKet' => 9,
+            'noiDung' => 'Phòng {0} đã được phân công cho bạn duyệt',
+            'thGianCapNhat' => '2017-12-14 21:21:15'
+        ]);
     }
 }

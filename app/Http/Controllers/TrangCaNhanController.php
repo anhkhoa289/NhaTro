@@ -12,14 +12,6 @@ class TrangCaNhanController extends Controller
     public $data;
 
     /**
-     * Trang Admin và CTV
-     */
-    public function quanTri(Request $request){
-        $this->data['test'] = null;
-        return view('TrangCaNhan.TrangQuanTri', $this->data);
-    }
-
-    /**
      * Thông báo
      */
     public function thongBao(Request $req) {
@@ -115,7 +107,7 @@ class TrangCaNhanController extends Controller
      * Ẩn phòng
      */
     public function anPhong(Request $req) {
-        app('PhongTroRepository')->hidePhongTro($req->maPhong);
+        app('PhongTroRepository')->hidePhongTro($req->maPhong, $req->tinhTrangHienThi);
         return response('success',200)->header('Content-Type', 'text/plain');
     }
 }

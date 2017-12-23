@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 54);
+/******/ 	return __webpack_require__(__webpack_require__.s = 55);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -19571,18 +19571,42 @@ module.exports = function spread(callback) {
 /* 51 */,
 /* 52 */,
 /* 53 */,
-/* 54 */
+/* 54 */,
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(55);
+module.exports = __webpack_require__(56);
 
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ComponentXemPhong__ = __webpack_require__(57);
+
+
+
+
+/** Render App
+ */
+
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__ComponentXemPhong__["a" /* DuyetPhong */], { status: cND, phongDuyet: phongDuyet }), document.getElementById("ForCTV"));
+
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__ComponentXemPhong__["b" /* XemPhong */], null), document.getElementById("dat-cho-react"));
+
+/***/ }),
+/* 57 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return XemPhong; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DuyetPhong; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(13);
@@ -19768,7 +19792,7 @@ var DatCho = function (_React$Component) {
                                 { 'data-toggle': 'validator', role: 'form' },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
-                                    { className: 'form-group' },
+                                    { className: 'form-group input-sdt' },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'label',
                                         { htmlFor: 'sdtKhachHang' },
@@ -19907,11 +19931,79 @@ var XemPhong = function (_React$Component2) {
     return XemPhong;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-/** Render App
- */
+var DuyetPhong = function (_React$Component3) {
+    _inherits(DuyetPhong, _React$Component3);
 
+    function DuyetPhong(props) {
+        _classCallCheck(this, DuyetPhong);
 
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(XemPhong, null), document.getElementById("dat-cho-react"));
+        var _this5 = _possibleConstructorReturn(this, (DuyetPhong.__proto__ || Object.getPrototypeOf(DuyetPhong)).call(this, props));
+
+        _this5.state = {
+            tinhTrangDuyet: _this5.props.phongDuyet.tinhTrangDuyet
+        };
+        _this5.thayDoiTinhTrangDuyet = _this5.thayDoiTinhTrangDuyet.bind(_this5);
+        return _this5;
+    }
+
+    _createClass(DuyetPhong, [{
+        key: 'thayDoiTinhTrangDuyet',
+        value: function thayDoiTinhTrangDuyet(event) {
+            this.setState({ tinhTrangDuyet: Number(event.target.value) });
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post(location.origin + '/CTV/UpdateTinhTrangDuyet', {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                maPhong: this.props.phongDuyet.maPhong,
+                tinhTrangDuyet: event.target.value
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            if (this.props.status == 1) return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'div',
+                { className: 'radio' },
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'label',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', name: this.props.phongDuyet.maPhong, value: '1',
+                        defaultChecked: this.state.tinhTrangDuyet == 1, onChange: this.thayDoiTinhTrangDuyet }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'span',
+                        { className: 'checkmark' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-ok', 'data-toggle': 'tooltip', title: 'Duy\u1EC7t' }),
+                        'Duy\u1EC7t'
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'label',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', name: this.props.phongDuyet.maPhong, value: '2',
+                        defaultChecked: this.state.tinhTrangDuyet == 2, onChange: this.thayDoiTinhTrangDuyet }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'span',
+                        { className: 'checkmark' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-remove', 'data-toggle': 'tooltip', title: 'Kh\xF3a Ph\xF2ng' }),
+                        'Kh\xF3a'
+                    )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'label',
+                    null,
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', name: this.props.phongDuyet.maPhong, value: '0',
+                        defaultChecked: this.state.tinhTrangDuyet == 0, onChange: this.thayDoiTinhTrangDuyet }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'span',
+                        { className: 'checkmark' },
+                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-pushpin', 'data-toggle': 'tooltip', title: 'Ch\u1EDD Duy\u1EC7t' }),
+                        'Ch\u1EDD'
+                    )
+                )
+            );else return null;
+        }
+    }]);
+
+    return DuyetPhong;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
 /***/ })
 /******/ ]);

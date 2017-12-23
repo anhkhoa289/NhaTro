@@ -104,6 +104,11 @@
                         cursor: pointer;
                     }
                 }
+                > div.radio {
+                    flex-grow: 1;
+                    white-space: nowrap;
+                    @include radio-customize;
+                }
             }
             >div.table {
                 width: 100%;
@@ -122,6 +127,50 @@
 |- by anhkhoa289          
 |---------------------------------
 */
+@mixin display-grid-picture { // for contain
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    > label {
+        width: 33.333333333%;
+        height: 33.333333333%;
+        position: relative;
+        cursor: pointer;
+        > img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+@mixin navigation-ul {
+    ul {
+        list-style-type: none;
+        margin-bottom: 0;
+        -webkit-padding-start: 0;
+
+        > li {
+            display: inline-block;
+            > a {
+                display: block;
+                padding: 1rem;
+                font-weight: bold;
+                color: black;
+            }
+        }
+        > li {
+            &.active, &:hover {
+                background-color: #1bca06;
+                a {
+                    color: white;
+                    text-decoration: none;
+                }
+            }
+        }
+
+    }
+}
+
 @mixin checkbox-blue { // for some .contain class, wrap input by label please
     >label { 
         > .checkmark {
@@ -163,6 +212,7 @@
         }
     }
 }
+
 @mixin checkbox-bigger { // for some .contain class, wrap input by label please
     >label { 
         > .checkmark {
@@ -206,46 +256,53 @@
         }
     }
 }
-@mixin display-grid-picture { // for contain
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    > label {
-        width: 33.333333333%;
-        height: 33.333333333%;
+
+/*
+|---------------------------------
+|- for persional page
+|- 22/12/2017 - 23/12/2017          
+|- by anhkhoa289          
+|---------------------------------
+*/
+@mixin radio-customize { // for some .contain class, wrap input by label please
+    >label { 
         position: relative;
-        cursor: pointer;
-        > img {
-            width: 100%;
-            height: 100%;
-        }
-    }
-}
+        > .checkmark {
+            border: .2rem solid rgb(168, 168, 168);
+            padding: .3rem;
+            padding-right: 1rem;
+            border-radius: 3rem;
+            border-bottom-right-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            font-size: 1.7rem;
 
-@mixin navigation-ul {
-    ul {
-        list-style-type: none;
-        margin-bottom: 0;
-        -webkit-padding-start: 0;
+            background-image: linear-gradient(rgb(236, 236, 236), rgb(211, 211, 211));
+            color: gray;
 
-        > li {
-            display: inline-block;
-            > a {
-                display: block;
-                padding: 1rem;
-                font-weight: bold;
-                color: black;
+            .glyphicon {
+                border: 0.2rem solid #a8a8a8;
+                border-radius: 3rem;
+                padding: 0.5rem;
+                margin-left: -.5rem;
+                margin-right: 1rem;
             }
         }
-        > li {
-            &.active, &:hover {
-                background-color: #1bca06;
-                a {
-                    color: white;
-                    text-decoration: none;
+        &:hover > input ~ .checkmark {
+            //background-color: #ccc; // ->
+        }
+        > input {
+            position: absolute;
+            opacity: 0;
+            &:checked ~ .checkmark {
+                border-color: silver;
+                background-image: linear-gradient($sec-back-color, rgb(76, 175, 80));
+                color: white;
+
+                .glyphicon {
+                    background-image: linear-gradient(rgb(236, 236, 236), rgb(211, 211, 211));
+                    color: gray;
                 }
             }
         }
-
     }
 }

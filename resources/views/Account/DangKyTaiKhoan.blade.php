@@ -89,7 +89,7 @@
                         'data-error'=>'Phải có 9 chữ số', 'data-minlength'=>'9', 'maxlength'=>'9','required']) !!}
                         <div class="help-block with-errors"></div>
                     </div>  --}}
-                    <div class="form-group col-md-4{{ $errors->has('sdt') ? ' has-error has-danger' : '' }}">
+                    <div class="form-group col-md-4 input-sdt{{ $errors->has('sdt') ? ' has-error has-danger' : '' }}">
                         {!! Form::label('sdt', 'Số điện thoại') !!}
                         {!! Form::number('sdt', null, ['class' => 'form-control', 
                         'data-error'=>'Không được bỏ trống', 'required']) !!}

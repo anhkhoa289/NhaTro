@@ -13,6 +13,11 @@
         >.thong-tin {
             @include xem-thong-tin-phong-tro;
         }
+        #ForCTV{
+            .radio{
+                @include radio-customize;
+            }
+        }
     }
     .sua-phong {
         @include in-dam-ten-phong-span();

@@ -112,5 +112,48 @@ class HinhAnhPhongTroSeeder extends Seeder
             'maPhong' => 6,
             'pathImg' => '6/multi-functional-artist-studio-raanan-stern-designboom01.jpg'
         ]);
+
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 7,
+            'pathImg' => '7/1_49265.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 7,
+            'pathImg' => '7/nha-tro-ban-quan-12.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 7,
+            'pathImg' => '7/readfaweradfdsv234234.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 7,
+            'pathImg' => '7/thumb745x510.382906.jpg'
+        ]);
+
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 8,
+            'pathImg' => '8/1_22516.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 8,
+            'pathImg' => '8/145195523467.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 8,
+            'pathImg' => '8/dothidiaoc_asd_fgh_crop_630_500_abc_3.20150228113022-cc5a.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 8,
+            'pathImg' => '8/thue-nha-tro-tai-hcm-1.jpg'
+        ]);
+
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 9,
+            'pathImg' => '9/48d2bac343fde5593493bef163021547.jpg'
+        ]);
+        DB::table('HinhAnhPhongTro')->insert([
+            'maPhong' => 9,
+            'pathImg' => '9/cho-thue-phong-tro-gia-re-tai-kdc-434-164.jpg'
+        ]);
     }
 }

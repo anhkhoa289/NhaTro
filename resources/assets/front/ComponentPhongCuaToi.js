@@ -49,7 +49,8 @@ export class PhongCuaToi extends React.Component{
                 this.setState((prevState, props) => {
                     let mang = prevState.mang
                     mang.splice(prevState.deleteIndex, 1)
-                    return {deleteItem: null, deleteIndex: null, mang: mang}
+                    skip = prevState - 1
+                    return {deleteItem: null, deleteIndex: null, mang: mang, skip: skip}
                 })
                 $("#xoa-phong").modal('hide')
             }
@@ -79,8 +80,7 @@ export class PhongCuaToi extends React.Component{
                 <ul className="new-ul">
                     {
                         this.state.mang.map((va, index) =>
-                            <PhongCuaToiItem key={index} urlEdit={va.urlEdit} tenPhong={va.tenPhong} 
-                            noiDung={va.noiDung} backgroundImg={va.backgroundImg} sdt={va.sdt}
+                            <PhongCuaToiItem key={index} phong={va}
                             deleteAction={() => this.deleteAction(va, index)}/>
                         )
                     }
@@ -97,16 +97,10 @@ export class PhongCuaToi extends React.Component{
                                 <h4 className="modal-title">Xóa Phòng Trọ</h4>
                             </div>
                             <div className="modal-body">
-                                {/* <form data-toggle="validator" role="form">
-                                    <div className="form-group">
-                                        <label htmlFor='maXacNhan'>Nhập mã xác nhận nhận được qua tin nhắn </label>
-                                        <input type='text' id='maXacNhan' name='maXacNhan' className='form-control'
-                                        data-error='không được bỏ trống' required></input>
-                                        <div id="thongbaoxacnhan" className="help-block with-errors" style={{whiteSpace: 'pre-line'}}></div>
-                                    </div>
-                                </form> */}
                                 Bạn có chắc muốn xóa phòng:
-                                <b>{(this.state.deleteItem != null) ? this.state.deleteItem.tenPhong : null}</b>
+                                <div>
+                                    <b>{(this.state.deleteItem != null) ? this.state.deleteItem.tenPhong : null}</b>
+                                </div>
                             </div>
                             <div className="modal-footer">
                                 <button type="button" className='btn btn-success my-btn-success' id="xacNhan"
@@ -126,37 +120,55 @@ class PhongCuaToiItem extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            sdtStatus : false
+            sdtStatus : false,
+            tinhTrangHienThi: this.props.phong.tinhTrangHienThi
         }
         this.changeSdtStatus = this.changeSdtStatus.bind(this)
+        this.changeTinhTrangHienThi = this.changeTinhTrangHienThi.bind(this)
     }
     changeSdtStatus() {
         this.setState({sdtStatus : !this.state.sdtStatus})
     }
+    changeTinhTrangHienThi() {
+        let tinhTrangHienThi = this.state.tinhTrangHienThi
+        if(tinhTrangHienThi == 1)
+            tinhTrangHienThi = 0
+        else
+            tinhTrangHienThi = 1
+        axios.post(location.origin + '/Account/hide', {
+            _token: $('meta[name="csrf-token"]').attr('content'),
+            maPhong: this.props.phong.maPhong,
+            tinhTrangHienThi
+        }).then((res) => {
+            if(res.data = 'success') {
+                this.setState({tinhTrangHienThi})
+            }
+        })
+    }
     render() {
-        const divStyle = {
-            backgroundImage:'url('+ this.props.backgroundImg + ')'
-        }
-
         let sdt = null
         let chevron = <Chevron type={"down"} title={"Mở rộng"} onClick={this.changeSdtStatus}/>
         if(this.state.sdtStatus) {
             chevron = <Chevron type={"up"} title={"Thu nhỏ"} onClick={this.changeSdtStatus}/>
-            sdt = <CompSdt sdt={this.props.sdt}/>
+            sdt = <CompSdt sdt={this.props.phong.sdt}/>
         }
         return (
             <li >
                 <div>
                     <div>
                         <div className='img-nhatro' onClick={this.changeSdtStatus}>
-                            <div style={divStyle}></div>
+                            <div style={{backgroundImage:'url('+ this.props.phong.backgroundImg + ')'}}></div>
                         </div>
                         <div className="noi-dung" onClick={this.changeSdtStatus}>
-                            <div className="title">{this.props.tenPhong}</div>
-                            {this.props.noiDung}
+                            <div className="title">{this.props.phong.tenPhong}</div>
+                            {this.props.phong.noiDung}
                         </div>
                         <div className="action">
-                            <a href={this.props.urlEdit} className="edit">
+                            <a onClick={this.changeTinhTrangHienThi} className="edit">
+                                <span className={(this.state.tinhTrangHienThi == 1)? "glyphicon glyphicon-eye-open" : "glyphicon glyphicon-eye-close"} 
+                                data-toggle="tooltip" title="Ản Phòng"></span>
+                            </a>
+                            <a href={this.props.phong.urlEdit} className="edit">
                                 <span className="glyphicon glyphicon-edit" data-toggle="tooltip" title="Chỉnh Sửa"></span>
                             </a>
                             <a onClick={this.props.deleteAction} className="trash">

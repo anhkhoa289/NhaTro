@@ -123,7 +123,8 @@ class TaiKhoanRepository
             'PhongTro.maPhong as maPhong',
             'PhongTro.tenPhong as tenPhong', 
             'PhongTro.noiDung as noiDung',
-            'PhongTro.pathImg as backgroundImg'
+            'PhongTro.pathImg as backgroundImg',
+            'PhongTro.tinhTrangHienThi as tinhTrangHienThi'
         )
         ->orderBy("capNhatLuc", 'desc')
         ->skip($skip)

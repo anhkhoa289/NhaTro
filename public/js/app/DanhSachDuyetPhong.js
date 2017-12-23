@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 57);
+/******/ 	return __webpack_require__(__webpack_require__.s = 58);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -652,7 +652,7 @@ module.exports = defaults;
 if (false) {
   module.exports = require('./cjs/react.production.min.js');
 } else {
-  module.exports = __webpack_require__(15);
+  module.exports = __webpack_require__(14);
 }
 
 
@@ -696,7 +696,7 @@ module.exports = emptyObject;
 if (true) {
   var invariant = __webpack_require__(2);
   var warning = __webpack_require__(3);
-  var ReactPropTypesSecret = __webpack_require__(17);
+  var ReactPropTypesSecret = __webpack_require__(16);
   var loggedTypeFailures = {};
 }
 
@@ -1054,18 +1054,12 @@ if (false) {
   checkDCE();
   module.exports = require('./cjs/react-dom.production.min.js');
 } else {
-  module.exports = __webpack_require__(18);
+  module.exports = __webpack_require__(17);
 }
 
 
 /***/ }),
 /* 14 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(32);
-
-/***/ }),
-/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1084,7 +1078,7 @@ if (true) {
   (function() {
 'use strict';
 
-var _assign = __webpack_require__(16);
+var _assign = __webpack_require__(15);
 var invariant = __webpack_require__(2);
 var emptyObject = __webpack_require__(6);
 var warning = __webpack_require__(3);
@@ -2415,7 +2409,7 @@ module.exports = react;
 
 
 /***/ }),
-/* 16 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2512,7 +2506,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 17 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2531,7 +2525,7 @@ module.exports = ReactPropTypesSecret;
 
 
 /***/ }),
-/* 18 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2553,18 +2547,18 @@ if (true) {
 var React = __webpack_require__(5);
 var invariant = __webpack_require__(2);
 var warning = __webpack_require__(3);
-var ExecutionEnvironment = __webpack_require__(19);
-var _assign = __webpack_require__(20);
+var ExecutionEnvironment = __webpack_require__(18);
+var _assign = __webpack_require__(19);
 var emptyFunction$1 = __webpack_require__(1);
-var EventListener = __webpack_require__(21);
-var getActiveElement = __webpack_require__(22);
-var shallowEqual = __webpack_require__(23);
-var containsNode = __webpack_require__(24);
-var focusNode = __webpack_require__(27);
+var EventListener = __webpack_require__(20);
+var getActiveElement = __webpack_require__(21);
+var shallowEqual = __webpack_require__(22);
+var containsNode = __webpack_require__(23);
+var focusNode = __webpack_require__(26);
 var emptyObject = __webpack_require__(6);
 var checkPropTypes = __webpack_require__(7);
-var hyphenateStyleName = __webpack_require__(28);
-var camelizeStyleName = __webpack_require__(30);
+var hyphenateStyleName = __webpack_require__(27);
+var camelizeStyleName = __webpack_require__(29);
 
 /**
  * WARNING: DO NOT manually require this module.
@@ -17896,7 +17890,7 @@ module.exports = reactDom;
 
 
 /***/ }),
-/* 19 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17935,7 +17929,7 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 20 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18032,7 +18026,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 
 
 /***/ }),
-/* 21 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18112,7 +18106,7 @@ var EventListener = {
 module.exports = EventListener;
 
 /***/ }),
-/* 22 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18154,7 +18148,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 module.exports = getActiveElement;
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18225,7 +18219,7 @@ function shallowEqual(objA, objB) {
 module.exports = shallowEqual;
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18240,7 +18234,7 @@ module.exports = shallowEqual;
  * 
  */
 
-var isTextNode = __webpack_require__(25);
+var isTextNode = __webpack_require__(24);
 
 /*eslint-disable no-bitwise */
 
@@ -18268,7 +18262,7 @@ function containsNode(outerNode, innerNode) {
 module.exports = containsNode;
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18283,7 +18277,7 @@ module.exports = containsNode;
  * @typechecks
  */
 
-var isNode = __webpack_require__(26);
+var isNode = __webpack_require__(25);
 
 /**
  * @param {*} object The object to check.
@@ -18296,7 +18290,7 @@ function isTextNode(object) {
 module.exports = isTextNode;
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18324,7 +18318,7 @@ function isNode(object) {
 module.exports = isNode;
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18354,7 +18348,7 @@ function focusNode(node) {
 module.exports = focusNode;
 
 /***/ }),
-/* 28 */
+/* 27 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18369,7 +18363,7 @@ module.exports = focusNode;
 
 
 
-var hyphenate = __webpack_require__(29);
+var hyphenate = __webpack_require__(28);
 
 var msPattern = /^ms-/;
 
@@ -18396,7 +18390,7 @@ function hyphenateStyleName(string) {
 module.exports = hyphenateStyleName;
 
 /***/ }),
-/* 29 */
+/* 28 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18432,7 +18426,7 @@ function hyphenate(string) {
 module.exports = hyphenate;
 
 /***/ }),
-/* 30 */
+/* 29 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18447,7 +18441,7 @@ module.exports = hyphenate;
 
 
 
-var camelize = __webpack_require__(31);
+var camelize = __webpack_require__(30);
 
 var msPattern = /^-ms-/;
 
@@ -18475,7 +18469,7 @@ function camelizeStyleName(string) {
 module.exports = camelizeStyleName;
 
 /***/ }),
-/* 31 */
+/* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -18508,6 +18502,12 @@ function camelize(string) {
 }
 
 module.exports = camelize;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(32);
 
 /***/ }),
 /* 32 */
@@ -19574,14 +19574,15 @@ module.exports = function spread(callback) {
 /* 54 */,
 /* 55 */,
 /* 56 */,
-/* 57 */
+/* 57 */,
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(58);
+module.exports = __webpack_require__(59);
 
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -19590,9 +19591,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ComponentTrangChu_jsx__ = __webpack_require__(59);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -19605,637 +19605,184 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 
+var PhongDuyetItem = function (_React$Component) {
+    _inherits(PhongDuyetItem, _React$Component);
 
-var Result = function (_React$Component) {
-    _inherits(Result, _React$Component);
+    function PhongDuyetItem(props) {
+        _classCallCheck(this, PhongDuyetItem);
 
-    function Result(props) {
-        _classCallCheck(this, Result);
-
-        var _this = _possibleConstructorReturn(this, (Result.__proto__ || Object.getPrototypeOf(Result)).call(this, props));
-
-        _this.getItemPT = _this.getItemPT.bind(_this);
-        _this.updateItemPT = _this.updateItemPT.bind(_this);
+        var _this = _possibleConstructorReturn(this, (PhongDuyetItem.__proto__ || Object.getPrototypeOf(PhongDuyetItem)).call(this, props));
 
         _this.state = {
-            itemPT: [],
-            skip: 0,
-            remaining: true,
-            cond: []
+            tinhTrangDuyet: _this.props.phongDuyet.tinhTrangDuyet
         };
-
-        _this.getItemPT();
+        _this.thayDoiTinhTrangDuyet = _this.thayDoiTinhTrangDuyet.bind(_this);
+        _this.xemPhong = _this.xemPhong.bind(_this);
         return _this;
     }
 
-    _createClass(Result, [{
-        key: 'getItemPT',
-        value: function getItemPT() {
-            var _this2 = this;
-
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('TrangChuReact', {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                skip: this.state.skip,
-                cond: this.state.cond
-            }).then(function (res) {
-                var itemPT = _this2.state.itemPT;
-                res.data.result.map(function (value) {
-                    return itemPT.push(value);
-                });
-
-                var remaining = true;
-                if (res.data.result.length < 5) remaining = false;
-                _this2.setState({ itemPT: itemPT, remaining: remaining, skip: _this2.state.itemPT.length });
-            });
+    _createClass(PhongDuyetItem, [{
+        key: 'xemPhong',
+        value: function xemPhong() {
+            location.assign(location.origin + '/Phong/' + this.props.phongDuyet.maPhong);
         }
     }, {
-        key: 'updateItemPT',
-        value: function updateItemPT(cond) {
-            var _this3 = this;
-
-            console.log();
-            this.setState({ remaining: true, itemPT: [], skip: 0, cond: cond }, function () {
-                _this3.getItemPT();
-            });
-        }
-    }, {
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            var _this4 = this;
-
-            window.addEventListener('scroll', function () {
-                if (_this4.state.remaining) if ($(window).scrollTop() + $(window).height() == $(document).height()) _this4.getItemPT();
-            });
+        key: 'thayDoiTinhTrangDuyet',
+        value: function thayDoiTinhTrangDuyet(event) {
+            this.setState({ tinhTrangDuyet: Number(event.target.value) });
+            this.props.updateTinhTrangDuyet(event.target.value);
         }
     }, {
         key: 'render',
         value: function render() {
-            var _this5 = this;
-
+            var backgroundImage = 'url(' + location.origin + '/storage/img/' + this.props.phongDuyet.pathImg + ')';
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'row' },
+                'li',
+                null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: 'col-md-8 col-xs-12 result' },
+                    null,
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                         'div',
-                        { className: 'panel panel-approved panel-default' },
+                        null,
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'panel-heading' },
-                            'Ph\xF2ng tr\u1ECD'
+                            { className: 'img-nhatro', onClick: this.xemPhong },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { style: { backgroundImage: backgroundImage } })
                         ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'panel-body', id: 'result' },
-                            this.state.itemPT.map(function (v, i) {
-                                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                    'a',
-                                    { className: 'bordering', href: 'Phong/' + v.maPhong, key: i,
-                                        style: i == 0 ? { border: 0 + 'px' } : null },
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                        'div',
-                                        { className: 'row' },
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'div',
-                                            { className: 'col-md-2 col-xs-12 img-nhatro' },
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { style: { backgroundImage: 'url(storage/img/' + v.pathImg + ')' } })
-                                        ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'div',
-                                            { className: 'col-md-10 col-xs-12' },
-                                            v.tenPhong
-                                        ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'div',
-                                            { className: 'col-md-10 col-xs-12' },
-                                            'Gi\xE1: ',
-                                            v.gia
-                                        ),
-                                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                            'div',
-                                            { className: 'col-md-10 col-xs-12 img-ctv' },
-                                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                                'span',
-                                                { href: '#' },
-                                                v.tinhTrangDuyet == 1 ? 'Da Duyet' : 'Chua Duyet'
-                                            )
-                                        )
-                                    )
-                                );
-                            })
-                        )
-                    )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'col-md-4', id: 'search-panel' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__ComponentTrangChu_jsx__["a" /* SearchPanel */], { giaTien: priceList, dienTich: areaList, capNhatDanhSach: function capNhatDanhSach(x) {
-                            return _this5.updateItemPT(x);
-                        } })
-                )
-            );
-        }
-    }]);
-
-    return Result;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-/** Render App 
- * 
-*/
-
-
-var priceList = [{ value: 2000000, name: '< 1 000 000', min: 0, max: 1000000 }, { value: 3000000, name: '1 000 000 - 2 000 000', min: 1000000, max: 2000000 }, { value: 3000000, name: '2 000 000 - 3 000 000', min: 2000000, max: 3000000 }, { value: 4000000, name: '3 000 000 - 4 000 000', min: 3000000, max: 4000000 }, { value: 5000000, name: '4 000 000 - 5 000 000', min: 4000000, max: 5000000 }, { value: 6000000, name: '5 000 000 - 6 000 000', min: 5000000, max: 6000000 }, { value: 7000000, name: '> 6 000 000', min: 6000000, max: 0 }];
-var areaList = [{ value: 10, name: '<= 10 m', min: 0, max: 10 }, { value: 20, name: '10 - 20 m', min: 10, max: 20 }, { value: 30, name: '20 - 30 m', min: 20, max: 30 }, { value: 40, name: '30 - 40 m', min: 30, max: 40 }, { value: 50, name: '40 - 50 m', min: 40, max: 50 }, { value: 60, name: '50 - 60 m', min: 50, max: 60 }, { value: 70, name: '> 60', min: 60, max: 0 }];
-
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Result, null), document.getElementById('app'));
-
-/***/ }),
-/* 59 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SearchPanel; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(13);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-
-
-
-
-function GiaTien(props) {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'select',
-        { className: 'form-control', name: 'giaTien' },
-        props.giaTien.map(function (value, index) {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'option',
-                { key: index, value: value.value, min: value.min, max: value.max },
-                value.name
-            );
-        })
-    );
-}
-
-function DienTich(props) {
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'select',
-        { className: 'form-control', name: 'dienTich' },
-        props.dienTich.map(function (value, index) {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'option',
-                { key: index, value: value.value, min: value.min, max: value.max },
-                value.name
-            );
-        })
-    );
-}
-
-function FilterConditional(props) {
-    var c = 'cond';
-    if (props.name.length > 35) c = 'cond long-cond';
-    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-        'div',
-        null,
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-            'div',
-            { className: c },
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'button',
-                { onClick: props.remove },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-remove' })
-            ),
-            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'span',
-                null,
-                props.name
-            )
-        )
-    );
-}
-
-var DiaPhuong = function (_React$Component) {
-    _inherits(DiaPhuong, _React$Component);
-
-    function DiaPhuong(props) {
-        _classCallCheck(this, DiaPhuong);
-
-        var _this = _possibleConstructorReturn(this, (DiaPhuong.__proto__ || Object.getPrototypeOf(DiaPhuong)).call(this, props));
-
-        _this.getQuan = _this.getQuan.bind(_this);
-        _this.updateQuan = _this.updateQuan.bind(_this);
-        _this.updatePhuong = _this.updatePhuong.bind(_this);
-        _this.getTinh = _this.getTinh.bind(_this);
-
-        _this.state = {
-            tinh: [],
-            quan: [],
-            phuong: []
-        };
-        _this.getTinh();
-        _this.getQuan('Hà Nội');
-        return _this;
-    }
-
-    _createClass(DiaPhuong, [{
-        key: 'getTinh',
-        value: function getTinh() {
-            var _this2 = this;
-
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post(location.origin + '/getTinhs', {
-                _token: $('meta[name="csrf-token"]').attr('content')
-            }).then(function (res) {
-                _this2.setState({ tinh: res.data });
-            });
-        }
-    }, {
-        key: 'getQuan',
-        value: function getQuan(tenTinh) {
-            var _this3 = this;
-
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post(location.origin + '/getQuan', {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                tenTinh: tenTinh
-            }).then(function (res) {
-                var data = [{
-                    "maQuan": null, "tenQuan": null, "phuong": [{ maPhuong: null, tenPhuong: null }]
-                }];
-                res.data.forEach(function (value) {
-                    return data.push(value);
-                });
-                _this3.setState({ quan: data, phuong: data[0].phuong });
-            });
-        }
-    }, {
-        key: 'updateQuan',
-        value: function updateQuan(event) {
-            this.getQuan(event.target.value);
-        }
-    }, {
-        key: 'updatePhuong',
-        value: function updatePhuong(event) {
-            var _this4 = this;
-
-            this.state.quan.forEach(function (val) {
-                if (val.tenQuan == event.target.value) {
-                    var phuong = [{ maPhuong: null, tenPhuong: null }];
-                    val.phuong.forEach(function (v) {
-                        return phuong.push(v);
-                    });
-                    _this4.setState({ phuong: phuong });
-                }
-            }, this);
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'dia-phuong' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'select',
-                    { className: 'form-control', name: 'tinh', onChange: this.updateQuan },
-                    this.state.tinh.map(function (value, index) {
-                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'option',
-                            { key: index, value: value.tenTinh },
-                            value.tenTinh
-                        );
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'select',
-                    { className: 'form-control', name: 'quan', onChange: this.updatePhuong },
-                    this.state.quan.map(function (value, index) {
-                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'option',
-                            { key: index, value: value.tenQuan },
-                            value.tenQuan
-                        );
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'select',
-                    { className: 'form-control', name: 'phuong' },
-                    this.state.phuong.map(function (value, index) {
-                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'option',
-                            { key: index, value: value.tenPhuong },
-                            value.tenPhuong
-                        );
-                    })
-                )
-            );
-        }
-    }]);
-
-    return DiaPhuong;
-}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
-
-var SearchPanel = function (_React$Component2) {
-    _inherits(SearchPanel, _React$Component2);
-
-    function SearchPanel(props) {
-        _classCallCheck(this, SearchPanel);
-
-        var _this5 = _possibleConstructorReturn(this, (SearchPanel.__proto__ || Object.getPrototypeOf(SearchPanel)).call(this, props));
-
-        _this5.state = {
-            display: 'nav', //[nav, diaphuong, giatien, dientich]
-            item: [{ id: 'diaphuong', name: 'Địa phương' }, { id: 'giatien', name: 'Giá tiền' }, { id: 'dientich', name: 'Diện tích' }],
-            filterCond: []
-        };
-        _this5.changeDisplayStatus = _this5.changeDisplayStatus.bind(_this5);
-        _this5.addCond = _this5.addCond.bind(_this5);
-
-        _this5.removeCond = _this5.removeCond.bind(_this5);
-        _this5.checkCond = _this5.checkCond.bind(_this5);
-        return _this5;
-    }
-
-    _createClass(SearchPanel, [{
-        key: 'componentDidMount',
-        value: function componentDidMount() {
-            var _this6 = this;
-
-            window.addEventListener('scroll', function () {
-                return _this6.flowSearch();
-            });
-        }
-    }, {
-        key: 'flowSearch',
-        value: function flowSearch() {
-            var position = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
-
-            var height = $('#navbar-phongtro').height() + 22;
-            if ($(window).scrollTop() > height) $('#search-panel').css('margin-top', $(window).scrollTop() - height + 'px');else $('#search-panel').css('margin-top', 0 + 'px');
-        }
-
-        /**
-         * Filter
-         */
-
-    }, {
-        key: 'changeDisplayStatus',
-        value: function changeDisplayStatus() {
-            var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'nav';
-
-            this.setState({ display: id });
-        }
-
-        /** kiểm tra điều kiện có tồn tại
-         * @param type loại điều kiện
-         */
-
-    }, {
-        key: 'checkCond',
-        value: function checkCond(type) {
-            var ind = false;
-            this.state.filterCond.forEach(function (value, index) {
-                if (value.type === type) ind = index;
-            });
-            return ind;
-        }
-    }, {
-        key: 'addCond',
-        value: function addCond(idItem) {
-            // kiểm tra điều kiện trùng lặp
-            var index = this.checkCond(idItem);
-            if (index !== false) this.removeCond(index, true);
-
-            // tạo điều kiện mới
-            var itemCond = void 0;
-            switch (idItem) {
-                case 'diaphuong':
-                    itemCond = {
-                        type: 'diaphuong',
-                        value: null,
-                        name: $('select[name="tinh"] option:selected').text() + ' - ' + $('select[name="quan"] option:selected').text() + ' - ' + $('select[name="phuong"] option:selected').text(),
-
-                        tinh: $('select[name="tinh"] option:selected').val(),
-                        quan: $('select[name="quan"] option:selected').val(),
-                        phuong: $('select[name="phuong"] option:selected').val()
-                    };
-                    break;
-                case 'giatien':
-                    itemCond = {
-                        type: 'giatien',
-                        value: $('select[name="giaTien"]').val(),
-                        name: $('select[name="giaTien"] option:selected').text(),
-                        min: $('select[name="giaTien"] option:selected').attr('min'),
-                        max: $('select[name="giaTien"] option:selected').attr('max')
-                    };
-                    break;
-                case 'dientich':
-                    itemCond = {
-                        type: 'dientich',
-                        value: $('select[name="dienTich"]').val(),
-                        name: $('select[name="dienTich"] option:selected').text(),
-                        min: $('select[name="dienTich"] option:selected').attr('min'),
-                        max: $('select[name="dienTich"] option:selected').attr('max')
-                    };
-                    break;
-                case 'ten':
-                    itemCond = {
-                        type: 'ten',
-                        value: $('input[name="timKiem"]').val(),
-                        name: $('input[name="timKiem"]').val()
-                    };
-                    break;
-            }
-
-            // thêm điều kiện mới
-            var newFilterCond = this.state.filterCond;
-            newFilterCond.push(itemCond);
-            this.setState({ filterCond: newFilterCond });
-
-            // đổi trạng thái nav filter
-            this.changeDisplayStatus();
-
-            // đặt lại scrollTop
-            $(window).scrollTop(0);
-
-            // Cập nhật trang chủ
-            this.props.capNhatDanhSach(newFilterCond);
-        }
-
-        /**
-         * Filter Conditional
-         * xóa điều kiện
-         * @param index stt trong mảng điều kiện
-         */
-
-    }, {
-        key: 'removeCond',
-        value: function removeCond(index) {
-            var funcCall = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
-
-            var newFilterCond = this.state.filterCond;
-            newFilterCond.splice(index, 1);
-            this.setState({ filterCond: newFilterCond });
-
-            if (!funcCall) {
-                // đặt lại scrollTop
-                $(window).scrollTop(0);
-                // Cập nhật trang chủ
-                this.props.capNhatDanhSach(newFilterCond);
-            }
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            var _this7 = this;
-
-            // Filter
-            var nav = void 0;
-            var back = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'button',
-                { className: 'back', onClick: function onClick() {
-                        return _this7.changeDisplayStatus('nav');
-                    } },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-chevron-left' })
-            );
-            var giaTien = null,
-                diaPhuong = null,
-                dienTich = null,
-                ok = null;
-
-            switch (this.state.display) {
-                case 'diaphuong':
-                    nav = back;
-                    diaPhuong = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(DiaPhuong, null);
-                    ok = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'button',
-                        { className: 'ok', onClick: function onClick() {
-                                return _this7.addCond('diaphuong');
-                            } },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-ok' })
-                    );
-                    break;
-                case 'giatien':
-                    nav = back;
-                    giaTien = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(GiaTien, { giaTien: this.props.giaTien });
-                    ok = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'button',
-                        { className: 'ok', onClick: function onClick() {
-                                return _this7.addCond('giatien');
-                            } },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-ok' })
-                    );
-                    break;
-                case 'dientich':
-                    nav = back;
-                    dienTich = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(DienTich, { dienTich: this.props.dienTich });
-                    ok = __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'button',
-                        { className: 'ok', onClick: function onClick() {
-                                return _this7.addCond('dientich');
-                            } },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-ok' })
-                    );
-                    break;
-                default:
-                    nav = this.state.item.map(function (value, index) {
-                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            'button',
-                            { key: index, onClick: function onClick() {
-                                    return _this7.changeDisplayStatus(value.id);
-                                } },
-                            value.name
-                        );
-                    }, this);
-                    break;
-            }
-            ////////////////////////////////////////////////////////////////////////////////////////
-
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                'div',
-                { className: 'panel panel-default' },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'panel-heading', id: 'search' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'div',
-                        { className: 'input-group' },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'text', className: 'form-control', placeholder: 'T\xECm ki\u1EBFm', name: 'timKiem',
-                            onSubmit: function onSubmit() {
-                                return _this7.addCond('ten');
-                            } }),
+                            { className: 'noi-dung', onClick: this.xemPhong },
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'div',
+                                { className: 'title' },
+                                this.props.phongDuyet.tenPhong
+                            ),
+                            this.props.phongDuyet.noiDung
+                        ),
                         __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            { className: 'input-group-btn' },
+                            { className: 'radio' },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                                'button',
-                                { className: 'btn btn-default', type: 'submit',
-                                    onClick: function onClick() {
-                                        return _this7.addCond('ten');
-                                    } },
-                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'glyphicon glyphicon-search' })
+                                'label',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', name: this.props.phongDuyet.maPhong, value: '1',
+                                    defaultChecked: this.state.tinhTrangDuyet == 1, onChange: this.thayDoiTinhTrangDuyet }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    { className: 'checkmark' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-ok', 'data-toggle': 'tooltip', title: 'Duy\u1EC7t' }),
+                                    'Duy\u1EC7t'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', name: this.props.phongDuyet.maPhong, value: '2',
+                                    defaultChecked: this.state.tinhTrangDuyet == 2, onChange: this.thayDoiTinhTrangDuyet }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    { className: 'checkmark' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-remove', 'data-toggle': 'tooltip', title: 'Kh\xF3a Ph\xF2ng' }),
+                                    'Kh\xF3a'
+                                )
+                            ),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'label',
+                                null,
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'radio', name: this.props.phongDuyet.maPhong, value: '0',
+                                    defaultChecked: this.state.tinhTrangDuyet == 0, onChange: this.thayDoiTinhTrangDuyet }),
+                                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                    'span',
+                                    { className: 'checkmark' },
+                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('span', { className: 'glyphicon glyphicon-pushpin', 'data-toggle': 'tooltip', title: 'Ch\u1EDD Duy\u1EC7t' }),
+                                    'Ch\u1EDD'
+                                )
                             )
                         )
                     )
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'panel-heading', id: 'filter' },
-                    nav,
-                    giaTien,
-                    dienTich,
-                    diaPhuong,
-                    ok
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    'div',
-                    { className: 'panel-body', id: 'filter-conditional' },
-                    this.state.filterCond.map(function (value, index) {
-                        return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(FilterConditional, { key: index, name: value.name,
-                            remove: function remove() {
-                                return _this7.removeCond(index);
-                            } });
-                    }, this)
                 )
             );
         }
     }]);
 
-    return SearchPanel;
+    return PhongDuyetItem;
 }(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
 
-var test = {
-    filterCond: [{ type: 'ten', value: 'vũ', name: 'vũ' }, {
-        type: 'giatien',
-        value: 3000000,
-        name: '1 000 000 - 2 000 000',
-        min: 1000000,
-        max: 2000000
+var DanhSachDuyetPhong = function (_React$Component2) {
+    _inherits(DanhSachDuyetPhong, _React$Component2);
+
+    function DanhSachDuyetPhong(props) {
+        _classCallCheck(this, DanhSachDuyetPhong);
+
+        var _this2 = _possibleConstructorReturn(this, (DanhSachDuyetPhong.__proto__ || Object.getPrototypeOf(DanhSachDuyetPhong)).call(this, props));
+
+        _this2.state = {
+            skip: 0,
+            dsPhong: []
+        };
+        _this2.getDanhSachDuyetPhong = _this2.getDanhSachDuyetPhong.bind(_this2);
+        _this2.updateTinhTrangDuyet = _this2.updateTinhTrangDuyet.bind(_this2);
+        return _this2;
+    }
+
+    _createClass(DanhSachDuyetPhong, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.getDanhSachDuyetPhong();
+        }
     }, {
-        type: 'dientich',
-        value: 10,
-        name: '<= 10 m',
-        min: 0,
-        max: 10
+        key: 'getDanhSachDuyetPhong',
+        value: function getDanhSachDuyetPhong() {
+            var _this3 = this;
+
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('GetDanhSachPhongDuyet', {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                skip: this.state.skip
+            }).then(function (res) {
+                _this3.setState(function (prevState, props) {
+                    var dsPhong = prevState.dsPhong;
+                    var skip = prevState.skip;
+
+                    res.data.map(function (value, index) {
+                        return dsPhong.push(value);
+                    });
+                    skip += res.data.length;
+                    return { dsPhong: dsPhong, skip: skip };
+                });
+            });
+        }
     }, {
-        type: 'diaphuong',
-        value: null,
-        name: 'TP Đà Nẵng - Quận Hải Châu - Phường Hòa Cường Bắc',
-        tinh: 'TP Đà Nẵng',
-        quan: 'Quận Hải Châu',
-        phuong: 'Phường Hòa Cường Bắc'
-    }]
-};
+        key: 'updateTinhTrangDuyet',
+        value: function updateTinhTrangDuyet(index, tinhTrangDuyet) {
+            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('UpdateTinhTrangDuyet', {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                maPhong: this.state.dsPhong[index].maPhong,
+                tinhTrangDuyet: tinhTrangDuyet
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this4 = this;
+
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                'ul',
+                { className: 'new-ul' },
+                this.state.dsPhong.map(function (va, index) {
+                    return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(PhongDuyetItem, { key: index, phongDuyet: va,
+                        updateTinhTrangDuyet: function updateTinhTrangDuyet(tinhTrangDuyet) {
+                            return _this4.updateTinhTrangDuyet(index, tinhTrangDuyet);
+                        } });
+                })
+            );
+        }
+    }]);
+
+    return DanhSachDuyetPhong;
+}(__WEBPACK_IMPORTED_MODULE_0_react___default.a.Component);
+
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(DanhSachDuyetPhong, null), document.getElementById('danhsachduyetphong'));
 
 /***/ })
 /******/ ]);

@@ -12,6 +12,7 @@ class TaiKhoanSeeder extends Seeder
     public function run()
     {
         DB::table('TaiKhoan')->insert([
+            'id' => 1,
             'holot' => 'Nguyễn Hữu Anh',
             'ten' => 'Khoa',
             'gioiTinh' => 'M',
@@ -22,7 +23,7 @@ class TaiKhoanSeeder extends Seeder
             'quan' => 'Quận Hải Châu',
             'phuong' => 'Phường Hòa Cường Bắc',
             'diaChi' => '44 Huỳnh Tấn Phát',
-            'tinhTrangHoatDong' => '1',
+            'tinhTrangHoatDong' => 1,
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'anhkhoa289',
             'matkhau' => bcrypt('1234'),
@@ -30,6 +31,7 @@ class TaiKhoanSeeder extends Seeder
             'avatar' => 'avaDefault.jpg'
         ]);
         DB::table('TaiKhoan')->insert([
+            'id' => 2,
             'holot' => 'Nguyễn Hoàng Minh',
             'ten' => 'Thi',
             'gioiTinh' => 'F',
@@ -40,7 +42,9 @@ class TaiKhoanSeeder extends Seeder
             'quan' => 'Quận Hải Châu',
             'phuong' => 'Phường Hòa Cường Bắc',
             'diaChi' => '44 Huỳnh Tấn Phát',
-            'tinhTrangHoatDong' => '1',
+            'tinhTrangHoatDong' => 1,
+            'slgDuyet' => 3,
+            'slgThongBao' => 3,
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'thi12345',
             'matkhau' => bcrypt('1234'),
@@ -48,6 +52,7 @@ class TaiKhoanSeeder extends Seeder
             'avatar' => 'avaDefault.jpg'
         ]);
         DB::table('TaiKhoan')->insert([
+            'id' => 3,
             'holot' => 'Mai Tuấn',
             'ten' => 'Vũ',
             'gioiTinh' => 'M',
@@ -58,8 +63,8 @@ class TaiKhoanSeeder extends Seeder
             'quan' => 'Quận Hoàn Kiếm',
             'phuong' => 'Phường Hàng Đào',
             'diaChi' => '44 Tân Hiệp Phát',
-            'tinhTrangHoatDong' => '1',
-            'slgPhongTroSoHuu' => '3',
+            'tinhTrangHoatDong' => 1,
+            'slgPhongTroSoHuu' => 4,
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'vu1234',
             'matkhau' => bcrypt('1234'),
@@ -67,6 +72,7 @@ class TaiKhoanSeeder extends Seeder
             'avatar' => 'avaDefault.jpg'
         ]);
         DB::table('TaiKhoan')->insert([
+            'id' => 4,
             'holot' => 'Mai Kim',
             'ten' => 'Anh',
             'gioiTinh' => 'F',
@@ -77,7 +83,8 @@ class TaiKhoanSeeder extends Seeder
             'quan' => 'Quận Ba Đình',
             'phuong' => 'Phường Quán Thánh',
             'diaChi' => '44 Tân Hiệp Phát',
-            'tinhTrangHoatDong' => '1',
+            'tinhTrangHoatDong' => 1,
+            'slgPhongTroSoHuu' => 3,
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'anh1234',
             'matkhau' => bcrypt('1234'),
@@ -85,6 +92,7 @@ class TaiKhoanSeeder extends Seeder
             'avatar' => 'avaDefault.jpg'
         ]);
         DB::table('TaiKhoan')->insert([
+            'id' => 5,
             'holot' => 'Trần Thị',
             'ten' => 'A',
             'gioiTinh' => 'F',
@@ -95,7 +103,8 @@ class TaiKhoanSeeder extends Seeder
             'quan' => 'Quận Hai Bà Trưng',
             'phuong' => 'Phường Bách Khoa',
             'diaChi' => '44 Huỳnh Tấn Phát',
-            'tinhTrangHoatDong' => '1',
+            'tinhTrangHoatDong' => 1,
+            'slgPhongTroSoHuu' => 2,
             'maKichHoat'=> str_random(6),
             'tenDangNhap' => 'a12345678',
             'matkhau' => bcrypt('1234'),
@@ -103,6 +112,7 @@ class TaiKhoanSeeder extends Seeder
             'avatar' => 'avaDefault.jpg'
         ]);
         DB::table('TaiKhoan')->insert([
+            'id' => 6,
             'holot' => 'Trần Văn',
             'ten' => 'B',
             'gioiTinh' => 'M',

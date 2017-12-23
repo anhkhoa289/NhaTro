@@ -131,5 +131,62 @@ class PhongTroSeeder extends Seeder
             'created_at' => '2017-11-14 19:54:15',
             'updated_at' => '2017-11-14 19:54:15'
         ]);
+        DB::table('PhongTro')->insert([
+            'maPhong' => 7,
+            'tenPhong' => 'Testing 1',
+            'noiDung' => "Testing 1",
+            'tongSoPhong' => 3,
+            'soPhongTrong' => 2,
+            'dienTich' => 10,
+            'gia' => 2500000,
+            'tinh' => 'Hà Nội',
+            'quan' => 'Quận Ba Đình',
+            'phuong' => 'Phường Nguyễn Trung Trực',
+            'diaChi' => '223 Lê Thánh Tông',
+            'chuNha' => 4,
+            'CTVduyet' => 2,
+            'capNhatLuc' => '2017-12-14 19:54:15',
+            'pathImg' => '7/readfaweradfdsv234234.jpg',
+            'created_at' => '2017-12-14 19:54:15',
+            'updated_at' => '2017-12-14 19:54:15'
+        ]);
+        DB::table('PhongTro')->insert([
+            'maPhong' => 8,
+            'tenPhong' => 'Testing 2',
+            'noiDung' => "Testing 2",
+            'tongSoPhong' => 3,
+            'soPhongTrong' => 2,
+            'dienTich' => 10,
+            'gia' => 6500000,
+            'tinh' => 'Hà Nội',
+            'quan' => 'Quận Ba Đình',
+            'phuong' => 'Phường Nguyễn Trung Trực',
+            'diaChi' => '223 Lê Thánh Tông',
+            'chuNha' => 4,
+            'CTVduyet' => 2,
+            'capNhatLuc' => '2017-12-14 19:59:15',
+            'pathImg' => '8/1_22516.jpg',
+            'created_at' => '2017-12-14 19:59:15',
+            'updated_at' => '2017-12-14 19:59:15'
+        ]);
+        DB::table('PhongTro')->insert([
+            'maPhong' => 9,
+            'tenPhong' => 'Testing 3',
+            'noiDung' => "Testing 3",
+            'tongSoPhong' => 3,
+            'soPhongTrong' => 2,
+            'dienTich' => 30,
+            'gia' => 7500000,
+            'tinh' => 'Hà Nội',
+            'quan' => 'Quận Ba Đình',
+            'phuong' => 'Phường Nguyễn Trung Trực',
+            'diaChi' => '223 Lê Thánh Tông',
+            'chuNha' => 4,
+            'CTVduyet' => 2,
+            'capNhatLuc' => '2017-12-14 21:21:15',
+            'pathImg' => '9/cho-thue-phong-tro-gia-re-tai-kdc-434-164.jpg',
+            'created_at' => '2017-12-14 21:21:15',
+            'updated_at' => '2017-12-14 21:21:15'
+        ]);
     }
 }

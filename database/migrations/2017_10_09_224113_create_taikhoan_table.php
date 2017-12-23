@@ -26,6 +26,7 @@ class CreateTaikhoanTable extends Migration
             $table->char('quan', 50);
             $table->char('phuong', 50);
             $table->char('diaChi', 255);
+            $table->boolean('khoaTaiKhoan')->default(0);
             $table->boolean('tinhTrangHoatDong')->default(0);
             $table->integer('slgThongBao')->unsigned()->default(0);// new
             $table->integer('slgPhongTroSoHuu')->default(0);

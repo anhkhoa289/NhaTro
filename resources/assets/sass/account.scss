@@ -59,8 +59,10 @@
                 }
             }
 
-            // Trang thông báo
-            .thong-bao, .phong-cua-toi{
+            // Các trang bên trong Trang cá nhân
+            .thong-bao, 
+            .phong-cua-toi, 
+            #danhsachduyetphong {
                 ul {
                     list-style: none;
                     padding: 0;
@@ -83,7 +85,7 @@
                     }
                 }
 
-                // Trang phòng trọ của tôi
+                // Phòng trọ của tôi và Danh sách phòng duyệt
                 ul.new-ul {
                     @include trangcanhan-img-noidung-v2;
                     li.xem-them {

@@ -45,7 +45,7 @@ class PhongTroRepository
     }
 
     public function get10($skip = 0, $q) {
-        $query = [['tinhTrangHienThi', '=', 1], ['tinhTrangSoHuu', '=', 1]];
+        $query = [['tinhTrangHienThi', '=', 1], ['tinhTrangSoHuu', '=', 1], ['tinhTrangDuyet', '<>', 2]];
         foreach($q as $value)
         {
             switch($value['type']) {
@@ -110,9 +110,19 @@ class PhongTroRepository
         $this->PhongTro->save();
     }
 
-    public function hidePhongTro($maPhong) {
+    public function hidePhongTro($maPhong, $tinhTrangHienThi) {
         $this->PhongTro = PhongTro::findOrFail($maPhong);
-        $this->PhongTro->tinhTrangHienThi = 0;
+        $this->PhongTro->tinhTrangHienThi = $tinhTrangHienThi;
         $this->PhongTro->save();
+    }
+
+    public function updateTinhTrangDuyet($currentIDUser, $maPhong, $tinhTrangDuyet) {
+        $this->PhongTro = PhongTro::findOrFail($maPhong);
+        if($this->PhongTro->CTVduyet == $currentIDUser) {
+            $this->PhongTro->tinhTrangDuyet = $tinhTrangDuyet;
+            $this->PhongTro->save();
+            return true;
+        }
+        else return false;
     }
 }
