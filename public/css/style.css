@@ -922,10 +922,10 @@ div.img-nhatro > div {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  opacity: 0.3;
+  height: 8rem;
+  width: 8rem;
+  background-color: #ccc;
+  opacity: .5;
   border-radius: 50%;
 }
 
@@ -934,17 +934,17 @@ div.img-nhatro > div {
   position: absolute;
   display: none;
   left: 50%;
-  top: 39%;
-  width: 4rem;
-  height: 8rem;
+  top: 43%;
+  width: 3rem;
+  height: 5rem;
   border: solid white;
-  border-width: 0 12px 12px 0;
+  border-width: 0 1rem 1rem 0;
   -webkit-transform: translate(-50%, -50%) rotate(45deg);
   transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .phong .sua-phong .contain-label > label:hover > input ~ .checkmark {
-  background-color: #ccc;
+  background-color: #eee;
 }
 
 .phong .sua-phong .contain-label > label > input {
@@ -954,6 +954,7 @@ div.img-nhatro > div {
 
 .phong .sua-phong .contain-label > label > input:checked ~ .checkmark {
   background-color: #2196F3;
+  opacity: 1;
 }
 
 .phong .sua-phong .contain-label > label > input:checked ~ .checkmark:after {

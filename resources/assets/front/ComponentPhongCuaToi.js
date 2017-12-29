@@ -57,6 +57,7 @@ export class PhongCuaToi extends React.Component{
         })
     }
     componentDidMount() {
+        this.getJSON()
         window.addEventListener('scroll', () => {
             if(this.state.remaining)
                 if(($(window).scrollTop() + $(window).height() == $(document).height()))

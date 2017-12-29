@@ -82,8 +82,16 @@ class TrangCaNhanController extends Controller
     }
 
     public function capNhatPhongTro(Request $req) {
-
-        return view('Phong.SuaPhong');
+        $phong = app('PhongTroRepository')->get($req->maPhong, $req->session()->get('TaiKhoan.id'));
+        if($phong != null) {
+            $phong->HinhAnhPhongTro = app('HinhAnhPhongTroRepository')->get($req->maPhong);
+            return view('Phong.SuaPhong', ["phong" => $phong]);
+        }
+        else {
+            return redirect()->action(
+                'AccountController@canhBao', ['loi' => 'Không tìm thấy phòng của bạn']
+            );
+        }
     }
 
 

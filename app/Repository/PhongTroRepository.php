@@ -30,6 +30,13 @@ class PhongTroRepository
     public function get($maPhong){
         return $this->PhongTro::findOrFail($maPhong);
     }
+    public function getForUpdate($maPhong, $chuNha){
+        $this->PhongTro = $this->PhongTro::findOrFail($maPhong);
+        if($this->PhongTro->tinhTrangDuyet == 2 || $this->PhongTro->chuNha != $chuNha )
+            return null;
+        else 
+            return $this->PhongTro;
+    }
     public function updateClicked($maPhong){
         $this->PhongTro = PhongTro::findOrFail($maPhong);
         $this->PhongTro->luotClick = $this->PhongTro->luotClick + 1;

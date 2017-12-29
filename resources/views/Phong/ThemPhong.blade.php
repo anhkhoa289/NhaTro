@@ -129,7 +129,7 @@
     $("#photo").fileinput({
         language: "vi",
         maxFileCount: 10,
-        maxFileSize: 200,
+        maxFileSize: 500,
         allowedFileExtensions: ["jpg", "png", "jpeg", "gif"]
     });
     $("#tinh").prepend("<option value='' selected='selected'>Chọn tỉnh</option>");

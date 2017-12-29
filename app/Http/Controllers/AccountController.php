@@ -102,6 +102,8 @@ class AccountController extends Controller
                 array_push($data, 'Tài khoản của bạn đã bị khóa, vui lòng liên hệ quản trị viên để biết thêm thông tin chi tiết');
             if($req->session()->get('TaiKhoan.tinhTrangHoatDong') == 0)
                 array_push($data, 'Tài khoản của bạn chưa được kích hoạt');
+            if(isset($req->loi))
+                array_push($data, $req->loi);
         }
         else {
             array_push($data, 'Bạn chưa đăng nhập');

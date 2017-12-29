@@ -19690,6 +19690,7 @@ var PhongCuaToi = function (_React$Component) {
         value: function componentDidMount() {
             var _this4 = this;
 
+            this.getJSON();
             window.addEventListener('scroll', function () {
                 if (_this4.state.remaining) if ($(window).scrollTop() + $(window).height() == $(document).height()) _this4.getJSON();
             });
