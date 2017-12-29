@@ -21,11 +21,17 @@ npm install
 ```bash
 php artisan migrate:refresh --seed
 ```
-4. Tạo key cho trình sinh mã tự động
+5. Tạo lối tắt cho thư mục storage
+- Xóa shortcut storage trong thư mục public nếu có
+- Chạy lệnh
+```bash
+php artisan storage:link
+```
+6. Tạo key cho trình sinh mã tự động
 ```bash
 php artisan key:generate
 ```
-5. Chạy Server (Cổng mặc định 8000)
+7. Chạy Server (Cổng mặc định 8000)
 ```bash
 php artisan serve
 ```
