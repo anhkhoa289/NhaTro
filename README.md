@@ -12,4 +12,7 @@
     ```bash
     npm install
     ```
+    ```bash
+    php artisan migrate:refresh --seed
+    ```
 
