@@ -33,3 +33,16 @@ php artisan serve
 ```bash
 php artisan serve
 ```
+# Các lệnh trong quá trình chạy
+- Làm mới lại dữ liệu mẫu
+```bash
+php artisan migrate:refresh --seed
+```
+- Chạy lệnh biên dịch sass và js khi sửa code scss và js (mỗi lần chạy sẽ biên dịch 1 lần)
+```bash
+npm run dev
+```
+- Chạy lệnh biên dịch sass và js khi sửa code scss và js (sẽ tự động biên dịch khi có thay đổi các file này)
+```bash
+npm run dev
+```
