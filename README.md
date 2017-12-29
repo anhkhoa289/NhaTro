@@ -50,5 +50,5 @@ npm run dev
 ```
 - Chạy lệnh biên dịch sass và js khi sửa code scss và js (sẽ tự động biên dịch khi có thay đổi các file này)
 ```bash
-npm run dev
+npm run watch
 ```
