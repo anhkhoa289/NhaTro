@@ -22,6 +22,15 @@ class PhongTroRepository
         $this->PhongTro->save();
         return $this->PhongTro->maPhong;
     }
+
+    public function update($phong) {
+        $this->PhongTro = $this->PhongTro::find($phong->maPhong);
+        foreach($phong as $key => $value) {
+            $this->PhongTro->$key = $value;
+        }
+        $this->PhongTro->save();
+    }
+
     public function updatePhoto($maPhong,$path){
         $this->PhongTro = $this->PhongTro::find($maPhong);
         $this->PhongTro->pathImg = $path;

@@ -2,7 +2,9 @@
 namespace App\Repository;
 
 use App\Model\HinhAnhPhongTro;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\DB;
+use Log;
 
 class HinhAnhPhongTroRepository
 {
@@ -35,8 +37,19 @@ class HinhAnhPhongTroRepository
         // $photos = DB::table('HinhAnhPhongTro')->where('maPhong',$maPhong)->get(['pathImg']);
 
         // trả về mảng các giá trị của cột
-        $photos = DB::table('HinhAnhPhongTro')->where('maPhong',$maPhong)->pluck('pathImg');
+        $photos = DB::table('HinhAnhPhongTro')->where('maPhong', $maPhong)->pluck('pathImg');
         if($photos->count() === 0) return null;
         else return $photos;
+    }
+
+    public function del($pathImg) {
+        DB::table('HinhAnhPhongTro')->where('pathImg', $pathImg)->delete();
+        // Storage::delete('public/img/' . $pathImg);
+    }
+
+    public function insertDefault($maPhong) {
+        DB::table('HinhAnhPhongTro')->insert(
+            ['maPhong' => $maPhong, 'pathImg' => $path]
+        );
     }
 }

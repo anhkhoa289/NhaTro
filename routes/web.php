@@ -83,6 +83,10 @@ Route::group(['prefix' => 'Account', 'middleware' => ['kiemTraDangNhap', 'kiemTr
     Route::get('update/{maPhong}','TrangCaNhanController@capNhatPhongTro')
         ->middleware('kiemTraTinhTrangHoatDongTaiKhoan');
 
+    Route::post('capnhatphong','TrangCaNhanController@updatePhongTro')
+        ->middleware('kiemTraTinhTrangHoatDongTaiKhoan');
+
+
     Route::get('XacThucTaiKhoan','TrangCaNhanController@xacThucTaiKhoan');
     
     Route::view('CapNhatAvatar', 'Account.updateAvatar'); // chưa có

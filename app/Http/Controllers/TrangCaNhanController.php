@@ -6,6 +6,7 @@ use Session;
 use Illuminate\Http\Request;
 use App\Model\PhongTro;
 use App\Http\Middleware\KiemTraDangNhap;
+use Log;
 
 class TrangCaNhanController extends Controller
 {
@@ -94,6 +95,60 @@ class TrangCaNhanController extends Controller
         }
     }
 
+    public function updatePhongTro(Request $req) {
+        $phong = app('PhongTroRepository')->get($req->maPhong, $req->session()->get('TaiKhoan.id'));
+        if($phong != null) {
+            $hinhAnh = app('HinhAnhPhongTroRepository')->get($req->maPhong);
+
+            // Xóa ảnh cũ
+            $del = true; 
+            $a = $req->updatedPhoto;
+            foreach($hinhAnh as $v) {
+                $del = true;
+                if($a != null)
+                    foreach($a as $v2) {
+                        if($v === $v2) {
+                            $del = false;
+                            break;
+                        }
+                    }
+                if($del) app('HinhAnhPhongTroRepository')->del($v);
+            }
+
+            // Thêm ảnh mới
+            if($req->photo !== null)
+                $path = app('HinhAnhPhongTroRepository')->add($req->photo, $req->maPhong);
+
+
+            $newPhong = (object)[
+                'maPhong' => $req->maPhong,
+                'tongSoPhong' => $req->tongSoPhong,
+                'soPhongTrong' => $req->soPhongTrong,
+                'dienTich' => $req->dienTich,
+                'gia'=> $req->gia,
+                'noiDung' => $req->noiDung
+            ];
+
+            // Cập nhật ảnh đại diện phòng trọ
+            $hinhAnh = app('HinhAnhPhongTroRepository')->get($req->maPhong);
+            if(count($hinhAnh) !== 0)
+                $newPhong->pathImg = $hinhAnh[0];
+            else {
+                $newPhong->pathImg = 'defaultImg.jpg';
+                app('HinhAnhPhongTroRepository')->insertDefault($req->maPhong);
+            }
+
+            // Cập nhật phòng
+            app('PhongTroRepository')->update($newPhong);
+
+            return redirect()->action('PhongController@xemPhong', ['maPhong' => $req->maPhong]);
+        }
+        else
+            return redirect()->action(
+                'AccountController@canhBao', 
+                ['loi' => 'Không tìm thấy phòng của bạn']
+            );
+    }
 
     /**
      * Xác thực tài khoản

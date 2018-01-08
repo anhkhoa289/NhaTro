@@ -7,8 +7,10 @@
         <div class="col-md-12">
             <div class="row sua-phong">
                 
-                {!! Form::open(['url' => 'Phong/SuaPhong', 'id'=>'suaPhong', 
+                {!! Form::open(['url' => 'Account/capnhatphong', 'id'=>'suaPhong', 
                 'enctype' => 'multipart/form-data', 'data-toggle'=>"validator"]) !!}
+                
+                    {!! Form::hidden('maPhong', $phong->maPhong) !!}
 
                     <div class="col-md-8">
                         <div class="row ">
@@ -19,7 +21,7 @@
                                 @foreach($phong->HinhAnhPhongTro as $v)
                                 <label>
                                     <img class="rounded" src="{{asset('storage/img/' . $v)}}" />
-                                    {!! Form::checkbox('updated', 'value', true, ['onChange' => 'updateSlg()']) !!}
+                                    {!! Form::checkbox('updatedPhoto', $v, true, ['name' => 'updatedPhoto[]']) !!}
                                     <span class="checkmark"></span>
                                 </label>
                                 @endforeach
