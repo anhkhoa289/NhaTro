@@ -9,7 +9,7 @@
                 <div class="col-md-3 thanh-ben">{{--  thanh bên  --}}
                     <div class="avatar">
                         <a href="{{ URL::to('Account/ThongBao')}}">
-                            <img src="{{asset('img/user_1.jpg')}}" alt="user_1">
+                            <img src="{{asset('storage/img/' . Session::get('TaiKhoan.avatar'))}}" alt="user_1">
                         </a>
                     </div>
                     <div class="name">

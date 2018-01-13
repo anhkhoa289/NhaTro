@@ -132,6 +132,11 @@ class PhongTroRepository
         $this->PhongTro->save();
     }
 
+    public function updateCTVduyet($maPhong, $ctv) {
+        $this->PhongTro = PhongTro::findOrFail($maPhong);
+        $this->PhongTro->CTVduyet = $ctv;
+        $this->PhongTro->save();
+    }
     public function updateTinhTrangDuyet($currentIDUser, $maPhong, $tinhTrangDuyet) {
         $this->PhongTro = PhongTro::findOrFail($maPhong);
         if($this->PhongTro->CTVduyet == $currentIDUser) {

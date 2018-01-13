@@ -57,8 +57,12 @@ class PhongController extends Controller
         $min = app('TaiKhoanRepository')->getMin($CTV);
         $CTVduyet = null;
         foreach($CTV as $val)
-            if($val->slgDuyet <= $min)
+            if($val->slgDuyet <= $min && $req->session()->get('TaiKhoan.id') != $val->id)
                 $CTVduyet = $val->id;
+
+
+        // Cập nhật CTV cho phòng trọ
+        app('PhongTroRepository')->updateCTVduyet($maPhong, $CTVduyet);
 
         // Thông báo cho CTV
         $thongBao = (object)[
@@ -75,13 +79,23 @@ class PhongController extends Controller
         return redirect('Phong/'.$maPhong);
     }
     public function xemPhong(Request $req){
-        $data['PhongTro'] = app('PhongTroRepository')->get($req->maPhong);
+        $phongTro = app('PhongTroRepository')->get($req->maPhong);
+
+        // Kiểm tra phòng có bị khóa / có phải CTV của phòng đang xem / có phải là admin
+        if($phongTro->tinhTrangDuyet == 2) {
+            if($phongTro->CTVduyet == $req->session()->get('TaiKhoan.id')) {}
+            else if($req->session()->get('TaiKhoan.loaiTK') == 3) {}
+            else return abort(404);
+        }
+
+        $data['PhongTro'] = $phongTro;
         $data['photos'] = app('HinhAnhPhongTroRepository')->get($req->maPhong);
         $data['chuNha'] = app('TaiKhoanRepository')->get($data['PhongTro']->chuNha);
         if($data['PhongTro']->tinhTrangDuyet === 1) 
             $data["CTV"] = app('TaiKhoanRepository')->get($data['PhongTro']->CTVduyet);
         else
             $data["CTV"] = null;
+        
         if($req->session()->get('TaiKhoan.id') === $data['PhongTro']->CTVduyet)
             $data["ChucNanngDuyet"] = true;
         else

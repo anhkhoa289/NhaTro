@@ -12,8 +12,8 @@
                 <li><a href="{{URL::to('Admin/CapNhatTaiKhoan')}}">Cập nhật loại TK</a></li>
             </ul>
         </div>
-        <a href="#Samsung" class="btn btn-success my-btn-success">Samsung</a>
-        <a href="#Sony" class="btn btn-success my-btn-success">Sony</a>
+        {{--  <a href="#Samsung" class="btn btn-success my-btn-success">Samsung</a>
+        <a href="#Sony" class="btn btn-success my-btn-success">Sony</a>  --}}
     </div>
 @endif
 @stop

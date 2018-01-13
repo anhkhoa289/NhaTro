@@ -92,7 +92,7 @@
                     <div class="form-group col-md-4 input-sdt{{ $errors->has('sdt') ? ' has-error has-danger' : '' }}">
                         {!! Form::label('sdt', 'Số điện thoại') !!}
                         {!! Form::number('sdt', null, ['class' => 'form-control', 
-                        'data-error'=>'Không được bỏ trống', 'required']) !!}
+                        'data-error'=>'Tối thiểu >= 10', 'data-minlength'=>'10', 'required']) !!}
                         <div class="help-block with-errors">{{$errors->first('sdt')}}</div>
                     </div>
                     <div class="clearfix visible-lg-block"></div>

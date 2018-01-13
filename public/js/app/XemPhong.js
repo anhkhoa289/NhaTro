@@ -19595,9 +19595,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /** Render App
  */
-
-__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__ComponentXemPhong__["a" /* DuyetPhong */], { status: cND, phongDuyet: phongDuyet }), document.getElementById("ForCTV"));
-
+__WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__ComponentXemPhong__["a" /* DuyetPhong */], { status: window.cND, phongDuyet: window.phongDuyet }), document.getElementById("ForCTV"));
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__ComponentXemPhong__["b" /* XemPhong */], null), document.getElementById("dat-cho-react"));
 
 /***/ }),
@@ -19761,6 +19759,7 @@ var DatCho = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 { id: 'dat-cho', className: 'modal fade', role: 'dialog' },
@@ -19799,13 +19798,13 @@ var DatCho = function (_React$Component) {
                                         'Nh\u1EADp s\u1ED1 \u0111i\u1EC7n tho\u1EA1i c\u1EE7a b\u1EA1n'
                                     ),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { type: 'number', id: 'sdtKhachHang', name: 'sdtKhachHang', className: 'form-control',
-                                        'data-error': 'kh\xF4ng \u0111\u01B0\u1EE3c b\u1ECF tr\u1ED1ng', required: true,
+                                        'data-error': 'S\u1ED1 \u0111i\u1EC7n tho\u1EA1i t\u1ED1i thi\u1EC3u c\xF3 10 ch\u1EEF s\u1ED1', required: true, 'data-minlength': '10',
                                         'data-remote-error': 'S\u1ED1 \u0111i\u1EC7n tho\u1EA1i \u0111ang ch\u1EDD li\xEAn h\u1EC7. \\nVui l\xF2ng ch\u1EDD 5 ph\xFAt ho\u1EB7c s\u1EED d\u1EE5ng s\u1ED1 \u0111i\u1EC7n tho\u1EA1i kh\xE1c.',
                                         'data-remote': '/KhachHang/CheckSDT' }),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'div',
                                         { className: 'help-block with-errors', style: { whiteSpace: 'pre-line' } },
-                                        'L\u01B0u \xFD n\u1EBFu \u0111\u1EB7t ch\u1ED7 th\xE0nh c\xF4ng, s\u1ED1 \u0111i\u1EC7n tho\u1EA1i c\u1EE7a b\u1EA1n s\u1EBD b\u1ECB kh\xF3a 5 ph\xFAt'
+                                        '\'L\u01B0u \xFD n\u1EBFu \u0111\u1EB7t ch\u1ED7 th\xE0nh c\xF4ng, s\u1ED1 \u0111i\u1EC7n tho\u1EA1i c\u1EE7a b\u1EA1n s\u1EBD b\u1ECB kh\xF3a 5 ph\xFAt\''
                                     )
                                 )
                             )
@@ -19854,14 +19853,17 @@ var XemPhong = function (_React$Component2) {
         value: function dangKy() {
             var _this3 = this;
 
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post(location.origin + '/KhachHang/DangKy', {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                sdtKhachHang: $("#sdtKhachHang").val()
-            }).then(function (res) {
-                $('#dat-cho').modal('hide');
-                capNhatLuotClick();
-                if (res.data === 'success') $("#xac-nhan").modal('show');else _this3.thongBao(res.data);
-            });
+            var sdt = $("#sdtKhachHang").val().toString();
+            if (sdt.length >= 10 && sdt[0] == 0) {
+                __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post(location.origin + '/KhachHang/DangKy', {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    sdtKhachHang: sdt
+                }).then(function (res) {
+                    $('#dat-cho').modal('hide');
+                    capNhatLuotClick();
+                    if (res.data === 'success') $("#xac-nhan").modal('show');else _this3.thongBao(res.data);
+                });
+            }
         }
     }, {
         key: 'xacNhan',
@@ -19872,8 +19874,8 @@ var XemPhong = function (_React$Component2) {
                 _token: $('meta[name="csrf-token"]').attr('content'),
                 sdtKhachHang: $("#sdtKhachHang").val(),
                 maXacNhan: $("#maXacNhan").val(),
-                maPhong: maPhong,
-                chuNha: chuNha
+                maPhong: window.maPhong,
+                chuNha: window.chuNha
             }).then(function (res) {
                 if (res.data === 'success') {
                     $("#xac-nhan").modal('hide');

@@ -126,9 +126,11 @@
                 <div id="dat-cho-react"></div>
                 
                 <script>
-                    var clickHienSo = false, maPhong = {{$PhongTro->maPhong}}, chuNha = {{$PhongTro->chuNha}}
-                    var cND = {{$ChucNanngDuyet}}
-                    var phongDuyet = <?php echo json_encode($PhongTro); ?>
+                    var clickHienSo = false
+                    window.maPhong = {{$PhongTro->maPhong}}
+                    window.chuNha = {{$PhongTro->chuNha}}
+                    window.cND = {{$ChucNanngDuyet}}
+                    window.phongDuyet = <?php echo json_encode($PhongTro); ?>
                 </script>
                 <script src="{{asset('js/app/XemPhong.js')}}"></script>
 

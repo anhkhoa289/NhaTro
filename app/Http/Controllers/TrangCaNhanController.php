@@ -32,14 +32,14 @@ class TrangCaNhanController extends Controller
             if($req->session()->get('TaiKhoan.id') !== $ThongBao->TK_id)
                 return abort(404);
 
-            $this->data["DanhSachDatCho"] = $DanhSachDatCho;
+            $this->data["DanhSachDatCho"] = $ThongBaoChiTiet;
             $this->data["PhongTro"] = $ThongBao;
             
             if($ThongBao->tinhTrangXem == 0){
                 app('ThongBaoRepository')->updateTinhTrangXem($ThongBao->TB_id, 1);
                 $TaiKhoan = app('TaiKhoanRepository')->updateSlgThongBao($ThongBao->TK_id, -1);
                 $req->session()->put('TaiKhoan', $TaiKhoan);
-                foreach($DanhSachDatCho as $v) {
+                foreach($ThongBaoChiTiet as $v) {
                     app('KhachHangRepository')->updateTinhTrang($v->sdtKhachHang, 0);
                     app('PhongTroRepository')->decreaseLuotDatCho($v->maPhong);
                 }

@@ -73,6 +73,7 @@ class DatCho extends React.Component {
     }
 
     render() {
+
         return (
             <div id="dat-cho" className="modal fade" role="dialog">
                 <div className="modal-dialog">
@@ -87,10 +88,12 @@ class DatCho extends React.Component {
                                 <div className="form-group input-sdt">
                                     <label htmlFor="sdtKhachHang">Nhập số điện thoại của bạn</label>
                                     <input type="number" id="sdtKhachHang" name="sdtKhachHang" className='form-control'
-                                        data-error='không được bỏ trống' required
+                                        data-error='Số điện thoại tối thiểu có 10 chữ số' required data-minlength='10'
                                         data-remote-error="Số điện thoại đang chờ liên hệ. \nVui lòng chờ 5 phút hoặc sử dụng số điện thoại khác."
                                         data-remote='/KhachHang/CheckSDT'/>
-                                    <div className="help-block with-errors" style={{whiteSpace: 'pre-line'}}>Lưu ý nếu đặt chỗ thành công, số điện thoại của bạn sẽ bị khóa 5 phút</div>
+                                    <div className="help-block with-errors" style={{whiteSpace: 'pre-line'}}>
+                                        'Lưu ý nếu đặt chỗ thành công, số điện thoại của bạn sẽ bị khóa 5 phút'
+                                    </div>
                                 </div>
                             </form>
                         </div>
@@ -118,17 +121,20 @@ export class XemPhong extends React.Component{
     }
 
     dangKy() {
-        axios.post(location.origin + '/KhachHang/DangKy', {
-            _token: $('meta[name="csrf-token"]').attr('content'), 
-            sdtKhachHang: $("#sdtKhachHang").val()
-        }).then((res) => {
-            $('#dat-cho').modal('hide');
-            capNhatLuotClick();
-            if(res.data === 'success')
-                $("#xac-nhan").modal('show');
-            else
-                this.thongBao(res.data)
-        })
+        let sdt = $("#sdtKhachHang").val().toString()
+        if(sdt.length >= 10 && sdt[0] == 0) {
+            axios.post(location.origin + '/KhachHang/DangKy', {
+                _token: $('meta[name="csrf-token"]').attr('content'), 
+                sdtKhachHang: sdt
+            }).then((res) => {
+                $('#dat-cho').modal('hide');
+                capNhatLuotClick();
+                if(res.data === 'success')
+                    $("#xac-nhan").modal('show');
+                else
+                    this.thongBao(res.data)
+            })
+        }
     }
 
     xacNhan() {
@@ -136,8 +142,8 @@ export class XemPhong extends React.Component{
             _token: $('meta[name="csrf-token"]').attr('content'), 
             sdtKhachHang: $("#sdtKhachHang").val(),
             maXacNhan: $("#maXacNhan").val(),
-            maPhong: maPhong,
-            chuNha: chuNha
+            maPhong: window.maPhong,
+            chuNha: window.chuNha
         })
         .then( (res) => {
             if(res.data === 'success') {
